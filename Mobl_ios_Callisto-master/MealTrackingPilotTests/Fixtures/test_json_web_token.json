@@ -1,0 +1,13 @@
+{
+    "valid_token": {
+        "token": "TEST_TOKEN",
+        "expires_at": "1337"
+    },
+    "invalid_token": {
+        "some_key": "some_value"
+    },
+    "invalid_expiration": {
+        "token": "TEST_TOKEN",
+        "expires_at": "THIS_IS_NOT_A_TIMEINTERVAL"
+    }
+}

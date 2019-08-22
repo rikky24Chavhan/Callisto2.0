@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
+        <array key="OpenSans-Light.ttf">
+            <string>OpenSans-Light</string>
+        </array>
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+        <array key="OpenSans-Semibold.ttf">
+            <string>OpenSans-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GoogleAuthenticationViewController" customModule="MealTrackingPilot" customModuleProvider="target">
+            <connections>
+                <outlet property="logoView" destination="1Zw-L6-SqG" id="69g-LM-lkz"/>
+                <outlet property="signInButton" destination="dUG-rC-VYd" id="R7c-Nh-iyE"/>
+                <outlet property="titleLabel" destination="LVh-hb-Jey" id="14h-Fr-HWz"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lillyLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="yh8-h0-n5A">
+                    <rect key="frame" x="157.5" y="64" width="59" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="59" id="CQE-Zu-0Sy"/>
+                        <constraint firstAttribute="height" constant="32" id="Mly-9M-SFO"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="logoLarge" translatesAutoresizingMaskIntoConstraints="NO" id="1Zw-L6-SqG">
+                    <rect key="frame" x="83" y="140" width="208" height="208"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUG-rC-VYd">
+                    <rect key="frame" x="55" y="542" width="264" height="64"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="264" id="kB6-lA-YkL"/>
+                        <constraint firstAttribute="height" constant="64" id="zRA-Hw-1dV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="16"/>
+                    <color key="tintColor" red="0.2377204597" green="0.36214894060000002" blue="0.50317817929999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="16" maxY="0.0"/>
+                    <state key="normal" title="Sign In"/>
+                    <connections>
+                        <action selector="signIn" destination="-1" eventType="touchUpInside" id="piK-LU-MfX"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42v-iP-w7d">
+                    <rect key="frame" x="76" y="622" width="222" height="33"/>
+                    <string key="text">Copyright 2018 © Eli Lilly and Company.
+All rights reserved.</string>
+                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="CALLISTO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVh-hb-Jey">
+                    <rect key="frame" x="10" y="373" width="355" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="rrA-Bc-rn2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="40"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Meal Tracker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hd0-TN-vnK">
+                    <rect key="frame" x="10" y="428" width="355" height="38.5"/>
+                    <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="28"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Hd0-TN-vnK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="1Uh-tf-cPl"/>
+                <constraint firstItem="yh8-h0-n5A" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" priority="750" constant="64" id="9yr-e3-S8f"/>
+                <constraint firstAttribute="trailing" secondItem="LVh-hb-Jey" secondAttribute="trailing" constant="10" id="FFF-Dg-y2E"/>
+                <constraint firstItem="1Zw-L6-SqG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GRz-1B-COE"/>
+                <constraint firstItem="42v-iP-w7d" firstAttribute="top" secondItem="dUG-rC-VYd" secondAttribute="bottom" constant="16" id="HRz-u3-gTU"/>
+                <constraint firstItem="LVh-hb-Jey" firstAttribute="top" secondItem="1Zw-L6-SqG" secondAttribute="bottom" constant="25" id="Iwh-bV-MZ1"/>
+                <constraint firstItem="1Zw-L6-SqG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="yh8-h0-n5A" secondAttribute="bottom" constant="20" id="LfO-Yn-aru"/>
+                <constraint firstItem="LVh-hb-Jey" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="V0j-wm-e4B"/>
+                <constraint firstItem="1Zw-L6-SqG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="Xp4-St-YvM"/>
+                <constraint firstItem="42v-iP-w7d" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dMo-sF-Okq"/>
+                <constraint firstItem="dUG-rC-VYd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Hd0-TN-vnK" secondAttribute="bottom" constant="39" id="ds1-gF-UUn"/>
+                <constraint firstItem="yh8-h0-n5A" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dyn-1e-qet"/>
+                <constraint firstItem="1Zw-L6-SqG" firstAttribute="top" relation="lessThanOrEqual" secondItem="yh8-h0-n5A" secondAttribute="bottom" constant="44" id="e0l-Ig-Mrn"/>
+                <constraint firstAttribute="trailing" secondItem="Hd0-TN-vnK" secondAttribute="trailing" constant="10" id="e8n-D8-H2F"/>
+                <constraint firstItem="1Zw-L6-SqG" firstAttribute="top" relation="lessThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="140" id="fH8-4e-4qg"/>
+                <constraint firstItem="Hd0-TN-vnK" firstAttribute="top" secondItem="LVh-hb-Jey" secondAttribute="bottom" id="fbE-fa-dff"/>
+                <constraint firstItem="LVh-hb-Jey" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="lNz-N4-Vcy"/>
+                <constraint firstItem="Xqn-zl-H8A" firstAttribute="bottom" secondItem="42v-iP-w7d" secondAttribute="bottom" constant="12" id="yQY-nT-1ZL"/>
+                <constraint firstItem="dUG-rC-VYd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="z8u-rN-mM7"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Xqn-zl-H8A"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="lillyLogoWhite" width="59" height="32"/>
+        <image name="logoLarge" width="208" height="208"/>
+    </resources>
+</document>

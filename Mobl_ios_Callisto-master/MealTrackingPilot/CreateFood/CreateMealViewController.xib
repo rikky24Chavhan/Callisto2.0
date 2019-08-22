@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateMealViewController" customModule="MealTrackingPilot" customModuleProvider="target">
+            <connections>
+                <outlet property="containerScrollView" destination="dCp-1a-6bt" id="M5n-Dm-nOZ"/>
+                <outlet property="containerScrollViewTopSpaceConstraint" destination="1kf-Mq-KqQ" id="Vdx-NQ-DIf"/>
+                <outlet property="segmentedSlider" destination="2iG-aj-OMV" id="2qI-2e-3fg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCp-1a-6bt">
+                    <rect key="frame" x="0.0" y="-60" width="375" height="727"/>
+                </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2iG-aj-OMV" customClass="SegmentedSlider" customModule="MealTrackingPilot" customModuleProvider="target">
+                    <rect key="frame" x="-249" y="345" width="544" height="24"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="isM-ww-mzP"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="dCp-1a-6bt" secondAttribute="trailing" id="0y2-7C-ZCi"/>
+                <constraint firstItem="dCp-1a-6bt" firstAttribute="top" secondItem="y9W-uA-WNd" secondAttribute="top" constant="-80" id="1kf-Mq-KqQ"/>
+                <constraint firstItem="dCp-1a-6bt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="25t-Mx-4qe"/>
+                <constraint firstItem="y9W-uA-WNd" firstAttribute="bottom" secondItem="dCp-1a-6bt" secondAttribute="bottom" id="C1x-Ne-QKM"/>
+                <constraint firstItem="2iG-aj-OMV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="23" id="EhT-Jd-gBT"/>
+                <constraint firstItem="2iG-aj-OMV" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="23" id="aa4-R9-7AX"/>
+                <constraint firstItem="2iG-aj-OMV" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.815" id="yez-3V-3MG"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="y9W-uA-WNd"/>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+</document>

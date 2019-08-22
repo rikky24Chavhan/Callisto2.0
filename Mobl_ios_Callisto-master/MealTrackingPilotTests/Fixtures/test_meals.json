@@ -1,0 +1,35 @@
+[
+    {
+      "id": "test-meal-id-0",
+      "client_id": "local-test-meal-id-0",
+      "inserted_at": "2017-03-23T16:45:51.794593Z",
+      "updated_at": "2017-03-23T16:45:51.794593Z",
+      "name": "Mark's Test Meal",
+      "test_meal": false,
+      "occasions": [ "Breakfast" ],
+      "carbs_per_unit": 100,
+      "dosage_recommendation": false
+    },
+    {
+      "id": "test-meal-id-1",
+      "client_id": "local-test-meal-id-1",
+      "inserted_at": "2017-03-23T16:45:51.794593Z",
+      "updated_at": "2017-03-23T16:45:51.794593Z",
+      "name": "Andrew's Test Meal 1",
+      "test_meal": false,
+      "occasions": [ "Breakfast", "Lunch" ],
+      "carbs_per_unit": 100,
+      "dosage_recommendation": false
+    },
+    {
+      "id": "test-meal-id-2",
+      "client_id": "local-test-meal-id-2",
+      "inserted_at": "2017-03-23T16:45:51.794593Z",
+      "updated_at": "2017-03-23T16:45:51.794593Z",
+      "name": "Andrew's Test Meal 2",
+      "test_meal": false,
+      "occasions": [],
+      "carbs_per_unit": 100,
+      "dosage_recommendation": false
+    }
+]

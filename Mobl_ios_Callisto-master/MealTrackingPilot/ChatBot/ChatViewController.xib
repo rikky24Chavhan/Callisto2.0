@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatViewController" customModule="MealTrackingPilot" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundGradientView" destination="dOI-vJ-9Md" id="2Tm-yx-jSl"/>
+                <outlet property="confirmationButton" destination="8Yr-te-3dO" id="2cj-9H-CuS"/>
+                <outlet property="fadeOverlayView" destination="F0q-yB-XHX" id="b6J-dX-08z"/>
+                <outlet property="tableView" destination="SCB-2P-Zs6" id="yTZ-Om-coZ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOI-vJ-9Md" userLabel="Background Gradient" customClass="GradientView" customModule="MealTrackingPilot" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SCB-2P-Zs6">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </tableView>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F0q-yB-XHX" userLabel="Fadeout Overlay" customClass="GradientView" customModule="MealTrackingPilot" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCS-9I-MGC" userLabel="Input Container">
+                    <rect key="frame" x="0.0" y="572" width="375" height="95"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Yr-te-3dO" userLabel="Confirmation Button">
+                            <rect key="frame" x="55" y="22" width="264" height="50"/>
+                            <color key="backgroundColor" red="0.23529411764705882" green="0.36078431372549019" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="264" id="Bi7-On-bMa"/>
+                                <constraint firstAttribute="height" constant="50" id="xiC-v6-rDN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="16"/>
+                            <state key="normal" title="I'm ready now">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="25"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="confirmationButtonPressed:" destination="-1" eventType="touchUpInside" id="1Xe-OB-uxM"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="8Yr-te-3dO" firstAttribute="centerX" secondItem="xCS-9I-MGC" secondAttribute="centerX" id="Hkz-A6-oEz"/>
+                        <constraint firstItem="8Yr-te-3dO" firstAttribute="centerY" secondItem="xCS-9I-MGC" secondAttribute="centerY" id="Kx0-xN-IdL"/>
+                        <constraint firstAttribute="height" constant="95" id="eEi-Vh-t9f"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="F0q-yB-XHX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0T9-dJ-CAB"/>
+                <constraint firstAttribute="trailing" secondItem="xCS-9I-MGC" secondAttribute="trailing" id="8e4-pO-VYh"/>
+                <constraint firstItem="RBE-Yd-PCW" firstAttribute="bottom" secondItem="xCS-9I-MGC" secondAttribute="bottom" id="9eF-eQ-k5E"/>
+                <constraint firstAttribute="bottom" secondItem="dOI-vJ-9Md" secondAttribute="bottom" id="A3h-sF-nGl"/>
+                <constraint firstAttribute="bottom" secondItem="SCB-2P-Zs6" secondAttribute="bottom" id="BlO-0V-pRH"/>
+                <constraint firstItem="F0q-yB-XHX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Gox-FZ-xt1"/>
+                <constraint firstAttribute="bottom" secondItem="F0q-yB-XHX" secondAttribute="bottom" id="Jb6-ci-dqu"/>
+                <constraint firstItem="SCB-2P-Zs6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PxB-pX-b02"/>
+                <constraint firstAttribute="trailing" secondItem="dOI-vJ-9Md" secondAttribute="trailing" id="W1N-Xs-gyI"/>
+                <constraint firstItem="dOI-vJ-9Md" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dRl-Kb-CfD"/>
+                <constraint firstAttribute="trailing" secondItem="F0q-yB-XHX" secondAttribute="trailing" id="gcD-jE-v13"/>
+                <constraint firstAttribute="trailing" secondItem="SCB-2P-Zs6" secondAttribute="trailing" id="n9h-N5-wmH"/>
+                <constraint firstItem="dOI-vJ-9Md" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="nyk-0q-vgk"/>
+                <constraint firstItem="xCS-9I-MGC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oGP-jE-Q4T"/>
+                <constraint firstItem="SCB-2P-Zs6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vyy-Dt-tDF"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="RBE-Yd-PCW"/>
+            <point key="canvasLocation" x="135.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

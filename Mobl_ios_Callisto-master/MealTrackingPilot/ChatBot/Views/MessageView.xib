@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12120"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MessageView" customModule="MealTrackingPilot" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKS-jt-kq3" userLabel="BubbleContainer">
+                    <rect key="frame" x="0.0" y="0.0" width="74" height="44"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y9P-I6-5rN" userLabel="MessageBubbleView" customClass="MessageBubbleView" customModule="MealTrackingPilot" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="74" height="44"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" priority="500" constant="74" id="4nd-wb-EVF"/>
+                                <constraint firstAttribute="height" priority="500" constant="40" id="Bh6-Sw-k1m"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="28" placeholderIntrinsicHeight="6" translatesAutoresizingMaskIntoConstraints="NO" id="7Kz-xu-teR" customClass="TypingEllipsisView" customModule="MealTrackingPilot" customModuleProvider="target">
+                            <rect key="frame" x="23" y="19" width="28" height="6"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i82-wh-b9d" userLabel="Message Content">
+                            <rect key="frame" x="0.0" y="0.0" width="74" height="44"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="7Kz-xu-teR" firstAttribute="centerX" secondItem="y9P-I6-5rN" secondAttribute="centerX" id="6gM-Az-c7v"/>
+                        <constraint firstItem="y9P-I6-5rN" firstAttribute="leading" secondItem="yKS-jt-kq3" secondAttribute="leading" id="BUV-LU-Sls"/>
+                        <constraint firstItem="y9P-I6-5rN" firstAttribute="bottom" secondItem="yKS-jt-kq3" secondAttribute="bottom" id="Ewv-1K-cad"/>
+                        <constraint firstAttribute="width" priority="500" constant="74" id="Jxv-f4-mz0"/>
+                        <constraint firstItem="y9P-I6-5rN" firstAttribute="height" secondItem="yKS-jt-kq3" secondAttribute="height" priority="750" id="Nb7-j6-QLw"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" priority="750" constant="295" id="NsS-nO-7zM"/>
+                        <constraint firstItem="7Kz-xu-teR" firstAttribute="centerY" secondItem="y9P-I6-5rN" secondAttribute="centerY" id="QpZ-tn-AsA"/>
+                        <constraint firstItem="i82-wh-b9d" firstAttribute="centerY" secondItem="yKS-jt-kq3" secondAttribute="centerY" id="U6l-dO-Zj4"/>
+                        <constraint firstItem="i82-wh-b9d" firstAttribute="leading" secondItem="yKS-jt-kq3" secondAttribute="leading" id="VIH-Ka-xmT"/>
+                        <constraint firstAttribute="height" priority="500" constant="40" id="X0I-22-YuO"/>
+                        <constraint firstItem="i82-wh-b9d" firstAttribute="top" secondItem="yKS-jt-kq3" secondAttribute="top" priority="750" id="Y76-14-9eA"/>
+                        <constraint firstItem="i82-wh-b9d" firstAttribute="centerX" secondItem="yKS-jt-kq3" secondAttribute="centerX" id="YiW-N2-lU2"/>
+                        <constraint firstItem="y9P-I6-5rN" firstAttribute="width" secondItem="yKS-jt-kq3" secondAttribute="width" priority="750" id="icP-2l-Ykd"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yKS-jt-kq3" secondAttribute="trailing" constant="36" id="9Nl-DF-en7"/>
+                <constraint firstAttribute="bottom" secondItem="yKS-jt-kq3" secondAttribute="bottom" id="Ini-UK-Vhm"/>
+                <constraint firstItem="yKS-jt-kq3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Jtk-5l-obA"/>
+                <constraint firstItem="yKS-jt-kq3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bOh-ht-cgG"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bubbleContainer" destination="yKS-jt-kq3" id="jdT-NB-GWJ"/>
+                <outlet property="bubbleContainerBottomConstraint" destination="Ini-UK-Vhm" id="yVb-Xy-fOm"/>
+                <outlet property="bubbleContainerCompactHeightConstraint" destination="X0I-22-YuO" id="8LL-fn-due"/>
+                <outlet property="bubbleContainerCompactWidthConstraint" destination="Jxv-f4-mz0" id="0y9-m4-i4t"/>
+                <outlet property="bubbleContainerLeadingConstraint" destination="Jtk-5l-obA" id="5DO-kQ-2h7"/>
+                <outlet property="bubbleContainerTopConstraint" destination="bOh-ht-cgG" id="URa-nN-gnT"/>
+                <outlet property="bubbleContainerTrailingConstraint" destination="9Nl-DF-en7" id="Wmc-bV-U2S"/>
+                <outlet property="bubbleImageCompactHeightConstraint" destination="Bh6-Sw-k1m" id="WTO-bB-4pK"/>
+                <outlet property="bubbleImageCompactWidthConstraint" destination="4nd-wb-EVF" id="oJW-jS-uun"/>
+                <outlet property="bubbleImageFullHeightConstraint" destination="Nb7-j6-QLw" id="25f-Ru-k1p"/>
+                <outlet property="bubbleImageFullWidthConstraint" destination="icP-2l-Ykd" id="JCo-K4-3tz"/>
+                <outlet property="bubbleImageHorizontalPositionConstraint" destination="BUV-LU-Sls" id="WIN-qR-8eq"/>
+                <outlet property="messageBubbleView" destination="y9P-I6-5rN" id="pfd-FM-uii"/>
+                <outlet property="messageContainerLeadingConstraint" destination="VIH-Ka-xmT" id="VTT-ju-R9H"/>
+                <outlet property="messageContainerTopConstraint" destination="Y76-14-9eA" id="4hT-tf-QjW"/>
+                <outlet property="messageContentContainer" destination="i82-wh-b9d" id="C8h-gL-mrS"/>
+                <outlet property="typingEllipsisLabel" destination="7Kz-xu-teR" id="Rdo-Us-veY"/>
+            </connections>
+        </view>
+    </objects>
+</document>
