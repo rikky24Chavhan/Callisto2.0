@@ -37,7 +37,8 @@ struct PilotUserLoginCredentials: UserLoginCredentials, Codable {
         return [
             "username": userName ?? "",
             "password": password ?? "",
-            "device_id": idForVendor
+            //"device_id": idForVendor
+            "device_id": "xyz"
         ]
     }
 }

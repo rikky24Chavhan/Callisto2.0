@@ -13,9 +13,9 @@ struct PilotRequest: Request {
     // MARK: - Request
 
     #if DEBUG
-    static var baseURL = "https://callisto.lilly.com"
+    static var baseURL = "https://mdit-callisto2.herokuapp.com/api/v1/"
     #else
-    static var baseURL = "https://callisto.lilly.com"
+    static var baseURL = "https://mdit-callisto2.herokuapp.com/api/v1/"
     #endif
 
     static var acceptHeader: String? = "application/json; version=1"
