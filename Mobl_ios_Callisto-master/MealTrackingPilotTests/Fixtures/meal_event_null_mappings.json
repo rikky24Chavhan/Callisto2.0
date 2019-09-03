@@ -1,0 +1,21 @@
+{
+  "id": "test-meal-null-mappings-id",
+  "client_id": "test-meal-null-mappings-client-id",
+  "inserted_at": "2017-03-23T16:45:51.794593Z",
+  "updated_at": "2017-03-23T16:45:51.794593Z",
+  "consumed_at": "2017-03-23T16:45:51.794593Z",
+  "image_url": null,
+  "notes": null,
+  "portion": "Regular",
+  "meal": {
+    "id": "test-meal-id-0",
+    "client_id": "local-test-meal-id-0",
+    "inserted_at": "2017-03-23T16:45:51.794593Z",
+    "updated_at": "2017-03-23T16:45:51.794593Z",
+    "name": "Mark's Test Meal",
+    "test_meal": false,
+    "occasions": [ "Breakfast" ],
+    "carbs_per_unit": 100,
+    "dosage_recommendation": false
+  }
+}

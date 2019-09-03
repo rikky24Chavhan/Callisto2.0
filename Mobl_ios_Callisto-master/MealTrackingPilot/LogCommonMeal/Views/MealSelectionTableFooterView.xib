@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-LightItalic.ttf">
+            <string>OpenSansLight-Italic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MealSelectionTableFooterView" customModule="MealTrackingPilot" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OzB-m7-DjA">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="72" id="39B-1a-vUv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="OpenSansLight-Italic" family="Open Sans" pointSize="18"/>
+                    <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="Add a New Meal" image="plus">
+                        <color key="titleColor" red="0.35686274509803922" green="0.47450980392156861" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="addNewMealButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="QXH-xL-fhy"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="OzB-m7-DjA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2FF-J7-a7I"/>
+                <constraint firstAttribute="bottom" secondItem="OzB-m7-DjA" secondAttribute="bottom" id="IMp-4Z-bFc"/>
+                <constraint firstAttribute="trailing" secondItem="OzB-m7-DjA" secondAttribute="trailing" id="Ihw-mB-hm3"/>
+                <constraint firstItem="OzB-m7-DjA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SYY-6p-B6B"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="35.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="plus" width="20" height="20"/>
+    </resources>
+</document>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DashboardViewController" customModule="MealTrackingPilot" customModuleProvider="target">
+            <connections>
+                <outlet property="blockingActivityIndicatorView" destination="VCt-OZ-3da" id="ofr-bM-8GF"/>
+                <outlet property="dockedBackgroundView" destination="FNj-Z5-y4c" id="V65-bd-w19"/>
+                <outlet property="settingsButton" destination="YDC-xt-WR4" id="IYh-aS-Boo"/>
+                <outlet property="tableView" destination="3nW-ip-pzx" id="v3u-Mu-cln"/>
+                <outlet property="tableViewContainerTopSpaceConstraint" destination="ohi-n4-RXf" id="ctT-K0-7vv"/>
+                <outlet property="tableViewContainerView" destination="nqu-Rp-Ygt" id="Zlc-7d-r04"/>
+                <outlet property="undockedBackgroundView" destination="wDm-ex-dQW" id="6va-xX-tbB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="welcomeView" destination="Abe-2G-aH6" id="w2V-Aw-Mvb"/>
+                <outlet property="welcomeViewTopConstraint" destination="iv0-Q4-ELh" id="Mhv-9Q-tjr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDm-ex-dQW" userLabel="UndockedBackgroundView">
+                    <rect key="frame" x="0.0" y="-25" width="375" height="692"/>
+                    <color key="backgroundColor" red="0.94472330808639526" green="0.95266264677047729" blue="0.97331863641738892" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FNj-Z5-y4c" userLabel="DockedBackgroundView">
+                    <rect key="frame" x="0.0" y="-25" width="375" height="692"/>
+                    <color key="backgroundColor" red="0.46987652778625488" green="0.34748744964599609" blue="0.98336607217788696" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDC-xt-WR4">
+                    <rect key="frame" x="323" y="34" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="30g-54-ABj"/>
+                        <constraint firstAttribute="width" constant="44" id="qHf-Ea-PN5"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="settingsButton">
+                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="settingsButtonPressed:" destination="-1" eventType="touchUpInside" id="Es3-2T-gzp"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nqu-Rp-Ygt" userLabel="Table view container view" customClass="RoundedCornerView" customModule="MealTrackingPilot" customModuleProvider="target">
+                    <rect key="frame" x="8" y="43" width="359" height="624"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3nW-ip-pzx" customClass="DashboardTableView" customModule="MealTrackingPilot" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="359" height="624"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="2lx-Ny-WuW"/>
+                                <outlet property="delegate" destination="-1" id="NGs-Mg-XLw"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="3nW-ip-pzx" secondAttribute="bottom" id="2kl-sz-MLE"/>
+                        <constraint firstAttribute="trailing" secondItem="3nW-ip-pzx" secondAttribute="trailing" id="ZLs-8Q-BhQ"/>
+                        <constraint firstItem="3nW-ip-pzx" firstAttribute="leading" secondItem="nqu-Rp-Ygt" secondAttribute="leading" id="n0p-dW-Xv1"/>
+                        <constraint firstItem="3nW-ip-pzx" firstAttribute="top" secondItem="nqu-Rp-Ygt" secondAttribute="top" id="tSO-Vl-a55"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="206" translatesAutoresizingMaskIntoConstraints="NO" id="Abe-2G-aH6" customClass="DashboardHomeHeaderView" customModule="MealTrackingPilot" customModuleProvider="target">
+                    <rect key="frame" x="20" y="80" width="335" height="206"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCt-OZ-3da">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="bHJ-XA-9k2">
+                            <rect key="frame" x="169" y="315" width="37" height="37"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="bHJ-XA-9k2" firstAttribute="centerX" secondItem="VCt-OZ-3da" secondAttribute="centerX" id="2mr-ed-kII"/>
+                        <constraint firstItem="bHJ-XA-9k2" firstAttribute="centerY" secondItem="VCt-OZ-3da" secondAttribute="centerY" id="l83-SO-bWY"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="VCt-OZ-3da" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BlT-1U-zbl"/>
+                <constraint firstItem="VCt-OZ-3da" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BvB-8z-Qon"/>
+                <constraint firstAttribute="bottom" secondItem="wDm-ex-dQW" secondAttribute="bottom" id="KHL-rF-Zlp"/>
+                <constraint firstAttribute="trailing" secondItem="wDm-ex-dQW" secondAttribute="trailing" id="Qsw-zB-yw8"/>
+                <constraint firstItem="FNj-Z5-y4c" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="UNl-lP-Ush"/>
+                <constraint firstItem="WZd-xe-Tor" firstAttribute="top" secondItem="wDm-ex-dQW" secondAttribute="top" constant="45" id="V6Q-1e-4nb"/>
+                <constraint firstAttribute="bottom" secondItem="FNj-Z5-y4c" secondAttribute="bottom" id="YJF-AB-6sh"/>
+                <constraint firstAttribute="bottom" secondItem="nqu-Rp-Ygt" secondAttribute="bottom" id="YUR-hT-gYE"/>
+                <constraint firstItem="WZd-xe-Tor" firstAttribute="top" secondItem="FNj-Z5-y4c" secondAttribute="top" constant="45" id="YcR-BI-7cR"/>
+                <constraint firstAttribute="trailing" secondItem="nqu-Rp-Ygt" secondAttribute="trailing" constant="8" id="Zkc-Q2-2kE"/>
+                <constraint firstItem="nqu-Rp-Ygt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="bje-iV-Sb9"/>
+                <constraint firstItem="Abe-2G-aH6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dGD-2c-Ykj"/>
+                <constraint firstItem="Abe-2G-aH6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="iv0-Q4-ELh"/>
+                <constraint firstItem="nqu-Rp-Ygt" firstAttribute="top" secondItem="WZd-xe-Tor" secondAttribute="top" constant="23" id="ohi-n4-RXf"/>
+                <constraint firstItem="YDC-xt-WR4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="34" id="osD-39-EBb"/>
+                <constraint firstAttribute="trailing" secondItem="YDC-xt-WR4" secondAttribute="trailing" constant="8" id="qiF-Mx-VGK"/>
+                <constraint firstAttribute="bottom" secondItem="VCt-OZ-3da" secondAttribute="bottom" id="sYc-4K-EUU"/>
+                <constraint firstItem="wDm-ex-dQW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vbZ-ZN-pI8"/>
+                <constraint firstAttribute="trailing" secondItem="FNj-Z5-y4c" secondAttribute="trailing" id="veh-qO-AVk"/>
+                <constraint firstItem="Abe-2G-aH6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="wCd-fU-lgd"/>
+                <constraint firstAttribute="trailing" secondItem="VCt-OZ-3da" secondAttribute="trailing" id="yxK-fZ-2Dg"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="WZd-xe-Tor"/>
+            <point key="canvasLocation" x="36.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="settingsButton" width="24" height="24"/>
+    </resources>
+</document>

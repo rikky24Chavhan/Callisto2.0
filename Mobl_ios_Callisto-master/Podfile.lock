@@ -1,0 +1,90 @@
+PODS:
+  - Alamofire (5.0.0-beta.7)
+  - AlamofireImage (4.0.0-beta.3):
+    - Alamofire (~> 5.0.0-beta.6)
+  - Crashlytics (3.13.4):
+    - Fabric (~> 1.10.2)
+  - Fabric (1.10.2)
+  - Intrepid (0.13.3):
+    - Intrepid/Core (= 0.13.3)
+  - Intrepid/Core (0.13.3):
+    - IP-UIKit-Wisdom (= 0.0.10)
+  - Intrepid/Rx (0.13.3):
+    - RxCocoa (~> 4.5)
+    - RxSwift (~> 4.5)
+  - IP-UIKit-Wisdom (0.0.10)
+  - KeychainAccess (3.2.0)
+  - Nimble (8.0.2)
+  - Realm (3.17.3):
+    - Realm/Headers (= 3.17.3)
+  - Realm/Headers (3.17.3)
+  - RealmSwift (3.17.3):
+    - Realm (= 3.17.3)
+  - RxBlocking (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxRealm (0.7.6):
+    - RealmSwift (~> 3.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.5.0)
+  - RxTest (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - TPKeyboardAvoiding (1.3.2)
+
+DEPENDENCIES:
+  - AlamofireImage (~> 4.0.0-beta.2)
+  - Crashlytics
+  - Fabric
+  - Intrepid
+  - Intrepid/Rx
+  - KeychainAccess
+  - Nimble
+  - RealmSwift
+  - RxBlocking
+  - RxCocoa
+  - RxRealm
+  - RxSwift
+  - RxTest
+  - TPKeyboardAvoiding
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - Crashlytics
+    - Fabric
+    - Intrepid
+    - IP-UIKit-Wisdom
+    - KeychainAccess
+    - Nimble
+    - Realm
+    - RealmSwift
+    - RxBlocking
+    - RxCocoa
+    - RxRealm
+    - RxSwift
+    - RxTest
+    - TPKeyboardAvoiding
+
+SPEC CHECKSUMS:
+  Alamofire: bd07938ceecad59d2492aeecb1f785a8f2721160
+  AlamofireImage: 980b4eccaed1fa559d78bc479d067ff89d23bc95
+  Crashlytics: 2dfd686bcb918dc10ee0e76f7f853fe42c7bd552
+  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
+  Intrepid: 589a77405a216e44e652705613bd3437c114c3b6
+  IP-UIKit-Wisdom: b395a065344071b33659e5f6b918043a97c48a44
+  KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
+  Nimble: 622629381bda1dd5678162f21f1368cec7cbba60
+  Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
+  RealmSwift: b7fdc2d18616621c31df5c7a398a45a2163f8eb0
+  RxBlocking: 79413e4d916f44bb3e113c5b2cc059e36fe58910
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxRealm: 5379eddd74f8d617ca7681d1f8d144af25b432b0
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  RxTest: 3ccb66bfbace0bf7df1c43a7c75d046f8ce60372
+  TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
+
+PODFILE CHECKSUM: 91a30f8eeb20d0e277ee490a9e56f8f1dcdaaaf3
+
+COCOAPODS: 1.5.3

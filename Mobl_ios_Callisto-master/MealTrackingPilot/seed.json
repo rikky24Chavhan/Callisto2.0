@@ -1,0 +1,132 @@
+{
+  "meal_events": [
+    {
+      "id": "0388401d-f0cd-41e5-8cc4-ee8484b11364",
+      "client_id": "0388401d-f0cd-41e5-8cc4-ee8484b11364",
+      "inserted_at": "2017-03-23T16:45:51.794593Z",
+      "updated_at": "2017-03-23T16:45:51.794593Z",
+      "consumed_at": "2017-03-23T16:45:51.794593Z",
+      "image_url": "https://s-media-cache-ak0.pinimg.com/originals/66/68/b3/6668b3c0ecf2f25c5a93d25d6f5cbdc5.jpg",
+      "notes": "This meal was delicious",
+      "portion": "Regular",
+      "meal": {
+        "id": "TJTB",
+        "client_id": "local-TJTB",
+        "inserted_at": "2017-03-23T16:45:51.794593Z",
+        "updated_at": "2017-03-23T16:45:51.794593Z",
+        "name": "Turkey Burger",
+        "test_meal": true,
+        "location": "Trader Joe's",
+        "occasions": [
+          "Dinner"
+        ],
+        "carbs_per_unit": 100,
+        "dosage_recommendation": false,
+        "logging_goal": 5,
+        "source": null
+      }
+    },
+    {
+      "id": "7030f922-f84f-4bf1-a795-e3c6c40cdfef",
+      "client_id": "7030f922-f84f-4bf1-a795-e3c6c40cdfef",
+      "inserted_at": "2017-03-23T16:45:51.794593Z",
+      "updated_at": "2017-03-23T16:45:51.794593Z",
+      "consumed_at": "2017-03-23T16:45:51.794593Z",
+      "image_url": "https://sites.psu.edu/siowfa16/files/2016/10/shutterstock_245938681.0.0-239e4it.jpg",
+      "notes": "",
+      "portion": "Large",
+      "meal": {
+        "id": "Bacon-and-Waffles",
+        "client_id": "local-Bacon-and-Waffles",
+        "inserted_at": "2017-03-23T16:45:51.794593Z",
+        "updated_at": "2017-03-23T16:45:51.794593Z",
+        "name": "Bacon and Waffles",
+        "test_meal": false,
+        "occasions": [
+          "Breakfast",
+          "Lunch",
+          "Dinner"
+        ],
+        "carbs_per_unit": 100,
+        "dosage_recommendation": false,
+        "source": null
+    }
+    },
+    {
+      "id": "51a61553-8808-4fab-87cb-7341aebc3c28",
+      "client_id": "51a61553-8808-4fab-87cb-7341aebc3c28",
+      "inserted_at": "2017-03-23T16:45:51.794593Z",
+      "updated_at": "2017-03-23T16:45:51.794593Z",
+      "consumed_at": "2017-03-23T16:45:51.794593Z",
+      "image_url": "https://parade.com/wp-content/uploads/2014/07/Butter-Pecan-Brittle-ftr.jpg",
+      "notes": "This meal was delicious",
+      "portion": "Small",
+      "meal": {
+        "id": "WFPIC",
+        "client_id": "local-WFPIC",
+        "inserted_at": "2017-03-23T16:45:51.794593Z",
+        "updated_at": "2017-03-23T16:45:51.794593Z",
+        "name": "Pecan Ice Cream",
+        "location": "Whole Foods",
+        "test_meal": true,
+        "occasions": [
+          "Snacks"
+        ],
+        "carbs_per_unit": 100,
+        "dosage_recommendation": false,
+        "logging_goal": 3,
+        "source": null
+      }
+    },
+    {
+      "id": "9e914d91-ecaf-4cc8-83be-a80030452970",
+      "client_id": "9e914d91-ecaf-4cc8-83be-a80030452970",
+      "inserted_at": "2017-03-23T16:45:51.794593Z",
+      "updated_at": "2017-03-23T16:45:51.794593Z",
+      "consumed_at": "2017-03-23T16:45:51.794593Z",
+      "image_url": "https://sites.psu.edu/siowfa16/files/2016/10/shutterstock_245938681.0.0-239e4it.jpg",
+      "notes": "This meal was delicious",
+      "portion": "Large",
+      "meal": {
+        "id": "TJTB",
+        "client_id": "local-TJTB",
+        "inserted_at": "2017-03-23T16:45:51.794593Z",
+        "updated_at": "2017-03-23T16:45:51.794593Z",
+        "name": "Turkey Burger",
+        "test_meal": true,
+        "location": "Trader Joe's",
+        "occasions": [
+          "Dinner"
+        ],
+        "carbs_per_unit": 100,
+        "dosage_recommendation": false,
+        "logging_goal": 5,
+        "source": null
+      }
+    },
+    {
+      "id": "831d47c4-1037-48ce-9334-73791477f533",
+      "client_id": "831d47c4-1037-48ce-9334-73791477f533",
+      "inserted_at": "2017-03-23T16:45:51.794593Z",
+      "updated_at": "2017-03-23T16:45:51.794593Z",
+      "consumed_at": "2017-03-23T16:45:51.794593Z",
+      "image_url": "https://sites.psu.edu/siowfa16/files/2016/10/shutterstock_245938681.0.0-239e4it.jpg",
+      "notes": "This meal was delicious",
+      "portion": "Regular",
+      "meal": {
+        "id": "KFOS",
+        "client_id": "local-KFOS",
+        "inserted_at": "2017-03-23T16:45:51.794593Z",
+        "updated_at": "2017-03-23T16:45:51.794593Z",
+        "name": "Kathy's Favorite Orange Soda",
+        "test_meal": false,
+        "occasions": [
+          "Drinks"
+        ],
+        "carbs_per_unit": 0,
+        "dosage_recommendation": true,
+        "source": null
+      }
+    }
+  ]
+}

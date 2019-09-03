@@ -1,0 +1,131 @@
+{
+  "start": "Welcome",
+  "nodes": [
+    {
+      "id": "Welcome",
+      "next": "MealSetupCompletion",
+      "sender": "guru",
+      "messages": [
+        {
+          "text": "Welcome to Callisto, your personalized meal journal. Let’s get you set up."
+        },
+        {
+          "text": "First, your coordinator will help you set up some meals.",
+          "style": "bold",
+          "icon": "monitor",
+          "highlight": {
+            "untilAfter": "MealSetupCompletion"
+          }
+        },
+        {
+          "text": "Let me know when you’re done.",
+          "style": "bold"
+        }
+      ],
+    },
+    {
+      "id": "MealSetupCompletion",
+      "next": "MealSetupReply",
+      "callToActionText": "I'm done with meal setup"
+    },
+    {
+      "id": "MealSetupReply",
+      "next": "HealthPermissionsPrimer",
+      "sender": "user",
+      "messages": [
+        {
+          "text": "I'm done with meal setup",
+          "style": "bold"
+        }
+      ]
+    },
+    {
+      "id": "HealthPermissionsPrimer",
+      "next": "ReadyForHealthPermissions",
+      "sender": "guru",
+      "messages": [
+        {
+          "text": "Great! Now we need to set up a few permissions."
+        },
+        {
+          "text": "Your coordinator will explain why we want you to allow permissions.",
+          "style": "bold",
+          "icon": "talking",
+          "highlight": {
+            "untilAfter": "ReadyForHealthPermissions"
+          }
+        },
+        {
+          "text": "We’ll send out the Health App Access permissions when you are ready.",
+          "style": "bold",
+        }
+      ],
+    },
+    {
+      "id": "ReadyForHealthPermissions",
+      "next": "HealthPermissionsReply",
+      "callToActionText": "I'm ready now",
+    },
+    {
+      "id": "HealthPermissionsReply",
+      "next": "HealthPermissionsRequest",
+      "sender": "user",
+      "messages": [
+        {
+          "text": "I'm ready now",
+          "style": "bold"
+        }
+      ]
+    },
+    {
+      "id": "HealthPermissionsRequest",
+      "next": "LocationPermissionsPrimer",
+      "requestPermissions": "healthKit"
+    },
+    {
+      "id": "LocationPermissionsPrimer",
+      "next": "ReadyForLocationPermissions",
+      "sender": "guru",
+      "messages": [
+        {
+          "text": "Awesome! Next, we’ll want to allow your location services."
+        },
+        {
+          "text": "For your security, your exact location will never be exposed."
+        },
+        {
+          "text": "Your coordinator will explain how we protect your data.",
+          "style": "bold",
+          "icon": "talking",
+          "highlight": {
+            "untilAfter": "ReadyForLocationPermissions"
+          }
+        },
+        {
+          "text": "We’ll send out the location services permissions when you are ready.",
+          "style": "bold",
+        }
+      ],
+    },
+    {
+      "id": "ReadyForLocationPermissions",
+      "next": "LocationPermissionsReply",
+      "callToActionText": "I'm ready now",
+    },
+    {
+      "id": "LocationPermissionsReply",
+      "next": "LocationPermissionsRequest",
+      "sender": "user",
+      "messages": [
+        {
+          "text": "I'm ready now",
+          "style": "bold"
+        }
+      ]
+    },
+    {
+      "id": "LocationPermissionsRequest",
+      "requestPermissions": "location"
+    }
+  ]
+}

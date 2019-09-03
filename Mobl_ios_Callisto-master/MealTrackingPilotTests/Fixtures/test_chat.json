@@ -1,0 +1,52 @@
+{
+  "start": "Test-MessagesNode",
+  "nodes": [
+    {
+      "id": "Test-MessagesNode",
+      "next": "Test-UserConfirmationNode",
+      "sender": "guru",
+      "messages": [
+        {
+          "text": "Guru message 0"
+        },
+        {
+          "text": "Guru message 1",
+          "style": "bold",
+          "icon": "monitor",
+          "highlight": {
+            "untilAfter": "Test-HealthKitPersmissionsRequestNode"
+          }
+        },
+        {
+          "text": "Guru message 2",
+          "style": "bold"
+        }
+      ],
+    },
+    {
+      "id": "Test-UserConfirmationNode",
+      "next": "Test-UserMessageNode",
+      "callToActionText": "This is a confirmation CTA."
+    },
+    {
+      "id": "Test-UserMessageNode",
+      "next": "Test-HealthKitPersmissionsRequestNode",
+      "sender": "user",
+      "messages": [
+        {
+          "text": "User message",
+          "style": "bold"
+        }
+      ]
+    },
+    {
+      "id": "Test-HealthKitPersmissionsRequestNode",
+      "requestPermissions": "healthKit",
+      "next": "Test-LocationPersmissionsRequestNode",
+    },
+    {
+      "id": "Test-LocationPersmissionsRequestNode",
+      "requestPermissions": "location"
+    }
+  ]
+}

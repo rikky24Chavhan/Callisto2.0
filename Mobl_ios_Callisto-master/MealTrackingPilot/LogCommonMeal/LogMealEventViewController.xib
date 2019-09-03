@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+        <array key="OpenSans-Semibold.ttf">
+            <string>OpenSans-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogMealEventViewController" customModule="MealTrackingPilot" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundViewContainer" destination="y9e-jp-pJW" id="avE-vB-d5H"/>
+                <outlet property="mealSelectionTableView" destination="rSZ-qk-s2L" id="KMo-bM-66c"/>
+                <outlet property="nextStepButton" destination="347-wR-uaw" id="jZx-LC-v5f"/>
+                <outlet property="occasionPicker" destination="n9E-1i-DpB" id="dXO-vr-SR5"/>
+                <outlet property="occasionPickerBottomSpaceConstraint" destination="mlb-eJ-3UW" id="Zfc-Gw-6wj"/>
+                <outlet property="occasionPickerHeightConstraint" destination="cXb-T2-doj" id="6ZX-1N-sWF"/>
+                <outlet property="occasionPickerTopSpaceConstraint" destination="F9J-IH-HAW" id="CMp-yR-tUE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y9e-jp-pJW" userLabel="Background Container">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="169"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9E-1i-DpB" userLabel="Occasion Picker" customClass="CarouselView" customModule="MealTrackingPilot" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="25" width="375" height="90"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="cXb-T2-doj"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="itO-X4-vVR" userLabel="Table Header">
+                    <rect key="frame" x="0.0" y="129" width="375" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY MEALS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UjS-ya-8aY">
+                            <rect key="frame" x="44" y="12" width="59" height="16.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIMES LOGGED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOX-rm-IhI">
+                            <rect key="frame" x="273.5" y="12" width="85.5" height="16.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.23921568630000001" green="0.36078431370000003" blue="0.50196078430000002" alpha="0.1523382482394367" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="xOX-rm-IhI" firstAttribute="baseline" secondItem="UjS-ya-8aY" secondAttribute="baseline" id="B6W-lF-J9f"/>
+                        <constraint firstAttribute="trailing" secondItem="xOX-rm-IhI" secondAttribute="trailing" constant="16" id="cr6-GI-E5Y"/>
+                        <constraint firstAttribute="height" constant="40" id="jf2-96-DXV"/>
+                        <constraint firstItem="UjS-ya-8aY" firstAttribute="leading" secondItem="itO-X4-vVR" secondAttribute="leading" constant="44" id="jgl-eN-TMw"/>
+                        <constraint firstItem="UjS-ya-8aY" firstAttribute="centerY" secondItem="itO-X4-vVR" secondAttribute="centerY" id="vS8-of-xSb"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rSZ-qk-s2L">
+                    <rect key="frame" x="0.0" y="169" width="375" height="442"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <inset key="separatorInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="347-wR-uaw" userLabel="Next Step">
+                    <rect key="frame" x="0.0" y="603" width="375" height="68"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="68" id="qb0-Ib-ONZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="20"/>
+                    <state key="normal" title="Next Step" backgroundImage="nextStepButtonBackground"/>
+                    <connections>
+                        <action selector="nextStepButtonTapped:" destination="-1" eventType="touchUpInside" id="USF-fn-MSt"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="y9e-jp-pJW" secondAttribute="trailing" id="8V5-Yj-5QX"/>
+                <constraint firstItem="n9E-1i-DpB" firstAttribute="top" secondItem="SZw-Sv-efU" secondAttribute="top" constant="5" id="F9J-IH-HAW"/>
+                <constraint firstAttribute="trailing" secondItem="rSZ-qk-s2L" secondAttribute="trailing" id="FcM-YA-MlU"/>
+                <constraint firstItem="SZw-Sv-efU" firstAttribute="bottom" secondItem="347-wR-uaw" secondAttribute="bottom" constant="-4" id="GxQ-E0-6LA"/>
+                <constraint firstItem="itO-X4-vVR" firstAttribute="bottom" secondItem="y9e-jp-pJW" secondAttribute="bottom" id="Irn-1x-LaC"/>
+                <constraint firstItem="y9e-jp-pJW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Kpt-2T-YUa"/>
+                <constraint firstAttribute="trailing" secondItem="347-wR-uaw" secondAttribute="trailing" id="QDO-pZ-PPH"/>
+                <constraint firstAttribute="trailing" secondItem="n9E-1i-DpB" secondAttribute="trailing" id="WaH-Bq-T4x"/>
+                <constraint firstItem="itO-X4-vVR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZOH-Gt-M11"/>
+                <constraint firstItem="y9e-jp-pJW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dqP-e9-bVN"/>
+                <constraint firstItem="347-wR-uaw" firstAttribute="top" secondItem="rSZ-qk-s2L" secondAttribute="bottom" constant="-8" id="edr-c9-GWt"/>
+                <constraint firstItem="rSZ-qk-s2L" firstAttribute="top" secondItem="itO-X4-vVR" secondAttribute="bottom" id="fMD-uu-JoO"/>
+                <constraint firstItem="itO-X4-vVR" firstAttribute="top" secondItem="n9E-1i-DpB" secondAttribute="bottom" constant="14" id="mlb-eJ-3UW"/>
+                <constraint firstAttribute="trailing" secondItem="itO-X4-vVR" secondAttribute="trailing" id="pvh-6U-1qR"/>
+                <constraint firstItem="n9E-1i-DpB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rI6-C6-Oaj"/>
+                <constraint firstItem="347-wR-uaw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="reC-i9-dQd"/>
+                <constraint firstItem="rSZ-qk-s2L" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wha-nf-ESy"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SZw-Sv-efU"/>
+            <point key="canvasLocation" x="-81" y="120"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="nextStepButtonBackground" width="375" height="72"/>
+    </resources>
+</document>

@@ -1,0 +1,25 @@
+import io.intrepid.XcodeProjectBuilder
+
+def xcodeProject = new io.intrepid.XcodeProject()
+xcodeProject.name = "MealTrackingPilot"
+xcodeProject.profile = "MealTrackerDistribution.mobileprovision (207579dc-8c77-443c-a57e-4768a73de1b7)"
+xcodeProject.bundleIdentifier = "io.intrepid.MealTrackerPilot"
+xcodeProject.xcodeVersion = "9.4.1"
+
+xcodeProject.addBuild([
+  configuration: "Debug"
+])
+
+xcodeProject.addBuild([
+  configuration: "Release"
+])
+
+def config = [
+ slack: [
+   enabled: true,
+   pullRequests: false,
+   channel: "#lilly-pilot-dev",
+ ]
+]
+
+xcodePipeline(this, xcodeProject, config)

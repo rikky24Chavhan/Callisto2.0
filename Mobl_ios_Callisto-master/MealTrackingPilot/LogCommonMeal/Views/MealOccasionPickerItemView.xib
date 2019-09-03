@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Semibold.ttf">
+            <string>OpenSans-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MealOccasionPickerItemView" customModule="MealTrackingPilot" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ft-kN-YdQ" userLabel="Icon Container">
+                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZRM-22-gq0">
+                            <rect key="frame" x="18" y="6" width="54" height="54"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="54" id="AbU-YC-FP0"/>
+                                <constraint firstAttribute="height" constant="54" id="EsU-sl-ia6"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="ZRM-22-gq0" firstAttribute="centerX" secondItem="4Ft-kN-YdQ" secondAttribute="centerX" id="d9D-bq-NG5"/>
+                        <constraint firstAttribute="width" constant="90" id="vV8-YJ-DCU"/>
+                        <constraint firstItem="ZRM-22-gq0" firstAttribute="top" secondItem="4Ft-kN-YdQ" secondAttribute="top" constant="6" id="vzF-kO-m0J"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tu-Zn-hpI">
+                    <rect key="frame" x="24.5" y="63" width="42" height="22"/>
+                    <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="16"/>
+                    <color key="textColor" red="0.23921568630000001" green="0.36078431370000003" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="4Ft-kN-YdQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5c5-FR-QG5"/>
+                <constraint firstAttribute="bottom" secondItem="2tu-Zn-hpI" secondAttribute="centerY" constant="16" id="8sB-LY-dJp"/>
+                <constraint firstItem="4Ft-kN-YdQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Xgg-US-9UC"/>
+                <constraint firstAttribute="bottom" secondItem="4Ft-kN-YdQ" secondAttribute="bottom" id="Xtf-vV-y9z"/>
+                <constraint firstItem="2tu-Zn-hpI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hhs-eP-HPM"/>
+                <constraint firstItem="4Ft-kN-YdQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" id="if1-Pp-Iv3"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="iconContainerView" destination="4Ft-kN-YdQ" id="U8e-pO-qOt"/>
+                <outlet property="iconImageView" destination="ZRM-22-gq0" id="hS5-kg-g7R"/>
+                <outlet property="titleLabel" destination="2tu-Zn-hpI" id="LVj-7H-pAd"/>
+            </connections>
+        </view>
+    </objects>
+</document>

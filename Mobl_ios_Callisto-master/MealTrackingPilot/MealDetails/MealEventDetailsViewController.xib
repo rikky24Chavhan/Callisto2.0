@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Semibold.ttf">
+            <string>OpenSans-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MealEventDetailsViewController">
+            <connections>
+                <outlet property="activityIndicator" destination="LQq-v2-kyT" id="yJ1-1P-Y1J"/>
+                <outlet property="activityIndicatorContainerView" destination="ZRp-mX-6iz" id="pWt-8b-Qng"/>
+                <outlet property="fakeNavigationBarTopSpaceConstraint" destination="hVq-v6-H4X" id="sJg-Q0-uVg"/>
+                <outlet property="logMealButton" destination="hpS-HE-2HV" id="vwc-Hh-it7"/>
+                <outlet property="tableView" destination="e8c-qW-Mrk" id="5aA-CT-bTq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2xS-R3-RPf" userLabel="Fake Navigation Bar">
+                    <rect key="frame" x="0.0" y="-40" width="375" height="64"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UfW-zh-0D0" userLabel="Divider">
+                            <rect key="frame" x="0.0" y="63" width="375" height="1"/>
+                            <color key="backgroundColor" red="0.23921568627450979" green="0.36078431372549019" blue="0.50196078431372548" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="VuU-tV-zNi"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="UfW-zh-0D0" firstAttribute="leading" secondItem="2xS-R3-RPf" secondAttribute="leading" id="D8e-DZ-qCG"/>
+                        <constraint firstAttribute="trailing" secondItem="UfW-zh-0D0" secondAttribute="trailing" id="MGp-xl-D0p"/>
+                        <constraint firstAttribute="bottom" secondItem="UfW-zh-0D0" secondAttribute="bottom" id="cci-Wk-dLC"/>
+                        <constraint firstAttribute="height" constant="64" id="wCx-D8-it4"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="e8c-qW-Mrk">
+                    <rect key="frame" x="0.0" y="24" width="375" height="643"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpS-HE-2HV" userLabel="Log Meal">
+                    <rect key="frame" x="0.0" y="603" width="375" height="68"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="68" id="Tk9-MT-KPQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="18"/>
+                    <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                    <state key="normal" title="Log Meal" backgroundImage="nextStepButtonBackground"/>
+                    <connections>
+                        <action selector="logMealButtonPressed:" destination="-1" eventType="touchUpInside" id="1Jb-qq-2hM"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRp-mX-6iz">
+                    <rect key="frame" x="0.0" y="603" width="375" height="68"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nextStepButtonBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ylJ-JM-1Xg">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
+                        </imageView>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="LQq-v2-kyT">
+                            <rect key="frame" x="177" y="24" width="20" height="20"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="ylJ-JM-1Xg" firstAttribute="top" secondItem="ZRp-mX-6iz" secondAttribute="top" id="74X-Cx-N4c"/>
+                        <constraint firstItem="ylJ-JM-1Xg" firstAttribute="leading" secondItem="ZRp-mX-6iz" secondAttribute="leading" id="7RE-xq-Glv"/>
+                        <constraint firstAttribute="trailing" secondItem="ylJ-JM-1Xg" secondAttribute="trailing" id="CIZ-rg-jpP"/>
+                        <constraint firstItem="LQq-v2-kyT" firstAttribute="centerX" secondItem="ylJ-JM-1Xg" secondAttribute="centerX" id="Ui3-Fm-UWj"/>
+                        <constraint firstItem="LQq-v2-kyT" firstAttribute="centerY" secondItem="ylJ-JM-1Xg" secondAttribute="centerY" id="m1p-pN-bfz"/>
+                        <constraint firstAttribute="bottom" secondItem="ylJ-JM-1Xg" secondAttribute="bottom" id="skt-Nb-wwU"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ZRp-mX-6iz" firstAttribute="leading" secondItem="hpS-HE-2HV" secondAttribute="leading" id="5xp-gO-he0"/>
+                <constraint firstItem="3lm-9Y-58a" firstAttribute="bottom" secondItem="hpS-HE-2HV" secondAttribute="bottom" constant="-4" id="FjQ-Cj-Ste"/>
+                <constraint firstItem="3lm-9Y-58a" firstAttribute="bottom" secondItem="e8c-qW-Mrk" secondAttribute="bottom" id="K0f-jk-gzz"/>
+                <constraint firstItem="2xS-R3-RPf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OPM-Zq-73j"/>
+                <constraint firstItem="ZRp-mX-6iz" firstAttribute="bottom" secondItem="hpS-HE-2HV" secondAttribute="bottom" id="QUc-bo-QvT"/>
+                <constraint firstAttribute="trailing" secondItem="e8c-qW-Mrk" secondAttribute="trailing" id="bOs-Ec-8cJ"/>
+                <constraint firstItem="e8c-qW-Mrk" firstAttribute="top" secondItem="2xS-R3-RPf" secondAttribute="bottom" id="bPo-yA-Bw5"/>
+                <constraint firstItem="ZRp-mX-6iz" firstAttribute="trailing" secondItem="hpS-HE-2HV" secondAttribute="trailing" id="dYr-E3-ffs"/>
+                <constraint firstItem="2xS-R3-RPf" firstAttribute="top" secondItem="3lm-9Y-58a" secondAttribute="top" constant="-60" id="hVq-v6-H4X"/>
+                <constraint firstItem="e8c-qW-Mrk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hYM-g6-HC5"/>
+                <constraint firstAttribute="trailing" secondItem="2xS-R3-RPf" secondAttribute="trailing" id="iu9-sa-Dym"/>
+                <constraint firstAttribute="trailing" secondItem="hpS-HE-2HV" secondAttribute="trailing" id="nxj-Xc-hB6"/>
+                <constraint firstItem="ZRp-mX-6iz" firstAttribute="top" secondItem="hpS-HE-2HV" secondAttribute="top" id="q04-xs-Icx"/>
+                <constraint firstItem="hpS-HE-2HV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="z8N-yK-t1h"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="3lm-9Y-58a"/>
+            <point key="canvasLocation" x="35.5" y="54.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="nextStepButtonBackground" width="375" height="72"/>
+    </resources>
+</document>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Callisto</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.622221088193-05l10d11c2him2vdvs877fr609e6gv8c</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>d4644999f9acaab70a6af52eebed37881b8dc107</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>This app allows you to take a photo of your meal</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>This app will use your step data to help track health habits.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>This app will use your step data to help track health habits.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app will use the location data to help track health habits.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This app will use the location data to help track health habits.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app will use the location data to help track health habits.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>This app allows you to add a photo of your meal</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app allows you to select a photo for your meal</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>OpenSans-Bold.ttf</string>
+		<string>OpenSans-BoldItalic.ttf</string>
+		<string>OpenSans-ExtraBold.ttf</string>
+		<string>OpenSans-ExtraBoldItalic.ttf</string>
+		<string>OpenSans-Italic.ttf</string>
+		<string>OpenSans-Light.ttf</string>
+		<string>OpenSans-LightItalic.ttf</string>
+		<string>OpenSans-Regular.ttf</string>
+		<string>OpenSans-Semibold.ttf</string>
+		<string>OpenSans-SemiboldItalic.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+		<string>healthkit</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+</dict>
+</plist>
