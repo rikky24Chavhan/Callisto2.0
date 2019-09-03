@@ -227,7 +227,6 @@
 		AFEF667D1E8201FE00903F94 /* MealOccasionPickerItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEF667C1E8201FE00903F94 /* MealOccasionPickerItemViewModelTests.swift */; };
 		AFEF667F1E82037400903F94 /* MealOccasionPickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEF667E1E82037400903F94 /* MealOccasionPickerViewModelTests.swift */; };
 		AFFBBC2A1EA9070A009B4767 /* ChatBotGraph.json in Resources */ = {isa = PBXBuildFile; fileRef = AFFBBC291EA9070A009B4767 /* ChatBotGraph.json */; };
-		BC3423CC2306A9640000E2A0 /* AccessCredentialsRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3423C72306A9630000E2A0 /* AccessCredentialsRefresher.swift */; };
 		BC3423CE2306A9640000E2A0 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3423C92306A9630000E2A0 /* APIClient.swift */; };
 		BC3423D02306A9640000E2A0 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3423CB2306A9630000E2A0 /* Request.swift */; };
 		BC3423D42306ACDC0000E2A0 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3423D22306ACDC0000E2A0 /* Date+Extension.swift */; };
@@ -529,7 +528,6 @@
 		AFEF667C1E8201FE00903F94 /* MealOccasionPickerItemViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealOccasionPickerItemViewModelTests.swift; sourceTree = "<group>"; };
 		AFEF667E1E82037400903F94 /* MealOccasionPickerViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealOccasionPickerViewModelTests.swift; sourceTree = "<group>"; };
 		AFFBBC291EA9070A009B4767 /* ChatBotGraph.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ChatBotGraph.json; sourceTree = "<group>"; };
-		BC3423C72306A9630000E2A0 /* AccessCredentialsRefresher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessCredentialsRefresher.swift; sourceTree = "<group>"; };
 		BC3423C92306A9630000E2A0 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		BC3423CB2306A9630000E2A0 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		BC3423D22306ACDC0000E2A0 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
@@ -803,7 +801,6 @@
 			isa = PBXGroup;
 			children = (
 				BCA4D5F9231E574F005E3C00 /* ChatBot */,
-				BC3423C62306A9630000E2A0 /* APIClient */,
 				AA2ED8651EC4C932009C3FA2 /* Image Viewer */,
 				5EDB5DE81E7B22D20096C3CD /* Appearance */,
 				AF61FFE91E6F1F50003A4614 /* Authentication */,
@@ -1102,6 +1099,8 @@
 		AFC530141E7084190028B357 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				BC3423C92306A9630000E2A0 /* APIClient.swift */,
+				BC3423CB2306A9630000E2A0 /* Request.swift */,
 				BC3423D62306AD240000E2A0 /* PilotAPIClientConstant.swift */,
 				AFBADF781E71B69300D082F5 /* PilotAPIClient.swift */,
 				AF729A911E78869C00FB816D /* PilotRequest.swift */,
@@ -1133,16 +1132,6 @@
 			);
 			name = LogMealEvent;
 			path = LogCommonMeal;
-			sourceTree = "<group>";
-		};
-		BC3423C62306A9630000E2A0 /* APIClient */ = {
-			isa = PBXGroup;
-			children = (
-				BC3423C72306A9630000E2A0 /* AccessCredentialsRefresher.swift */,
-				BC3423C92306A9630000E2A0 /* APIClient.swift */,
-				BC3423CB2306A9630000E2A0 /* Request.swift */,
-			);
-			path = APIClient;
 			sourceTree = "<group>";
 		};
 		BC3423D12306ACDC0000E2A0 /* Date */ = {
@@ -1655,7 +1644,6 @@
 				5EA734B81EB7B6950056D4D5 /* Synchronizable.swift in Sources */,
 				AF2439211E8D670900737A94 /* PilotRequest+CreateMealEvent.swift in Sources */,
 				BCA4D633231E5750005E3C00 /* IconMessageContentView.swift in Sources */,
-				BC3423CC2306A9640000E2A0 /* AccessCredentialsRefresher.swift in Sources */,
 				BC34241C230BF8C90000E2A0 /* CarouselCollectionViewCell.swift in Sources */,
 				BCA4D61D231E5750005E3C00 /* ChatMessageViewModelProtocol.swift in Sources */,
 				AF729A921E78869C00FB816D /* PilotRequest.swift in Sources */,

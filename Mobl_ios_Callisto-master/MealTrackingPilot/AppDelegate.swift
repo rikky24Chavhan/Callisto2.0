@@ -31,12 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         reachability: reachability
     )
 
-    lazy var accessCredentialsRefresher: AccessCredentialsRefresher = AccessCredentialsRefresher(
-        apiClient: self.apiClient,
-        loginClient: self.loginClient,
-        accessCredentialsProvider: self.loginClient
-    )
-
     lazy var onboardingManager: OnboardingManager = PilotOnboardingManager(primaryUserStorage: self.primaryUserStorage)
 
     // TODO: Figure out a better way to handle this failure
@@ -69,9 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         super.init()
 
         setMondayAsFirstWeekday()
-
         apiClient.accessCredentialsProvider = loginClient
-        apiClient.accessCredentialsRefresher = accessCredentialsRefresher
     }
 
     internal func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

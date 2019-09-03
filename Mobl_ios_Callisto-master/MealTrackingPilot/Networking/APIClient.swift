@@ -20,8 +20,6 @@ public class APIClient {
 
     public var decoder = JSONDecoder()
     
-    public var accessCredentialsRefresher: AccessCredentialsRefresher?
-    
     // MARK: - Private Methods
     
     private func sendRequest(_ request: URLRequest, completion: defaultRequestCompletion?) {
@@ -35,12 +33,6 @@ public class APIClient {
             switch statusCode {
                 case 200..<300:
                     return completion(.success(response.data))
-                case 401:
-                    guard let accessCredentialsRefresher = welf.accessCredentialsRefresher else {
-                        let error = APIClientError.httpError(statusCode: statusCode, response: httpResponse, data: response.data)
-                        return completion(.failure(error))
-                    }
-                    accessCredentialsRefresher.handleUnauthorizedRequest(request: request, completion: completion)
                 default:
                     let error = APIClientError.httpError(statusCode: statusCode, response: httpResponse, data: response.data)
                     return completion(.failure(error))

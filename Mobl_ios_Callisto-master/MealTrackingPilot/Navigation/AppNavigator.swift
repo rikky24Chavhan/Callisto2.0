@@ -86,7 +86,7 @@ final class AppNavigator: NSObject, LoginClientDelegate, LoginClientUIDelegate {
             isSignedIn = false
         }
 
-        let controller = true ? postLoginViewController() : signInViewController
+        let controller = isSignedIn ? postLoginViewController() : signInViewController
         if shouldReload {
             rootNavigationController.setViewControllers([controller], animated: animated)
         }
@@ -112,7 +112,7 @@ final class AppNavigator: NSObject, LoginClientDelegate, LoginClientUIDelegate {
     // MARK: - Onboarding
 
     private func onboardingViewController() -> UIViewController {
-        return dashboardViewController()
+        return chatViewController()
     }
 
     private func chatViewController() -> UIViewController {
@@ -164,7 +164,6 @@ final class AppNavigator: NSObject, LoginClientDelegate, LoginClientUIDelegate {
     private func demoDashboardViewController() -> UIViewController {
         let demoApiClient = DemoPilotAPIClient()
         demoApiClient.accessCredentialsProvider = apiClient.accessCredentialsProvider
-        demoApiClient.accessCredentialsRefresher = apiClient.accessCredentialsRefresher
 
         let demoMealDataController = try! RealmMealDataController(
             realmConfiguration: Realm.Configuration(inMemoryIdentifier: "DemoRealm"),
