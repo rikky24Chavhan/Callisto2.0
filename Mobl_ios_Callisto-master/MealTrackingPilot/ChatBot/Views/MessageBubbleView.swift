@@ -41,8 +41,8 @@ class MessageBubbleView: UIView {
 
     private func updateBubbleImage() {
         imageView.image = MessageBubbleFactory.bubbleImage(forOrientation: orientation, highlighted: highlighted)
-        imageView.setContentCompressionResistancePriority(UILayoutPriority.defaultLow, for: .horizontal)
-        imageView.setContentCompressionResistancePriority(UILayoutPriority.defaultLow, for: .vertical)
+        imageView.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        imageView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
     }
 }
 

@@ -60,7 +60,7 @@ final class AppNavigator: NSObject, LoginClientDelegate, LoginClientUIDelegate {
 
         self.loginClient.delegate = self
         self.loginClient.uiDelegate = self
-        //self.loginClient.login()
+        self.loginClient.login()
 
         rootNavigationController.delegate = self
     }
@@ -70,8 +70,7 @@ final class AppNavigator: NSObject, LoginClientDelegate, LoginClientUIDelegate {
         if window?.rootViewController == nil {
             window?.rootViewController = rootNavigationController
         }
-
-        /*
+        
         var isSignedIn = (userProvider.user != nil)
 
         // Detects if user is opening the app after deletion with an expired token.
@@ -86,7 +85,6 @@ final class AppNavigator: NSObject, LoginClientDelegate, LoginClientUIDelegate {
             userProvider.logout()
             isSignedIn = false
         }
-        */
 
         let controller = true ? postLoginViewController() : signInViewController
         if shouldReload {
@@ -98,8 +96,6 @@ final class AppNavigator: NSObject, LoginClientDelegate, LoginClientUIDelegate {
     }
 
     private func postLoginViewController() -> UIViewController {
-        return dashboardViewController()
-        
         guard let user = userProvider.user else {
             print("Error: AppNavigator could not determine the current logged-in user. Logging out.")
             loginClient.logout()
@@ -119,7 +115,6 @@ final class AppNavigator: NSObject, LoginClientDelegate, LoginClientUIDelegate {
         return dashboardViewController()
     }
 
-    /*
     private func chatViewController() -> UIViewController {
         let chatViewModel = ChatViewModel(
             healthKitPermissionsController: healthKitController,
@@ -148,7 +143,6 @@ final class AppNavigator: NSObject, LoginClientDelegate, LoginClientUIDelegate {
         let chatCompletionViewController = ChatCompletionViewController(viewModel: chatCompletionViewModel)
         rootNavigationController.pushViewController(chatCompletionViewController, animated: true)
     }
-    */
 
     private func completeOnboarding() {
         guard let user = userProvider.user else {
@@ -290,11 +284,9 @@ final class AppNavigator: NSObject, LoginClientDelegate, LoginClientUIDelegate {
 
 extension AppNavigator: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        /*
         if fromVC is ChatViewController && toVC is ChatCompletionViewController {
             return ChatToChatCompletionTransitionAnimator()
         }
-         */
         return nil
     }
 }

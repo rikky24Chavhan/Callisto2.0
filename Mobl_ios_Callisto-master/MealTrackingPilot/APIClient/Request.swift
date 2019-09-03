@@ -36,17 +36,10 @@ public extension Request {
         request.httpMethod = method.rawValue
         request.setValue(Self.acceptHeader, forHTTPHeaderField: "Accept")
         request.setValue(contentType, forHTTPHeaderField: "Content-Type")
-        
-        /*
+    
         if authenticated {
             accessCredentials?.authorize(&request)
         }
-        */
-        
-        let value = "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJVc2VyOmUwNTY5OTMyLTE1MDctNGNmNi05NWU2LWIyNTU0MTgwMjk4OCIsImV4cCI6MTU2ODE4MzYxNCwiaWF0IjoxNTY1NTkxNjE0LCJpc3MiOiJMaWxseUNhcmJMb2dTZXJ2ZXIiLCJqdGkiOiIwYmQxMjIxYi0zYTdhLTQyMWMtODkyOC0yNWE3YzQzN2FjNzYiLCJwZW0iOnt9LCJzdWIiOiJVc2VyOmUwNTY5OTMyLTE1MDctNGNmNi05NWU2LWIyNTU0MTgwMjk4OCIsInR5cCI6ImFjY2VzcyJ9.UxMslU0VvCO7-r_pPquH_6TcBxGzw6ZOl95x1nFFa9MSj9FmsjS7YOc-UJxj34YWKIm9V6DEi_ZXs3Uu_pFVTA"
-        let formattedValue = "Bearer \(value)"
-        request.setValue(formattedValue, forHTTPHeaderField: "Authorization")
-        
         encodeQueryParameters(request: &request, parameters: queryParameters)
         encodeHTTPBody(request: &request, parameters: bodyParameters)
         return request as URLRequest

@@ -14,7 +14,7 @@ extension PilotRequest {
             method: .POST,
             path: "users",
             authenticated: false,
-            bodyParameters: nil
+            bodyParameters: credentials.httpBodyParameters()
         )
     }
 }

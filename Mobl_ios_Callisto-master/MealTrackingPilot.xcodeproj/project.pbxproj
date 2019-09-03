@@ -234,9 +234,6 @@
 		BC3423D52306ACDC0000E2A0 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3423D32306ACDC0000E2A0 /* Region.swift */; };
 		BC3423D72306AD240000E2A0 /* PilotAPIClientConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3423D62306AD240000E2A0 /* PilotAPIClientConstant.swift */; };
 		BC3423DB2306B1B00000E2A0 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3423DA2306B1B00000E2A0 /* Logger.swift */; };
-		BC3423E02306BC130000E2A0 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3423DD2306BC130000E2A0 /* Sounds.swift */; };
-		BC3423E12306BC130000E2A0 /* MessageBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3423DE2306BC130000E2A0 /* MessageBubbleView.swift */; };
-		BC3423E22306BC130000E2A0 /* ChatMessageViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3423DF2306BC130000E2A0 /* ChatMessageViewModelProtocol.swift */; };
 		BC34241A230BF8C20000E2A0 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC342419230BF8C20000E2A0 /* CarouselView.swift */; };
 		BC34241C230BF8C90000E2A0 /* CarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34241B230BF8C90000E2A0 /* CarouselCollectionViewCell.swift */; };
 		BC342420230BF8D50000E2A0 /* CarouselView+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34241F230BF8D50000E2A0 /* CarouselView+UICollectionViewDelegate.swift */; };
@@ -246,6 +243,34 @@
 		BC342428230BF8EF0000E2A0 /* CarouselViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC342427230BF8EF0000E2A0 /* CarouselViewConstants.swift */; };
 		BC34242A230BF8F80000E2A0 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC342429230BF8F80000E2A0 /* CGPoint+Extension.swift */; };
 		BC34242C230BF9010000E2A0 /* CGSize+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34242B230BF9010000E2A0 /* CGSize+Extension.swift */; };
+		BCA4D619231E5750005E3C00 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D5FA231E574F005E3C00 /* ChatViewController.swift */; };
+		BCA4D61A231E5750005E3C00 /* ChatCompletionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D5FC231E574F005E3C00 /* ChatCompletionViewModel.swift */; };
+		BCA4D61B231E5750005E3C00 /* ChatMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D5FD231E574F005E3C00 /* ChatMessageViewModel.swift */; };
+		BCA4D61C231E5750005E3C00 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D5FE231E574F005E3C00 /* ChatViewModel.swift */; };
+		BCA4D61D231E5750005E3C00 /* ChatMessageViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D5FF231E574F005E3C00 /* ChatMessageViewModelProtocol.swift */; };
+		BCA4D61E231E5750005E3C00 /* AsyncDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D600231E574F005E3C00 /* AsyncDispatcher.swift */; };
+		BCA4D61F231E5750005E3C00 /* ChatCompletionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA4D601231E574F005E3C00 /* ChatCompletionViewController.xib */; };
+		BCA4D620231E5750005E3C00 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA4D602231E574F005E3C00 /* ChatViewController.xib */; };
+		BCA4D621231E5750005E3C00 /* ChatNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D604231E574F005E3C00 /* ChatNode.swift */; };
+		BCA4D622231E5750005E3C00 /* ChatNodeGraphJSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D605231E574F005E3C00 /* ChatNodeGraphJSONLoader.swift */; };
+		BCA4D623231E5750005E3C00 /* MessagesNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D606231E574F005E3C00 /* MessagesNode.swift */; };
+		BCA4D624231E5750005E3C00 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D607231E574F005E3C00 /* Message.swift */; };
+		BCA4D625231E5750005E3C00 /* BasicChatNodeGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D608231E574F005E3C00 /* BasicChatNodeGraph.swift */; };
+		BCA4D626231E5750005E3C00 /* ChatDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D609231E574F005E3C00 /* ChatDriver.swift */; };
+		BCA4D627231E5750005E3C00 /* UserConfirmationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D60A231E574F005E3C00 /* UserConfirmationNode.swift */; };
+		BCA4D628231E5750005E3C00 /* ChatNodeGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D60B231E574F005E3C00 /* ChatNodeGraph.swift */; };
+		BCA4D629231E5750005E3C00 /* UserPermissionsNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D60C231E574F005E3C00 /* UserPermissionsNode.swift */; };
+		BCA4D62A231E5750005E3C00 /* ChatCompletionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D60D231E574F005E3C00 /* ChatCompletionViewController.swift */; };
+		BCA4D62B231E5750005E3C00 /* ChatToChatCompletionTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D60E231E574F005E3C00 /* ChatToChatCompletionTransitionAnimator.swift */; };
+		BCA4D62C231E5750005E3C00 /* MessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA4D610231E574F005E3C00 /* MessageView.xib */; };
+		BCA4D62D231E5750005E3C00 /* TypingEllipsisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D611231E574F005E3C00 /* TypingEllipsisView.swift */; };
+		BCA4D62E231E5750005E3C00 /* ChatMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D612231E574F005E3C00 /* ChatMessageTableViewCell.swift */; };
+		BCA4D62F231E5750005E3C00 /* IconMessageContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA4D613231E574F005E3C00 /* IconMessageContentView.xib */; };
+		BCA4D630231E5750005E3C00 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D614231E574F005E3C00 /* Sounds.swift */; };
+		BCA4D631231E5750005E3C00 /* ChatMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA4D615231E574F005E3C00 /* ChatMessageTableViewCell.xib */; };
+		BCA4D632231E5750005E3C00 /* MessageBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D616231E574F005E3C00 /* MessageBubbleView.swift */; };
+		BCA4D633231E5750005E3C00 /* IconMessageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D617231E574F005E3C00 /* IconMessageContentView.swift */; };
+		BCA4D634231E5750005E3C00 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D618231E574F005E3C00 /* MessageView.swift */; };
 		E61B65E01ECFA08D00188CCE /* DemoDashboardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B65DF1ECFA08D00188CCE /* DemoDashboardViewModelTests.swift */; };
 		E61B65E21ECFA13400188CCE /* MockKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B65E11ECFA13400188CCE /* MockKeychain.swift */; };
 		E61B65E41ECFA18200188CCE /* MockLoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B65E31ECFA18200188CCE /* MockLoginClient.swift */; };
@@ -511,9 +536,6 @@
 		BC3423D32306ACDC0000E2A0 /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		BC3423D62306AD240000E2A0 /* PilotAPIClientConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PilotAPIClientConstant.swift; sourceTree = "<group>"; };
 		BC3423DA2306B1B00000E2A0 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		BC3423DD2306BC130000E2A0 /* Sounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
-		BC3423DE2306BC130000E2A0 /* MessageBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBubbleView.swift; sourceTree = "<group>"; };
-		BC3423DF2306BC130000E2A0 /* ChatMessageViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageViewModelProtocol.swift; sourceTree = "<group>"; };
 		BC342419230BF8C20000E2A0 /* CarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		BC34241B230BF8C90000E2A0 /* CarouselCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselCollectionViewCell.swift; sourceTree = "<group>"; };
 		BC34241F230BF8D50000E2A0 /* CarouselView+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CarouselView+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
@@ -523,6 +545,34 @@
 		BC342427230BF8EF0000E2A0 /* CarouselViewConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselViewConstants.swift; sourceTree = "<group>"; };
 		BC342429230BF8F80000E2A0 /* CGPoint+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extension.swift"; sourceTree = "<group>"; };
 		BC34242B230BF9010000E2A0 /* CGSize+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Extension.swift"; sourceTree = "<group>"; };
+		BCA4D5FA231E574F005E3C00 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		BCA4D5FC231E574F005E3C00 /* ChatCompletionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCompletionViewModel.swift; sourceTree = "<group>"; };
+		BCA4D5FD231E574F005E3C00 /* ChatMessageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageViewModel.swift; sourceTree = "<group>"; };
+		BCA4D5FE231E574F005E3C00 /* ChatViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		BCA4D5FF231E574F005E3C00 /* ChatMessageViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageViewModelProtocol.swift; sourceTree = "<group>"; };
+		BCA4D600231E574F005E3C00 /* AsyncDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncDispatcher.swift; sourceTree = "<group>"; };
+		BCA4D601231E574F005E3C00 /* ChatCompletionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatCompletionViewController.xib; sourceTree = "<group>"; };
+		BCA4D602231E574F005E3C00 /* ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		BCA4D604231E574F005E3C00 /* ChatNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatNode.swift; sourceTree = "<group>"; };
+		BCA4D605231E574F005E3C00 /* ChatNodeGraphJSONLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatNodeGraphJSONLoader.swift; sourceTree = "<group>"; };
+		BCA4D606231E574F005E3C00 /* MessagesNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesNode.swift; sourceTree = "<group>"; };
+		BCA4D607231E574F005E3C00 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		BCA4D608231E574F005E3C00 /* BasicChatNodeGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicChatNodeGraph.swift; sourceTree = "<group>"; };
+		BCA4D609231E574F005E3C00 /* ChatDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatDriver.swift; sourceTree = "<group>"; };
+		BCA4D60A231E574F005E3C00 /* UserConfirmationNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserConfirmationNode.swift; sourceTree = "<group>"; };
+		BCA4D60B231E574F005E3C00 /* ChatNodeGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatNodeGraph.swift; sourceTree = "<group>"; };
+		BCA4D60C231E574F005E3C00 /* UserPermissionsNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPermissionsNode.swift; sourceTree = "<group>"; };
+		BCA4D60D231E574F005E3C00 /* ChatCompletionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCompletionViewController.swift; sourceTree = "<group>"; };
+		BCA4D60E231E574F005E3C00 /* ChatToChatCompletionTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatToChatCompletionTransitionAnimator.swift; sourceTree = "<group>"; };
+		BCA4D610231E574F005E3C00 /* MessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageView.xib; sourceTree = "<group>"; };
+		BCA4D611231E574F005E3C00 /* TypingEllipsisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingEllipsisView.swift; sourceTree = "<group>"; };
+		BCA4D612231E574F005E3C00 /* ChatMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageTableViewCell.swift; sourceTree = "<group>"; };
+		BCA4D613231E574F005E3C00 /* IconMessageContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IconMessageContentView.xib; sourceTree = "<group>"; };
+		BCA4D614231E574F005E3C00 /* Sounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
+		BCA4D615231E574F005E3C00 /* ChatMessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatMessageTableViewCell.xib; sourceTree = "<group>"; };
+		BCA4D616231E574F005E3C00 /* MessageBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBubbleView.swift; sourceTree = "<group>"; };
+		BCA4D617231E574F005E3C00 /* IconMessageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconMessageContentView.swift; sourceTree = "<group>"; };
+		BCA4D618231E574F005E3C00 /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		CB68BE3C413A8890E6DFE3B8 /* Pods-MealTrackingPilotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTrackingPilotUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealTrackingPilotUITests/Pods-MealTrackingPilotUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE24596C7B0C494F839F4A8D /* Pods-MealTrackingPilot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTrackingPilot.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealTrackingPilot/Pods-MealTrackingPilot.release.xcconfig"; sourceTree = "<group>"; };
 		E05A257C1047FBBF980480AE /* Pods_MealTrackingPilot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealTrackingPilot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -752,7 +802,7 @@
 		AA355EDF1E64B01800221911 /* MealTrackingPilot */ = {
 			isa = PBXGroup;
 			children = (
-				BC3423DC2306BC130000E2A0 /* Chatboat */,
+				BCA4D5F9231E574F005E3C00 /* ChatBot */,
 				BC3423C62306A9630000E2A0 /* APIClient */,
 				AA2ED8651EC4C932009C3FA2 /* Image Viewer */,
 				5EDB5DE81E7B22D20096C3CD /* Appearance */,
@@ -1104,16 +1154,6 @@
 			path = Date;
 			sourceTree = "<group>";
 		};
-		BC3423DC2306BC130000E2A0 /* Chatboat */ = {
-			isa = PBXGroup;
-			children = (
-				BC3423DD2306BC130000E2A0 /* Sounds.swift */,
-				BC3423DE2306BC130000E2A0 /* MessageBubbleView.swift */,
-				BC3423DF2306BC130000E2A0 /* ChatMessageViewModelProtocol.swift */,
-			);
-			path = Chatboat;
-			sourceTree = "<group>";
-		};
 		BC34242D230BF90C0000E2A0 /* CarouselView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1126,6 +1166,65 @@
 				BC342427230BF8EF0000E2A0 /* CarouselViewConstants.swift */,
 			);
 			path = CarouselView;
+			sourceTree = "<group>";
+		};
+		BCA4D5F9231E574F005E3C00 /* ChatBot */ = {
+			isa = PBXGroup;
+			children = (
+				BCA4D5FA231E574F005E3C00 /* ChatViewController.swift */,
+				BCA4D5FB231E574F005E3C00 /* ViewModels */,
+				BCA4D600231E574F005E3C00 /* AsyncDispatcher.swift */,
+				BCA4D601231E574F005E3C00 /* ChatCompletionViewController.xib */,
+				BCA4D602231E574F005E3C00 /* ChatViewController.xib */,
+				BCA4D603231E574F005E3C00 /* Models */,
+				BCA4D60D231E574F005E3C00 /* ChatCompletionViewController.swift */,
+				BCA4D60E231E574F005E3C00 /* ChatToChatCompletionTransitionAnimator.swift */,
+				BCA4D60F231E574F005E3C00 /* Views */,
+			);
+			path = ChatBot;
+			sourceTree = "<group>";
+		};
+		BCA4D5FB231E574F005E3C00 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BCA4D5FC231E574F005E3C00 /* ChatCompletionViewModel.swift */,
+				BCA4D5FD231E574F005E3C00 /* ChatMessageViewModel.swift */,
+				BCA4D5FE231E574F005E3C00 /* ChatViewModel.swift */,
+				BCA4D5FF231E574F005E3C00 /* ChatMessageViewModelProtocol.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BCA4D603231E574F005E3C00 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BCA4D604231E574F005E3C00 /* ChatNode.swift */,
+				BCA4D605231E574F005E3C00 /* ChatNodeGraphJSONLoader.swift */,
+				BCA4D606231E574F005E3C00 /* MessagesNode.swift */,
+				BCA4D607231E574F005E3C00 /* Message.swift */,
+				BCA4D608231E574F005E3C00 /* BasicChatNodeGraph.swift */,
+				BCA4D609231E574F005E3C00 /* ChatDriver.swift */,
+				BCA4D60A231E574F005E3C00 /* UserConfirmationNode.swift */,
+				BCA4D60B231E574F005E3C00 /* ChatNodeGraph.swift */,
+				BCA4D60C231E574F005E3C00 /* UserPermissionsNode.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BCA4D60F231E574F005E3C00 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BCA4D610231E574F005E3C00 /* MessageView.xib */,
+				BCA4D611231E574F005E3C00 /* TypingEllipsisView.swift */,
+				BCA4D612231E574F005E3C00 /* ChatMessageTableViewCell.swift */,
+				BCA4D613231E574F005E3C00 /* IconMessageContentView.xib */,
+				BCA4D614231E574F005E3C00 /* Sounds.swift */,
+				BCA4D615231E574F005E3C00 /* ChatMessageTableViewCell.xib */,
+				BCA4D616231E574F005E3C00 /* MessageBubbleView.swift */,
+				BCA4D617231E574F005E3C00 /* IconMessageContentView.swift */,
+				BCA4D618231E574F005E3C00 /* MessageView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D9F64416E3F076231E4808CB /* Pods */ = {
@@ -1269,7 +1368,9 @@
 				AF4BCFE61E816B0A0073937D /* MealSelectionTableFooterView.xib in Resources */,
 				AFE553121E8589580074D4D5 /* MealEventNotesEntryViewController.xib in Resources */,
 				AF4BCFE11E8168BF0073937D /* MealSelectionCell.xib in Resources */,
+				BCA4D62F231E5750005E3C00 /* IconMessageContentView.xib in Resources */,
 				AAAE628B1E783B56000CE539 /* OpenSans-Light.ttf in Resources */,
+				BCA4D61F231E5750005E3C00 /* ChatCompletionViewController.xib in Resources */,
 				AA355EEB1E64B01800221911 /* LaunchScreen.storyboard in Resources */,
 				5EE408551E8417E3002A6697 /* CreateMealOccasionsViewController.xib in Resources */,
 				AA1A93631E855C4700A92123 /* DashboardTableViewCell.xib in Resources */,
@@ -1281,6 +1382,7 @@
 				5EDB5DE21E7B16690096C3CD /* CreateMealViewController.xib in Resources */,
 				5E9E9BF21E801EE60053CF66 /* CreateMealNameViewController.xib in Resources */,
 				AAAE628E1E783B56000CE539 /* OpenSans-Semibold.ttf in Resources */,
+				BCA4D62C231E5750005E3C00 /* MessageView.xib in Resources */,
 				AFD0DDD31E7C7BD50033E092 /* LogMealEventViewController.xib in Resources */,
 				AFFBBC2A1EA9070A009B4767 /* ChatBotGraph.json in Resources */,
 				1DC81454211CB5B2005B1088 /* StatementViewController.xib in Resources */,
@@ -1300,9 +1402,11 @@
 				1DC8144C2119EEEC005B1088 /* CopyrightTableViewCell.xib in Resources */,
 				AFC5300B1E70812B0028B357 /* DashboardViewController.xib in Resources */,
 				5E27AE0F1ECE0E76000C3DBD /* MealEventDetailsMessageView.xib in Resources */,
+				BCA4D631231E5750005E3C00 /* ChatMessageTableViewCell.xib in Resources */,
 				AACE4B341E8D5C1C00B11212 /* DatePickerViewController.xib in Resources */,
 				5E52243A1EBA30720026A17B /* MealEventDetailsPortionCell.xib in Resources */,
 				AAAE628A1E783B56000CE539 /* OpenSans-Italic.ttf in Resources */,
+				BCA4D620231E5750005E3C00 /* ChatViewController.xib in Resources */,
 				1DF8390C2125FBDC00A2846D /* CreateMealCarbsViewController.xib in Resources */,
 				1D75745020FCD70D001AE4B7 /* LoginFormViewController.xib in Resources */,
 				AAAE62891E783B56000CE539 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
@@ -1481,6 +1585,7 @@
 				AAF021DA1E800FD800850157 /* DashboardHomeButton.swift in Sources */,
 				AACDC0021E6EFA0C0010038E /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				AFC530161E7084410028B357 /* PilotRequest+Login.swift in Sources */,
+				BCA4D622231E5750005E3C00 /* ChatNodeGraphJSONLoader.swift in Sources */,
 				5E9E9BFE1E806E290053CF66 /* EditIconTextField.swift in Sources */,
 				BC34242A230BF8F80000E2A0 /* CGPoint+Extension.swift in Sources */,
 				5ED5CF731EDF1D9700780DD5 /* ModalFadeAnimationController.swift in Sources */,
@@ -1491,10 +1596,12 @@
 				AF729A941E7889EC00FB816D /* PilotRequest+CurrentUser.swift in Sources */,
 				AACDC0041E6EFA0C0010038E /* Location.swift in Sources */,
 				AFC530111E7081450028B357 /* LoginLandingViewController.swift in Sources */,
+				BCA4D62D231E5750005E3C00 /* TypingEllipsisView.swift in Sources */,
 				BC342420230BF8D50000E2A0 /* CarouselView+UICollectionViewDelegate.swift in Sources */,
 				AAF021D81E7C7FD000850157 /* UIColor+Extensions.swift in Sources */,
 				AF353CE61E84638B00D5E7F9 /* RealmSeeder.swift in Sources */,
 				5ECA25451EE0B119005DE3BB /* LocationOffsetKeychainStorage.swift in Sources */,
+				BCA4D62A231E5750005E3C00 /* ChatCompletionViewController.swift in Sources */,
 				213EF43C1F9E2B9800719A3E /* Int+Extensions.swift in Sources */,
 				AF9242A01E7AC70C004AB47A /* UserProviding.swift in Sources */,
 				AA2AEFEE1E71A88C007A113D /* StepSample.swift in Sources */,
@@ -1508,11 +1615,14 @@
 				AFD0DDD51E7C7D180033E092 /* LogMealEventViewModel.swift in Sources */,
 				5E3B9CB11E77119C00EA01A9 /* Meal.swift in Sources */,
 				AA1A93571E81C2BA00A92123 /* DashboardDateTableHeaderView.swift in Sources */,
+				BCA4D630231E5750005E3C00 /* Sounds.swift in Sources */,
 				AA1042261E78485D0069B595 /* DashboardViewModel.swift in Sources */,
 				5E3B9CAF1E76F01400EA01A9 /* MealEvent.swift in Sources */,
 				5E5224391EBA30720026A17B /* MealEventDetailsPortionCell.swift in Sources */,
 				AF86E8A91E96EE8B00C555E2 /* RealmObjectIDGenerator.swift in Sources */,
 				AFEF667B1E81EE4800903F94 /* MealOccasionPickerViewModel.swift in Sources */,
+				BCA4D634231E5750005E3C00 /* MessageView.swift in Sources */,
+				BCA4D619231E5750005E3C00 /* ChatViewController.swift in Sources */,
 				BC3423D02306A9640000E2A0 /* Request.swift in Sources */,
 				AACE4B321E8D41C300B11212 /* DatePickerViewController.swift in Sources */,
 				AA1042281E7848AA0069B595 /* DashboardDateHeaderView.swift in Sources */,
@@ -1520,10 +1630,14 @@
 				AF86E8A71E9696E300C555E2 /* PilotRequest+GetMealEvents.swift in Sources */,
 				AA355EE31E64B01800221911 /* ViewController.swift in Sources */,
 				5ECB72EE1EAE49E8003D7126 /* RealmSyncController.swift in Sources */,
+				BCA4D621231E5750005E3C00 /* ChatNode.swift in Sources */,
+				BCA4D624231E5750005E3C00 /* Message.swift in Sources */,
 				AA1A93671E8948DA00A92123 /* Math.swift in Sources */,
 				AAAE62901E783B56000CE539 /* OpenSans.swift in Sources */,
 				5E8DB1421E85B8C100885851 /* PilotRequest+CreateMeal.swift in Sources */,
 				AA1D46A21E65BDF900525CB1 /* HealthKitController.swift in Sources */,
+				BCA4D629231E5750005E3C00 /* UserPermissionsNode.swift in Sources */,
+				BCA4D632231E5750005E3C00 /* MessageBubbleView.swift in Sources */,
 				5E3B9CBD1E79B49400EA01A9 /* RealmMealEvent.swift in Sources */,
 				BC3423D52306ACDC0000E2A0 /* Region.swift in Sources */,
 				5E42DD6F1ED76A5000CE8BF0 /* PilotRequest+ReportMealEvents.swift in Sources */,
@@ -1533,22 +1647,26 @@
 				BC34242C230BF9010000E2A0 /* CGSize+Extension.swift in Sources */,
 				AA1042371E7AE2800069B595 /* DashboardHomeHeaderView.swift in Sources */,
 				5ECB72EB1EAA456A003D7126 /* PilotRequest+CreateStepSample.swift in Sources */,
+				BCA4D62B231E5750005E3C00 /* ChatToChatCompletionTransitionAnimator.swift in Sources */,
 				AF4BCFE81E818F080073937D /* MealOccasionPickerItemView.swift in Sources */,
 				AAF021D61E7C771200850157 /* RoundedCornerView.swift in Sources */,
 				AA10422D1E7854E90069B595 /* UITableViewCell+Extensions.swift in Sources */,
 				BC342424230BF8E30000E2A0 /* CarouselView+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				5EA734B81EB7B6950056D4D5 /* Synchronizable.swift in Sources */,
 				AF2439211E8D670900737A94 /* PilotRequest+CreateMealEvent.swift in Sources */,
+				BCA4D633231E5750005E3C00 /* IconMessageContentView.swift in Sources */,
 				BC3423CC2306A9640000E2A0 /* AccessCredentialsRefresher.swift in Sources */,
 				BC34241C230BF8C90000E2A0 /* CarouselCollectionViewCell.swift in Sources */,
+				BCA4D61D231E5750005E3C00 /* ChatMessageViewModelProtocol.swift in Sources */,
 				AF729A921E78869C00FB816D /* PilotRequest.swift in Sources */,
 				5E3B9CBF1E79B4E600EA01A9 /* RealmMeal.swift in Sources */,
-				BC3423E12306BC130000E2A0 /* MessageBubbleView.swift in Sources */,
+				BCA4D628231E5750005E3C00 /* ChatNodeGraph.swift in Sources */,
+				BCA4D61C231E5750005E3C00 /* ChatViewModel.swift in Sources */,
+				BCA4D62E231E5750005E3C00 /* ChatMessageTableViewCell.swift in Sources */,
 				AFA1A6001EBA8C2E001AF135 /* UIAlertActionViewModel.swift in Sources */,
 				5EA396F61EE98C2D00BD95DF /* UIAlertController+Extensions.swift in Sources */,
 				5E27AE0D1ECE0E68000C3DBD /* MealEventDetailsMessageView.swift in Sources */,
 				5E42DD641ED7333900CE8BF0 /* ReportMealEventViewModel.swift in Sources */,
-				BC3423E02306BC130000E2A0 /* Sounds.swift in Sources */,
 				5E9E9BEE1E7C59160053CF66 /* SegmentedSlider.swift in Sources */,
 				5E0B8DD31E93F2E600723503 /* PilotRequest+GetMeals.swift in Sources */,
 				5E3B9CB81E797F2E00EA01A9 /* MealDataController.swift in Sources */,
@@ -1566,6 +1684,8 @@
 				BC342422230BF8DD0000E2A0 /* CarouselView+UICollectionViewDataSource.swift in Sources */,
 				AFC530181E7089930028B357 /* PilotLoginClient.swift in Sources */,
 				AF4BCFE01E8168BF0073937D /* MealSelectionCell.swift in Sources */,
+				BCA4D627231E5750005E3C00 /* UserConfirmationNode.swift in Sources */,
+				BCA4D61E231E5750005E3C00 /* AsyncDispatcher.swift in Sources */,
 				AFC5300A1E70812B0028B357 /* DashboardViewController.swift in Sources */,
 				BC342426230BF8EA0000E2A0 /* CarouselView+UIScrollViewDelegate.swift in Sources */,
 				AFD39CAD1EB91C85003F1EE3 /* GradientButton.swift in Sources */,
@@ -1578,19 +1698,22 @@
 				AA355EE11E64B01800221911 /* AppDelegate.swift in Sources */,
 				BC3423D42306ACDC0000E2A0 /* Date+Extension.swift in Sources */,
 				AF729A8C1E785EF200FB816D /* JsonWebToken.swift in Sources */,
+				BCA4D61B231E5750005E3C00 /* ChatMessageViewModel.swift in Sources */,
 				AFE553111E8589580074D4D5 /* MealEventNotesEntryViewController.swift in Sources */,
 				1D24F13021122899008EE56A /* PilotUserLoginCredentials.swift in Sources */,
 				5EDB5DE11E7B16690096C3CD /* CreateMealViewController.swift in Sources */,
 				5EE408541E8417E3002A6697 /* CreateMealOccasionsViewController.swift in Sources */,
-				BC3423E22306BC130000E2A0 /* ChatMessageViewModelProtocol.swift in Sources */,
 				AF44B7E91E982042001973DD /* UIBarButtonItem+EmptyTitle.swift in Sources */,
 				AA1042331E79CA290069B595 /* UIColor+PIAdditions.swift in Sources */,
 				BC3423D72306AD240000E2A0 /* PilotAPIClientConstant.swift in Sources */,
 				AFC5300E1E70813A0028B357 /* AppNavigator.swift in Sources */,
 				AF9471E71E83FB0C00220BFA /* MealEventDetailsHeaderView.swift in Sources */,
+				BCA4D623231E5750005E3C00 /* MessagesNode.swift in Sources */,
 				218450201F857EA200AB246C /* Array+Extensions.swift in Sources */,
+				BCA4D626231E5750005E3C00 /* ChatDriver.swift in Sources */,
 				1DC8144B2119EEEC005B1088 /* CopyrightTableViewCell.swift in Sources */,
 				AFEF667A1E81EE4800903F94 /* MealOccasionPickerItemViewModel.swift in Sources */,
+				BCA4D625231E5750005E3C00 /* BasicChatNodeGraph.swift in Sources */,
 				1DC81458211CC440005B1088 /* SettingTableViewCell.swift in Sources */,
 				E6C5D16C1ED47734003882BE /* MealEventDetailsTitleView.swift in Sources */,
 				AA1042311E798D860069B595 /* DashboardTableViewCellViewModel.swift in Sources */,
@@ -1622,6 +1745,7 @@
 				1DF8390B2125FBDC00A2846D /* CreateMealCarbsViewController.swift in Sources */,
 				5E27AE111ECF8C67000C3DBD /* UITableView+Extensions.swift in Sources */,
 				AACE4B2E1E8C03E300B11212 /* MealStatistics.swift in Sources */,
+				BCA4D61A231E5750005E3C00 /* ChatCompletionViewModel.swift in Sources */,
 				21084EAD1F9E3CE700252182 /* Decodable+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
