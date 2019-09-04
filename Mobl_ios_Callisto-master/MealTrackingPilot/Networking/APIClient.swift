@@ -24,8 +24,8 @@ public class APIClient {
     
     private func sendRequest(_ request: URLRequest, completion: defaultRequestCompletion?) {
         Logger.log(request: request)
-        AF.request(request).response { [weak self] response in
-            guard let completion = completion, let welf = self, let httpResponse = response.response else {
+        AF.request(request).response { response in
+            guard let completion = completion, let httpResponse = response.response else {
                 return
             }
             Logger.log(response: httpResponse)

@@ -36,7 +36,6 @@ public extension Request {
         request.httpMethod = method.rawValue
         request.setValue(Self.acceptHeader, forHTTPHeaderField: "Accept")
         request.setValue(contentType, forHTTPHeaderField: "Content-Type")
-    
         if authenticated {
             accessCredentials?.authorize(&request)
         }

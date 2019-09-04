@@ -74,8 +74,7 @@ final class AppNavigator: NSObject, LoginClientDelegate, LoginClientUIDelegate {
         var isSignedIn = (userProvider.user != nil)
 
         // Detects if user is opening the app after deletion with an expired token.
-        if
-            let userProvider = userProvider as? PilotLoginClient,
+        if let userProvider = userProvider as? PilotLoginClient,
             let user = userProvider.user,
             onboardingManager.shouldOnboardUser(user),
             let accessCredentials = userProvider.accessCredentials,

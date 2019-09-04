@@ -1303,7 +1303,7 @@
 				TargetAttributes = {
 					AA355EDC1E64B01800221911 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = DP823886NH;
+						DevelopmentTeam = ZGQ7UMT9VT;
 						LastSwiftMigration = 1030;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
@@ -1947,7 +1947,7 @@
 				CODE_SIGN_ENTITLEMENTS = MealTrackingPilot/MealTrackingPilot.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = DP823886NH;
+				DEVELOPMENT_TEAM = ZGQ7UMT9VT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1956,9 +1956,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lnt.Lilly-Callisto";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lnt.Lilly-Callisto2.0Dev";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = CallistoDev;
+				PROVISIONING_PROFILE_SPECIFIER = "Lilly-Callisto2.0-Dev";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1984,7 +1984,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DRELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lnt.Lilly-Callisto";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lnt.Lilly-Callisto2.0Dev";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
