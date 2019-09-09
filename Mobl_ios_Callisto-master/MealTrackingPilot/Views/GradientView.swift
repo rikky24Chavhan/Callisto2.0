@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 struct GradientSpec {
     var direction: GradientView.Direction

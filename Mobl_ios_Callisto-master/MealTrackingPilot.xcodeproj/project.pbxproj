@@ -233,15 +233,6 @@
 		BC3423D52306ACDC0000E2A0 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3423D32306ACDC0000E2A0 /* Region.swift */; };
 		BC3423D72306AD240000E2A0 /* PilotAPIClientConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3423D62306AD240000E2A0 /* PilotAPIClientConstant.swift */; };
 		BC3423DB2306B1B00000E2A0 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3423DA2306B1B00000E2A0 /* Logger.swift */; };
-		BC34241A230BF8C20000E2A0 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC342419230BF8C20000E2A0 /* CarouselView.swift */; };
-		BC34241C230BF8C90000E2A0 /* CarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34241B230BF8C90000E2A0 /* CarouselCollectionViewCell.swift */; };
-		BC342420230BF8D50000E2A0 /* CarouselView+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34241F230BF8D50000E2A0 /* CarouselView+UICollectionViewDelegate.swift */; };
-		BC342422230BF8DD0000E2A0 /* CarouselView+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC342421230BF8DC0000E2A0 /* CarouselView+UICollectionViewDataSource.swift */; };
-		BC342424230BF8E30000E2A0 /* CarouselView+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC342423230BF8E30000E2A0 /* CarouselView+UICollectionViewDelegateFlowLayout.swift */; };
-		BC342426230BF8EA0000E2A0 /* CarouselView+UIScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC342425230BF8EA0000E2A0 /* CarouselView+UIScrollViewDelegate.swift */; };
-		BC342428230BF8EF0000E2A0 /* CarouselViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC342427230BF8EF0000E2A0 /* CarouselViewConstants.swift */; };
-		BC34242A230BF8F80000E2A0 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC342429230BF8F80000E2A0 /* CGPoint+Extension.swift */; };
-		BC34242C230BF9010000E2A0 /* CGSize+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34242B230BF9010000E2A0 /* CGSize+Extension.swift */; };
 		BCA4D619231E5750005E3C00 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D5FA231E574F005E3C00 /* ChatViewController.swift */; };
 		BCA4D61A231E5750005E3C00 /* ChatCompletionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D5FC231E574F005E3C00 /* ChatCompletionViewModel.swift */; };
 		BCA4D61B231E5750005E3C00 /* ChatMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D5FD231E574F005E3C00 /* ChatMessageViewModel.swift */; };
@@ -270,6 +261,7 @@
 		BCA4D632231E5750005E3C00 /* MessageBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D616231E574F005E3C00 /* MessageBubbleView.swift */; };
 		BCA4D633231E5750005E3C00 /* IconMessageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D617231E574F005E3C00 /* IconMessageContentView.swift */; };
 		BCA4D634231E5750005E3C00 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D618231E574F005E3C00 /* MessageView.swift */; };
+		BCA4D63823264E0C005E3C00 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D63723264E0C005E3C00 /* PickerView.swift */; };
 		E61B65E01ECFA08D00188CCE /* DemoDashboardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B65DF1ECFA08D00188CCE /* DemoDashboardViewModelTests.swift */; };
 		E61B65E21ECFA13400188CCE /* MockKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B65E11ECFA13400188CCE /* MockKeychain.swift */; };
 		E61B65E41ECFA18200188CCE /* MockLoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B65E31ECFA18200188CCE /* MockLoginClient.swift */; };
@@ -534,15 +526,6 @@
 		BC3423D32306ACDC0000E2A0 /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		BC3423D62306AD240000E2A0 /* PilotAPIClientConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PilotAPIClientConstant.swift; sourceTree = "<group>"; };
 		BC3423DA2306B1B00000E2A0 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		BC342419230BF8C20000E2A0 /* CarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
-		BC34241B230BF8C90000E2A0 /* CarouselCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselCollectionViewCell.swift; sourceTree = "<group>"; };
-		BC34241F230BF8D50000E2A0 /* CarouselView+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CarouselView+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
-		BC342421230BF8DC0000E2A0 /* CarouselView+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CarouselView+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
-		BC342423230BF8E30000E2A0 /* CarouselView+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CarouselView+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
-		BC342425230BF8EA0000E2A0 /* CarouselView+UIScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CarouselView+UIScrollViewDelegate.swift"; sourceTree = "<group>"; };
-		BC342427230BF8EF0000E2A0 /* CarouselViewConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselViewConstants.swift; sourceTree = "<group>"; };
-		BC342429230BF8F80000E2A0 /* CGPoint+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extension.swift"; sourceTree = "<group>"; };
-		BC34242B230BF9010000E2A0 /* CGSize+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Extension.swift"; sourceTree = "<group>"; };
 		BCA4D5FA231E574F005E3C00 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		BCA4D5FC231E574F005E3C00 /* ChatCompletionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCompletionViewModel.swift; sourceTree = "<group>"; };
 		BCA4D5FD231E574F005E3C00 /* ChatMessageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageViewModel.swift; sourceTree = "<group>"; };
@@ -571,6 +554,7 @@
 		BCA4D616231E574F005E3C00 /* MessageBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBubbleView.swift; sourceTree = "<group>"; };
 		BCA4D617231E574F005E3C00 /* IconMessageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconMessageContentView.swift; sourceTree = "<group>"; };
 		BCA4D618231E574F005E3C00 /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		BCA4D63723264E0C005E3C00 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		CB68BE3C413A8890E6DFE3B8 /* Pods-MealTrackingPilotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTrackingPilotUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealTrackingPilotUITests/Pods-MealTrackingPilotUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE24596C7B0C494F839F4A8D /* Pods-MealTrackingPilot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTrackingPilot.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealTrackingPilot/Pods-MealTrackingPilot.release.xcconfig"; sourceTree = "<group>"; };
 		E05A257C1047FBBF980480AE /* Pods_MealTrackingPilot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealTrackingPilot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -761,8 +745,6 @@
 				2184501F1F857EA200AB246C /* Array+Extensions.swift */,
 				213EF43B1F9E2B9800719A3E /* Int+Extensions.swift */,
 				21084EAC1F9E3CE700252182 /* Decodable+Extensions.swift */,
-				BC342429230BF8F80000E2A0 /* CGPoint+Extension.swift */,
-				BC34242B230BF9010000E2A0 /* CGSize+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -985,6 +967,7 @@
 		AF4BCFDC1E8168BF0073937D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BCA4D63723264E0C005E3C00 /* PickerView.swift */,
 				AF4BCFDD1E8168BF0073937D /* MealSelectionCell.swift */,
 				AF4BCFDE1E8168BF0073937D /* MealSelectionCell.xib */,
 				AF4BCFDF1E8168BF0073937D /* MealSelectionCellViewModel.swift */,
@@ -994,7 +977,6 @@
 				AF4BCFE91E818F200073937D /* MealOccasionPickerItemView.xib */,
 				AFEF66781E81EE4800903F94 /* MealOccasionPickerItemViewModel.swift */,
 				AFEF66791E81EE4800903F94 /* MealOccasionPickerViewModel.swift */,
-				BC34242D230BF90C0000E2A0 /* CarouselView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1141,20 +1123,6 @@
 				BC3423D32306ACDC0000E2A0 /* Region.swift */,
 			);
 			path = Date;
-			sourceTree = "<group>";
-		};
-		BC34242D230BF90C0000E2A0 /* CarouselView */ = {
-			isa = PBXGroup;
-			children = (
-				BC342419230BF8C20000E2A0 /* CarouselView.swift */,
-				BC34241B230BF8C90000E2A0 /* CarouselCollectionViewCell.swift */,
-				BC34241F230BF8D50000E2A0 /* CarouselView+UICollectionViewDelegate.swift */,
-				BC342421230BF8DC0000E2A0 /* CarouselView+UICollectionViewDataSource.swift */,
-				BC342423230BF8E30000E2A0 /* CarouselView+UICollectionViewDelegateFlowLayout.swift */,
-				BC342425230BF8EA0000E2A0 /* CarouselView+UIScrollViewDelegate.swift */,
-				BC342427230BF8EF0000E2A0 /* CarouselViewConstants.swift */,
-			);
-			path = CarouselView;
 			sourceTree = "<group>";
 		};
 		BCA4D5F9231E574F005E3C00 /* ChatBot */ = {
@@ -1575,8 +1543,8 @@
 				AACDC0021E6EFA0C0010038E /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				AFC530161E7084410028B357 /* PilotRequest+Login.swift in Sources */,
 				BCA4D622231E5750005E3C00 /* ChatNodeGraphJSONLoader.swift in Sources */,
+				BCA4D63823264E0C005E3C00 /* PickerView.swift in Sources */,
 				5E9E9BFE1E806E290053CF66 /* EditIconTextField.swift in Sources */,
-				BC34242A230BF8F80000E2A0 /* CGPoint+Extension.swift in Sources */,
 				5ED5CF731EDF1D9700780DD5 /* ModalFadeAnimationController.swift in Sources */,
 				5EDB5DE71E7B1B0E0096C3CD /* GradientView.swift in Sources */,
 				AA10422A1E78543D0069B595 /* DashboardTableViewCell.swift in Sources */,
@@ -1586,7 +1554,6 @@
 				AACDC0041E6EFA0C0010038E /* Location.swift in Sources */,
 				AFC530111E7081450028B357 /* LoginLandingViewController.swift in Sources */,
 				BCA4D62D231E5750005E3C00 /* TypingEllipsisView.swift in Sources */,
-				BC342420230BF8D50000E2A0 /* CarouselView+UICollectionViewDelegate.swift in Sources */,
 				AAF021D81E7C7FD000850157 /* UIColor+Extensions.swift in Sources */,
 				AF353CE61E84638B00D5E7F9 /* RealmSeeder.swift in Sources */,
 				5ECA25451EE0B119005DE3BB /* LocationOffsetKeychainStorage.swift in Sources */,
@@ -1598,7 +1565,6 @@
 				AFB52B9C1EB3D735005CB248 /* KeychainValueStorage.swift in Sources */,
 				5E9E9BF11E801EE60053CF66 /* CreateMealNameViewController.swift in Sources */,
 				AA2ED8691EC60BF7009C3FA2 /* LogMealEventMode.swift in Sources */,
-				BC34241A230BF8C20000E2A0 /* CarouselView.swift in Sources */,
 				AF9471EB1E83FCCA00220BFA /* MealEventDetailsNotesView.swift in Sources */,
 				AA10422F1E7855470069B595 /* UITableViewHeaderFooterView+Extensions.swift in Sources */,
 				AFD0DDD51E7C7D180033E092 /* LogMealEventViewModel.swift in Sources */,
@@ -1633,18 +1599,15 @@
 				E62681921EE1B8BB008F223E /* URL+Extensions.swift in Sources */,
 				AA5440DA1E89AB0200DB45C6 /* CircleProgressView.swift in Sources */,
 				BC3423CE2306A9640000E2A0 /* APIClient.swift in Sources */,
-				BC34242C230BF9010000E2A0 /* CGSize+Extension.swift in Sources */,
 				AA1042371E7AE2800069B595 /* DashboardHomeHeaderView.swift in Sources */,
 				5ECB72EB1EAA456A003D7126 /* PilotRequest+CreateStepSample.swift in Sources */,
 				BCA4D62B231E5750005E3C00 /* ChatToChatCompletionTransitionAnimator.swift in Sources */,
 				AF4BCFE81E818F080073937D /* MealOccasionPickerItemView.swift in Sources */,
 				AAF021D61E7C771200850157 /* RoundedCornerView.swift in Sources */,
 				AA10422D1E7854E90069B595 /* UITableViewCell+Extensions.swift in Sources */,
-				BC342424230BF8E30000E2A0 /* CarouselView+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				5EA734B81EB7B6950056D4D5 /* Synchronizable.swift in Sources */,
 				AF2439211E8D670900737A94 /* PilotRequest+CreateMealEvent.swift in Sources */,
 				BCA4D633231E5750005E3C00 /* IconMessageContentView.swift in Sources */,
-				BC34241C230BF8C90000E2A0 /* CarouselCollectionViewCell.swift in Sources */,
 				BCA4D61D231E5750005E3C00 /* ChatMessageViewModelProtocol.swift in Sources */,
 				AF729A921E78869C00FB816D /* PilotRequest.swift in Sources */,
 				5E3B9CBF1E79B4E600EA01A9 /* RealmMeal.swift in Sources */,
@@ -1669,13 +1632,11 @@
 				5E42DD6B1ED75CD700CE8BF0 /* RoundedModalPresentationController.swift in Sources */,
 				5E26A2D31E8C52D900AB03F2 /* LabelCollectionViewCell.swift in Sources */,
 				AA2ED8641EC4A51B009C3FA2 /* PilotRequest+UpdateMealEvent.swift in Sources */,
-				BC342422230BF8DD0000E2A0 /* CarouselView+UICollectionViewDataSource.swift in Sources */,
 				AFC530181E7089930028B357 /* PilotLoginClient.swift in Sources */,
 				AF4BCFE01E8168BF0073937D /* MealSelectionCell.swift in Sources */,
 				BCA4D627231E5750005E3C00 /* UserConfirmationNode.swift in Sources */,
 				BCA4D61E231E5750005E3C00 /* AsyncDispatcher.swift in Sources */,
 				AFC5300A1E70812B0028B357 /* DashboardViewController.swift in Sources */,
-				BC342426230BF8EA0000E2A0 /* CarouselView+UIScrollViewDelegate.swift in Sources */,
 				AFD39CAD1EB91C85003F1EE3 /* GradientButton.swift in Sources */,
 				5E3B9CBB1E79B2A500EA01A9 /* RealmMealDataController.swift in Sources */,
 				1DF8390E212756E000A2846D /* Reachability.swift in Sources */,
@@ -1727,7 +1688,6 @@
 				BC3423DB2306B1B00000E2A0 /* Logger.swift in Sources */,
 				5E9E9C031E8193200053CF66 /* CheckmarkTableViewCell.swift in Sources */,
 				AFB52BA21EB5113F005CB248 /* PrimaryUserStorage.swift in Sources */,
-				BC342428230BF8EF0000E2A0 /* CarouselViewConstants.swift in Sources */,
 				1D75745220FCD756001AE4B7 /* LoginFormViewModel.swift in Sources */,
 				AF3541D21EB7ABD9004936F9 /* OnboardingManager.swift in Sources */,
 				1DF8390B2125FBDC00A2846D /* CreateMealCarbsViewController.swift in Sources */,

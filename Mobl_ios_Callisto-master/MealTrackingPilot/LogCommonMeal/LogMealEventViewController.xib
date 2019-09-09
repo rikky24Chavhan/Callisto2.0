@@ -39,7 +39,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="169"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9E-1i-DpB" userLabel="Occasion Picker" customClass="CarouselView" customModule="MealTrackingPilot" customModuleProvider="target">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9E-1i-DpB" userLabel="Occasion Picker" customClass="PickerView" customModule="MealTrackingPilot" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="25" width="375" height="90"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>

@@ -8,8 +8,8 @@
 
 import RxSwift
 
-class MealOccasionPickerViewModel: CarouselViewDataSource, CarouselViewDelegate {
-    
+class MealOccasionPickerViewModel: PickerViewDataSource, PickerViewDelegate {
+ 
     let occasions: [MealOccasion]
     private(set) var selectedIndex: Variable<Int>
 
@@ -48,15 +48,15 @@ class MealOccasionPickerViewModel: CarouselViewDataSource, CarouselViewDelegate 
 
     // MARK: - PickerViewDataSource
 
-    func carouselViewNumberOfItems(_ carouselView: CarouselView) -> Int {
+    func pickerViewNumberOfItems(_ pickerView: PickerView) -> Int {
         return itemViewModels.count
     }
 
-    func carouselViewSpanForItems(_ carouselView: CarouselView) -> CGFloat {
+    func pickerViewSpanForItems(_ _pickerView: PickerView) -> CGFloat {
         return MealOccasionPickerItemView.preferredWidth + Constants.itemPadding
     }
 
-    func carouselView(_ carouselView: CarouselView, viewForItem item: Int, index: Int, highlighted: Bool, reusingView view: UIView?) -> UIView? {
+    func pickerView(_ _pickerView: PickerView, viewForItem item: Int, index: Int, highlighted: Bool, reusingView view: UIView?) -> UIView? {
         let itemView = (view as? MealOccasionPickerItemView) ?? MealOccasionPickerItemView.ip_fromNib()
         let viewModel = itemViewModels[index]
         viewModel.highlighted = highlighted
@@ -64,13 +64,13 @@ class MealOccasionPickerViewModel: CarouselViewDataSource, CarouselViewDelegate 
         return itemView
     }
 
-    func carouselView(_ carouselView: CarouselView, titleForItem item: Int, index: Int) -> String {
+    func pickerView(_ _pickerView: PickerView, titleForItem item: Int, index: Int) -> String {
         return ""
     }
 
     // MARK: - PickerViewDelegate
 
-    func carouselView(_ carouselView: CarouselView, didSelectItem item: Int, index: Int) {
+    func pickerView(_ _pickerView: PickerView, didSelectItem item: Int, index: Int) {
         selectedIndex.value = index
     }
 }
