@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let primaryUserStorage = PilotPrimaryUserStorage()
 
+    
+    
+    
     let reachability = Reachability()
 
     let locationOffsetStorage = LocationOffsetKeychainStorage()
