@@ -44,9 +44,7 @@ public final class DashboardHomeHeaderView: UIView {
     var suggestionMessage: NSAttributedString? {
         didSet {
             guard let suggestionMessage = suggestionMessage else { return }
-            /* MIGRATION-COMMENT-NEED-TO-FIX
             messageView.viewModel = DashboardHomeHeaderMessageViewModel(attributedText: suggestionMessage)
-            */
         }
     }
 
@@ -75,7 +73,6 @@ public final class DashboardHomeHeaderView: UIView {
         return label
     }()
 
-    /* MIGRATION-COMMENT-NEED-TO-FIX
     lazy var messageView: MessageView = {
         let messageView = MessageView.ip_fromNib()
         messageView.bubbleContainerTrailingConstraint.constant = 0
@@ -83,7 +80,6 @@ public final class DashboardHomeHeaderView: UIView {
         messageView.translatesAutoresizingMaskIntoConstraints = false
         return messageView
     }()
-    */
 
     private var isDemo: Bool {
         return currentDayText == "DEMO"
@@ -107,9 +103,7 @@ public final class DashboardHomeHeaderView: UIView {
         addSubview(logoView)
         addSubview(dayLabel)
         addSubview(mealEventCountLabel)
-        /* MIGRATION-COMMENT-NEED-TO-FIX
         addSubview(messageView)
-        */
 
         // Constraints
         constrainView(toMiddleHorizontally: logoView)
@@ -117,16 +111,12 @@ public final class DashboardHomeHeaderView: UIView {
         dayLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         mealEventCountLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         mealEventCountLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        /* MIGRATION-COMMENT-NEED-TO-FIX
         messageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -Constants.messageViewHorizontalShadowInset).isActive = true
         messageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Constants.messageViewHorizontalShadowInset).isActive = true
-        */
         dayLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
         mealEventCountLabel.topAnchor.constraint(equalTo: dayLabel.bottomAnchor, constant: Constants.dayLabelToMealEventCountLabelSpacing).isActive = true
-        /* MIGRATION-COMMENT-NEED-TO-FIX
         messageView.topAnchor.constraint(equalTo: mealEventCountLabel.bottomAnchor, constant: Constants.mealEventCountLabelToMessageViewSpacing).isActive = true
         messageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-         */
     }
 }
 
