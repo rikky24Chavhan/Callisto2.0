@@ -102,7 +102,6 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.delegate = self
 
         tableView.tableFooterView = UIView(frame: .zero)
-        tableView.transform = CGAffineTransform(rotationAngle: (-.pi))
 
         tableView.contentInset = UIEdgeInsets(
             top: Constants.tableTopInset,
@@ -196,14 +195,12 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         case .spacer:
             let cell = tableView.dequeueReusableCell(withIdentifier: SpacerCell.cellIdentifier, for: indexPath)
             cell.backgroundColor = UIColor.clear
-            cell.transform = CGAffineTransform(rotationAngle: (-.pi))
             return cell
         case .message(let messageViewModel):
             let cell = tableView.dequeueReusableCell(withIdentifier: ChatMessageTableViewCell.cellIdentifier, for: indexPath)
             if let messageCell = cell as? ChatMessageTableViewCell {
                 messageCell.viewModel = messageViewModel
             }
-            cell.transform = CGAffineTransform(rotationAngle: (-.pi))
             return cell
         }
     }

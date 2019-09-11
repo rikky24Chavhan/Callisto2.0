@@ -117,7 +117,6 @@ public final class DashboardHomeHeaderView: UIView {
         mealEventCountLabel.topAnchor.constraint(equalTo: dayLabel.bottomAnchor, constant: Constants.dayLabelToMealEventCountLabelSpacing).isActive = true
         messageView.topAnchor.constraint(equalTo: mealEventCountLabel.bottomAnchor, constant: Constants.mealEventCountLabelToMessageViewSpacing).isActive = true
         messageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-
     }
 }
 
