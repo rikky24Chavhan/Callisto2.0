@@ -6,7 +6,7 @@
 //  Copyright © 2017 Intrepid. All rights reserved.
 //
 
-import Intrepid
+import Foundation
 
 protocol AsyncDispatcherProtocol {
     func after(_ delay: TimeInterval, op: @escaping () -> Void)
@@ -17,3 +17,4 @@ public class AsyncDispatcher: AsyncDispatcherProtocol {
         After(delay, op: op)
     }
 }
+

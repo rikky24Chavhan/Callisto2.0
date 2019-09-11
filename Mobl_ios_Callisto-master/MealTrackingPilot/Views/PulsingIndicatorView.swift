@@ -53,10 +53,10 @@ class PulsingIndicatorView: UIView {
         clipsToBounds = false
 
         addSubview(ringView)
-        constrainView(ringView, to: Constants.ringViewInsets)
+        _ = constrainView(ringView, to: Constants.ringViewInsets)
 
         addSubview(centerView)
-        constrainView(toAllEdges: centerView)
+        _ = constrainView(toAllEdges: centerView)
 
         centerView.layer.borderColor = UIColor.white.cgColor
         centerView.layer.borderWidth = 2.0

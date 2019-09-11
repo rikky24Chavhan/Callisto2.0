@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Intrepid
 import RxSwift
 
 class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {

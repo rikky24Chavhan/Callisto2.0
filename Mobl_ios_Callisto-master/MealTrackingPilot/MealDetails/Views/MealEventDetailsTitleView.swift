@@ -72,7 +72,7 @@ class MealEventDetailsTitleView: UIView {
         sizeThatFits(editableMealTitleSize)
         layoutIfNeeded()
 
-        if frameSize.width > Constants.maximumTitleWidth {
+        if self.frame.size.width > Constants.maximumTitleWidth {
             self.frame.size.width = Constants.maximumTitleWidth
         }
 

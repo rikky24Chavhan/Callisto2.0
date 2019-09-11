@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-import Intrepid
 
 class LoginFormViewController: UIViewController, UITextFieldDelegate {
 
@@ -137,7 +136,7 @@ class LoginFormViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(backgroundView)
         view.sendSubviewToBack(backgroundView)
         
-        view.constrainView(toAllEdges: backgroundView)
+        _ = view.constrainView(toAllEdges: backgroundView)
     }
 
     private func setupObservers() {
@@ -146,7 +145,7 @@ class LoginFormViewController: UIViewController, UITextFieldDelegate {
         viewModel.status.subscribe(onNext: { [weak self] (_) in
             guard let welf = self else { return }
 
-            Main {
+            DispatchQueue.main.async {
                 welf.messageBubbleLabel.text = welf.viewModel.helpText
                 welf.messageBubbleView.backgroundColor = welf.viewModel.backgroundColor
             }

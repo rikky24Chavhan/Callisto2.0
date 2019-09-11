@@ -28,9 +28,9 @@ public final class DashboardHomeHeaderView: UIView {
 
             // UI hack to make sure logo is not placed too high on small screen demo dashboard
             if UIDevice.current.isSmall && isDemo {
-                constrainView(logoView, above: self, withOffset: Constants.smallScreenDemologoImageToDayLabelSpace)
+                _ = constrainView(logoView, above: self, withOffset: Constants.smallScreenDemologoImageToDayLabelSpace)
             } else {
-                constrainView(logoView, above: self, withOffset: Constants.logoImageToDayLabelSpace)
+                _ = constrainView(logoView, above: self, withOffset: Constants.logoImageToDayLabelSpace)
             }
         }
     }
@@ -44,9 +44,7 @@ public final class DashboardHomeHeaderView: UIView {
     var suggestionMessage: NSAttributedString? {
         didSet {
             guard let suggestionMessage = suggestionMessage else { return }
-            /* MIGRATION-COMMENT-NEED-TO-FIX
             messageView.viewModel = DashboardHomeHeaderMessageViewModel(attributedText: suggestionMessage)
-            */
         }
     }
 
@@ -75,15 +73,13 @@ public final class DashboardHomeHeaderView: UIView {
         return label
     }()
 
-    /* MIGRATION-COMMENT-NEED-TO-FIX
     lazy var messageView: MessageView = {
-        let messageView = MessageView.ip_fromNib()
+        let messageView = MessageView.fromNib()
         messageView.bubbleContainerTrailingConstraint.constant = 0
         messageView.bubbleContainer.trailingAnchor.constraint(equalTo: messageView.trailingAnchor).isActive = true
         messageView.translatesAutoresizingMaskIntoConstraints = false
         return messageView
     }()
-    */
 
     private var isDemo: Bool {
         return currentDayText == "DEMO"
@@ -107,26 +103,21 @@ public final class DashboardHomeHeaderView: UIView {
         addSubview(logoView)
         addSubview(dayLabel)
         addSubview(mealEventCountLabel)
-        /* MIGRATION-COMMENT-NEED-TO-FIX
         addSubview(messageView)
-        */
 
         // Constraints
-        constrainView(toMiddleHorizontally: logoView)
+        _ = constrainView(toMiddleHorizontally: logoView)
         dayLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         dayLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         mealEventCountLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         mealEventCountLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        /* MIGRATION-COMMENT-NEED-TO-FIX
         messageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -Constants.messageViewHorizontalShadowInset).isActive = true
         messageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Constants.messageViewHorizontalShadowInset).isActive = true
-        */
         dayLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
         mealEventCountLabel.topAnchor.constraint(equalTo: dayLabel.bottomAnchor, constant: Constants.dayLabelToMealEventCountLabelSpacing).isActive = true
-        /* MIGRATION-COMMENT-NEED-TO-FIX
         messageView.topAnchor.constraint(equalTo: mealEventCountLabel.bottomAnchor, constant: Constants.mealEventCountLabelToMessageViewSpacing).isActive = true
         messageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-         */
+
     }
 }
 

@@ -103,7 +103,7 @@ public final class DashboardHomeButton: UIControl {
     private func setupBackground() {
         addSubview(backgroundView)
 
-        constrainView(toAllEdges: backgroundView)
+        _ = constrainView(toAllEdges: backgroundView)
     }
 
     private func setupChevron() {

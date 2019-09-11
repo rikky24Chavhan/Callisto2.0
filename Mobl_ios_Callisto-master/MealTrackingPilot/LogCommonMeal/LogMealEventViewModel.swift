@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-import Intrepid
 
 public final class LogMealEventViewModel: CreateMealViewModelDelegate {
 

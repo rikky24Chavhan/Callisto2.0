@@ -170,7 +170,7 @@ public final class CircleProgressView: UIView {
         configureCornerRadius()
 
         // Constraints
-        constrainView(toAllEdges: outerRingView)
+        _ = constrainView(toAllEdges: outerRingView)
 
         innerCircleLeadingConstraint = innerCircleView.leadingAnchor.constraint(equalTo: outerRingView.leadingAnchor, constant: outerRingWidth)
         innerCircleLeadingConstraint.isActive = true

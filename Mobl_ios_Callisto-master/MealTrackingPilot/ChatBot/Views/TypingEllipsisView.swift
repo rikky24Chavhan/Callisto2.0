@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Intrepid
 
 class TypingEllipsisView: UIView {
     var ellipsisColor = UIColor.black {
@@ -71,9 +70,9 @@ class TypingEllipsisView: UIView {
             dot.frame = CGRect(x: 0, y: 0, width: dotDiameter, height: dotDiameter)
             dot.layer.cornerRadius = dotRadius
         }
-        dots[1].center = bounds.ip_center
-        dots[0].center = dots[1].frame.ip_leftMiddle - CGPoint(x: dotSpacing, y: 0)
-        dots[2].center = dots[1].frame.ip_rightMiddle + CGPoint(x: dotSpacing, y: 0)
+        dots[1].center = bounds.cg_center
+        dots[0].center = dots[1].frame.leftMiddle - CGPoint(x: dotSpacing, y: 0)
+        dots[2].center = dots[1].frame.rightMiddle + CGPoint(x: dotSpacing, y: 0)
     }
 
     override var intrinsicContentSize: CGSize {

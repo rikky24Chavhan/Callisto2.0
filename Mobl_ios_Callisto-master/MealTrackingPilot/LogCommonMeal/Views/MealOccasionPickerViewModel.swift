@@ -57,7 +57,7 @@ class MealOccasionPickerViewModel: PickerViewDataSource, PickerViewDelegate {
     }
 
     func pickerView(_ _pickerView: PickerView, viewForItem item: Int, index: Int, highlighted: Bool, reusingView view: UIView?) -> UIView? {
-        let itemView = (view as? MealOccasionPickerItemView) ?? MealOccasionPickerItemView.ip_fromNib()
+        let itemView = (view as? MealOccasionPickerItemView) ?? MealOccasionPickerItemView.fromNib()
         let viewModel = itemViewModels[index]
         viewModel.highlighted = highlighted
         itemView.configureWithViewModel(viewModel)

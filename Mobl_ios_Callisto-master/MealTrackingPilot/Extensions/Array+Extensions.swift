@@ -23,4 +23,12 @@ extension Array where Element: Equatable {
         }
         return copy
     }
+    
+    @discardableResult public mutating func remove(object: Element) -> Bool {
+        for (idx, objectToCompare) in enumerated() where object == objectToCompare {
+            remove(at: idx)
+            return true
+        }
+        return false
+    }
 }

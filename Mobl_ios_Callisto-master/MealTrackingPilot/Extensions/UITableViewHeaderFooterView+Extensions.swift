@@ -18,6 +18,6 @@ extension UITableViewHeaderFooterView {
     }
 
     public static func registerNib(_ tableView: UITableView) {
-        tableView.register(ip_nib, forHeaderFooterViewReuseIdentifier: headerFooterIdentifier)
+        tableView.register(nib, forHeaderFooterViewReuseIdentifier: headerFooterIdentifier)
     }
 }

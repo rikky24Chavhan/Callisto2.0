@@ -10,7 +10,6 @@ import Foundation
 import RealmSwift
 import RxSwift
 import RxRealm
-import Intrepid
 
 
 enum MealSaveError: Error {
