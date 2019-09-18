@@ -11,16 +11,37 @@ import UIKit
 
 public extension CGRect {
     
-     var topLeft: CGPoint { return CGPoint(x: minX, y: minY) }
-     var topRight: CGPoint { return CGPoint(x: maxX, y: minY) }
-     var bottomRight: CGPoint { return CGPoint(x: maxX, y: maxY) }
-     var bottomLeft: CGPoint { return CGPoint(x: minX, y: maxY) }
+    var topLeft: CGPoint {
+        return CGPoint(x: minX, y: minY)
+    }
     
-     var leftMiddle: CGPoint { return CGPoint(x: minX, y: midY) }
-     var topMiddle: CGPoint { return CGPoint(x: midX, y: minY) }
-     var rightMiddle: CGPoint { return CGPoint(x: maxX, y: midY) }
-     var bottomMiddle: CGPoint { return CGPoint(x: midX, y: maxY) }
+    var topRight: CGPoint {
+        return CGPoint(x: maxX, y: minY)
+    }
     
+    var bottomRight: CGPoint {
+        return CGPoint(x: maxX, y: maxY)
+    }
+    
+    var bottomLeft: CGPoint {
+        return CGPoint(x: minX, y: maxY)
+    }
+    
+    var leftMiddle: CGPoint {
+        return CGPoint(x: minX, y: midY)
+    }
+    
+    var topMiddle: CGPoint {
+        return CGPoint(x: midX, y: minY)
+    }
+    
+    var rightMiddle: CGPoint {
+        return CGPoint(x: maxX, y: midY)
+    }
+    
+    var bottomMiddle: CGPoint {
+        return CGPoint(x: midX, y: maxY)
+    }
 
     var cg_width: CGFloat {
         get {
@@ -58,7 +79,7 @@ public extension CGRect {
         }
     }
     
-    var cg_center: CGPoint {
+    var center: CGPoint {
         get {
             return CGPoint(x: cg_midX, y: cg_midY)
         }
@@ -85,7 +106,6 @@ public extension CGRect {
             origin.y = newValue - cg_halfHeight
         }
     }
-    
     
 }
 

@@ -143,11 +143,9 @@ class LoginFormViewController: UIViewController, UITextFieldDelegate {
         viewModel.userID <- userIDTextField.rx.text >>> bag
         viewModel.password <- passwordTextField.rx.text >>> bag
         viewModel.status.subscribe(onNext: { [weak self] (_) in
-            guard let welf = self else { return }
-
             DispatchQueue.main.async {
-                welf.messageBubbleLabel.text = welf.viewModel.helpText
-                welf.messageBubbleView.backgroundColor = welf.viewModel.backgroundColor
+                self?.messageBubbleLabel.text = self?.viewModel.helpText
+                self?.messageBubbleView.backgroundColor = self?.viewModel.backgroundColor
             }
         }) >>> bag
     }

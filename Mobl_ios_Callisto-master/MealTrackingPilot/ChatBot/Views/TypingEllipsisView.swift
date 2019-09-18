@@ -70,7 +70,7 @@ class TypingEllipsisView: UIView {
             dot.frame = CGRect(x: 0, y: 0, width: dotDiameter, height: dotDiameter)
             dot.layer.cornerRadius = dotRadius
         }
-        dots[1].center = bounds.cg_center
+        dots[1].center = bounds.center
         dots[0].center = dots[1].frame.leftMiddle - CGPoint(x: dotSpacing, y: 0)
         dots[2].center = dots[1].frame.rightMiddle + CGPoint(x: dotSpacing, y: 0)
     }

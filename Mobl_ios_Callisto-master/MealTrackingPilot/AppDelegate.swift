@@ -20,9 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let apiClient = PilotAPIClient()
 
     let primaryUserStorage = PilotPrimaryUserStorage()
-
-    
-    
     
     let reachability = Reachability()
 

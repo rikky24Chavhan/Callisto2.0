@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 
 extension UIViewController {
+    public static func fromNib() -> Self {
+        let controller = self.init(nibName: nibName, bundle: nil)
+        return controller
+    }
+    
     public static var nibName: String {
         return "\(self)".components(separatedBy: ".").last!
     }

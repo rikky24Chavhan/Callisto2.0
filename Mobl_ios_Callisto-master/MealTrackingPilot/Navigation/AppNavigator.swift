@@ -28,7 +28,7 @@ final class AppNavigator: NSObject, LoginClientDelegate, LoginClientUIDelegate {
     }()
 
     private lazy var signInViewController: LoginLandingViewController = {
-        let controller = LoginLandingViewController.init(nibName: LoginLandingViewController.nibName, bundle: nil)
+        let controller = LoginLandingViewController.fromNib()
         controller.loginClient = self.loginClient
         return controller
     }()
