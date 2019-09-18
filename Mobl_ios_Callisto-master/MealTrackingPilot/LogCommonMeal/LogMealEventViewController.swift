@@ -28,7 +28,7 @@ public final class LogMealEventViewController: UIViewController, UITableViewData
     }
 
     @IBOutlet weak var backgroundViewContainer: UIView!
-    @IBOutlet weak var occasionPicker: PickerView!
+    @IBOutlet weak var occasionPicker: OccasionPicker!
     @IBOutlet weak var dosageRecommendationBanner: UIView!
     @IBOutlet weak var mealSelectionTableView: UITableView!
     @IBOutlet weak var nextStepButton: UIButton!

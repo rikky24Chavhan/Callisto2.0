@@ -98,6 +98,7 @@
 		5EE408541E8417E3002A6697 /* CreateMealOccasionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE408521E8417E3002A6697 /* CreateMealOccasionsViewController.swift */; };
 		5EE408551E8417E3002A6697 /* CreateMealOccasionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EE408531E8417E3002A6697 /* CreateMealOccasionsViewController.xib */; };
 		5EF436481EA7B5A300D9ABD0 /* MockLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF436471EA7B5A300D9ABD0 /* MockLocationManager.swift */; };
+		65AC567E23326FBB001835D6 /* OccasionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC567D23326FBB001835D6 /* OccasionPicker.swift */; };
 		93D4F766276CC765FC6209A7 /* Pods_MealTrackingPilotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9563EBA0AC2B40CED071536 /* Pods_MealTrackingPilotTests.framework */; };
 		AA1042261E78485D0069B595 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1042251E78485D0069B595 /* DashboardViewModel.swift */; };
 		AA1042281E7848AA0069B595 /* DashboardDateHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1042271E7848AA0069B595 /* DashboardDateHeaderView.swift */; };
@@ -261,7 +262,6 @@
 		BCA4D632231E5750005E3C00 /* MessageBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D616231E574F005E3C00 /* MessageBubbleView.swift */; };
 		BCA4D633231E5750005E3C00 /* IconMessageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D617231E574F005E3C00 /* IconMessageContentView.swift */; };
 		BCA4D634231E5750005E3C00 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D618231E574F005E3C00 /* MessageView.swift */; };
-		BCA4D63823264E0C005E3C00 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D63723264E0C005E3C00 /* PickerView.swift */; };
 		E61B65E01ECFA08D00188CCE /* DemoDashboardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B65DF1ECFA08D00188CCE /* DemoDashboardViewModelTests.swift */; };
 		E61B65E21ECFA13400188CCE /* MockKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B65E11ECFA13400188CCE /* MockKeychain.swift */; };
 		E61B65E41ECFA18200188CCE /* MockLoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B65E31ECFA18200188CCE /* MockLoginClient.swift */; };
@@ -384,6 +384,7 @@
 		5EE408521E8417E3002A6697 /* CreateMealOccasionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMealOccasionsViewController.swift; sourceTree = "<group>"; };
 		5EE408531E8417E3002A6697 /* CreateMealOccasionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateMealOccasionsViewController.xib; sourceTree = "<group>"; };
 		5EF436471EA7B5A300D9ABD0 /* MockLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLocationManager.swift; sourceTree = "<group>"; };
+		65AC567D23326FBB001835D6 /* OccasionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccasionPicker.swift; sourceTree = "<group>"; };
 		7BC7B15AF522101CC9A74342 /* Pods-MealTrackingPilotUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTrackingPilotUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealTrackingPilotUITests/Pods-MealTrackingPilotUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AA1042251E78485D0069B595 /* DashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		AA1042271E7848AA0069B595 /* DashboardDateHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardDateHeaderView.swift; sourceTree = "<group>"; };
@@ -554,7 +555,6 @@
 		BCA4D616231E574F005E3C00 /* MessageBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBubbleView.swift; sourceTree = "<group>"; };
 		BCA4D617231E574F005E3C00 /* IconMessageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconMessageContentView.swift; sourceTree = "<group>"; };
 		BCA4D618231E574F005E3C00 /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
-		BCA4D63723264E0C005E3C00 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		CB68BE3C413A8890E6DFE3B8 /* Pods-MealTrackingPilotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTrackingPilotUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealTrackingPilotUITests/Pods-MealTrackingPilotUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE24596C7B0C494F839F4A8D /* Pods-MealTrackingPilot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTrackingPilot.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealTrackingPilot/Pods-MealTrackingPilot.release.xcconfig"; sourceTree = "<group>"; };
 		E05A257C1047FBBF980480AE /* Pods_MealTrackingPilot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealTrackingPilot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -967,7 +967,7 @@
 		AF4BCFDC1E8168BF0073937D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BCA4D63723264E0C005E3C00 /* PickerView.swift */,
+				65AC567D23326FBB001835D6 /* OccasionPicker.swift */,
 				AF4BCFDD1E8168BF0073937D /* MealSelectionCell.swift */,
 				AF4BCFDE1E8168BF0073937D /* MealSelectionCell.xib */,
 				AF4BCFDF1E8168BF0073937D /* MealSelectionCellViewModel.swift */,
@@ -1543,7 +1543,6 @@
 				AACDC0021E6EFA0C0010038E /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				AFC530161E7084410028B357 /* PilotRequest+Login.swift in Sources */,
 				BCA4D622231E5750005E3C00 /* ChatNodeGraphJSONLoader.swift in Sources */,
-				BCA4D63823264E0C005E3C00 /* PickerView.swift in Sources */,
 				5E9E9BFE1E806E290053CF66 /* EditIconTextField.swift in Sources */,
 				5ED5CF731EDF1D9700780DD5 /* ModalFadeAnimationController.swift in Sources */,
 				5EDB5DE71E7B1B0E0096C3CD /* GradientView.swift in Sources */,
@@ -1656,6 +1655,7 @@
 				AA1042331E79CA290069B595 /* UIColor+PIAdditions.swift in Sources */,
 				BC3423D72306AD240000E2A0 /* PilotAPIClientConstant.swift in Sources */,
 				AFC5300E1E70813A0028B357 /* AppNavigator.swift in Sources */,
+				65AC567E23326FBB001835D6 /* OccasionPicker.swift in Sources */,
 				AF9471E71E83FB0C00220BFA /* MealEventDetailsHeaderView.swift in Sources */,
 				BCA4D623231E5750005E3C00 /* MessagesNode.swift in Sources */,
 				218450201F857EA200AB246C /* Array+Extensions.swift in Sources */,
