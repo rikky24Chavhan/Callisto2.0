@@ -103,6 +103,8 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.delegate = self
 
         tableView.tableFooterView = UIView(frame: .zero)
+        
+        tableView.transform = CGAffineTransform(scaleX: 1, y: -1)
 
         tableView.contentInset = UIEdgeInsets(
             top: Constants.tableTopInset,
@@ -196,9 +198,11 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         case .spacer:
             let cell = tableView.dequeueReusableCell(withIdentifier: SpacerCell.cellIdentifier, for: indexPath)
             cell.backgroundColor = UIColor.clear
+            cell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
             return cell
         case .message(let messageViewModel):
             let cell = tableView.dequeueReusableCell(withIdentifier: ChatMessageTableViewCell.cellIdentifier, for: indexPath)
+            cell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
             if let messageCell = cell as? ChatMessageTableViewCell {
                 messageCell.viewModel = messageViewModel
             }
