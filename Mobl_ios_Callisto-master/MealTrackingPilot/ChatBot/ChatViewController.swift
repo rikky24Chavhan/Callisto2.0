@@ -103,7 +103,6 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.delegate = self
 
         tableView.tableFooterView = UIView(frame: .zero)
-        
         tableView.transform = CGAffineTransform(rotationAngle: (-.pi))
 
         tableView.contentInset = UIEdgeInsets(
