@@ -36,7 +36,7 @@ class MessageBubbleView: UIView {
 
     private func setupImageView() {
         addSubview(imageView)
-        constrainView(toAllEdges: imageView)
+        _ = constrainView(toAllEdges: imageView)
     }
 
     private func updateBubbleImage() {

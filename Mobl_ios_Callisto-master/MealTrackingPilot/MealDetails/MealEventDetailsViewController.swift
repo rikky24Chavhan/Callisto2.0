@@ -9,7 +9,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import Intrepid
 import AVFoundation
 import Photos
 
@@ -37,7 +36,7 @@ final class MealEventDetailsViewController: UIViewController, UITableViewDataSou
     private var notesViewBag = DisposeBag()
 
     private lazy var itemContainerView: MealEventDetailsTitleView = {
-        let titleView = MealEventDetailsTitleView.ip_fromNib()
+        let titleView = MealEventDetailsTitleView.fromNib()
         return titleView
     }()
 
@@ -110,7 +109,7 @@ final class MealEventDetailsViewController: UIViewController, UITableViewDataSou
 
         // Make sure the that the title is always in the center of the navigation bar
         guard let navigationBar = navigationController?.navigationBar else { return }
-        itemContainerView.center = CGPoint(x: navigationBar.frameWidth / 2, y: navigationBar.ip_height / 2)
+        itemContainerView.center = CGPoint(x: navigationBar.frame.width / 2, y: navigationBar.bounds.height / 2)
     }
 
     private func setupNavigationBar(animated: Bool) {
@@ -172,7 +171,7 @@ final class MealEventDetailsViewController: UIViewController, UITableViewDataSou
     private func configureTableHeaderView() {
         guard viewModel.shouldDisplayTestMealMessages else { return }
 
-        let messageView = MealEventDetailsMessageView.ip_fromNib()
+        let messageView = MealEventDetailsMessageView.fromNib()
         messageView.configure(withContent: viewModel.currentTestMealMessageContent)
         tableView.tableHeaderView = messageView
     }
@@ -469,7 +468,7 @@ extension MealEventDetailsViewController: UIImagePickerControllerDelegate, UINav
             let cameraAction = UIAlertAction(title: "Take a Photo", style: .default) { _ in
                 AVCaptureDevice.requestAccess(for: .video) { result in
                     guard result else { return }
-                    Main {
+                    DispatchQueue.main.async {
                         self.showImagePicker(forSourceType: .camera)
                     }
                 }
@@ -480,7 +479,7 @@ extension MealEventDetailsViewController: UIImagePickerControllerDelegate, UINav
         let albumAction = UIAlertAction(title: "Choose From Library", style: .default) { _ in
             PHPhotoLibrary.requestAuthorization { status in
                 guard status == .authorized else { return }
-                Main {
+                DispatchQueue.main.async {
                     self.showImagePicker(forSourceType: .photoLibrary)
                 }
             }

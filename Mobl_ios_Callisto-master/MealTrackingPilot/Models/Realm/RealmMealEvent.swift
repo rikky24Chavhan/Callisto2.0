@@ -100,9 +100,6 @@ public final class RealmMealEvent: RealmSynchronizable, MealEvent, Codable {
             if let urlRequest = imageURLRequest {
                 let _ = ImageDownloader.default.imageCache?.removeImage(for: urlRequest, withIdentifier: nil)
                 ImageDownloader.default.session.sessionConfiguration.urlCache?.removeCachedResponse(for: urlRequest)
-                /* MIGRATION-COMMENT-NEED-TO-FIX
-                //ImageDownloader.default.sessionManager.session.configuration.urlCache?.removeCachedResponse(for: urlRequest)
-                */
             }
 
             // Send an empty string to the backend if the original image has been removed

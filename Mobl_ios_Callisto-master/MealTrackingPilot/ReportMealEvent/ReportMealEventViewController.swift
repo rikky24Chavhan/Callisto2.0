@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-import Intrepid
 
 class ReportMealEventViewController: UIViewController {
 

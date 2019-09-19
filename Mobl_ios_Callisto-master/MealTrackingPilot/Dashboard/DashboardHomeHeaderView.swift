@@ -28,9 +28,9 @@ public final class DashboardHomeHeaderView: UIView {
 
             // UI hack to make sure logo is not placed too high on small screen demo dashboard
             if UIDevice.current.isSmall && isDemo {
-                constrainView(logoView, above: self, withOffset: Constants.smallScreenDemologoImageToDayLabelSpace)
+                _ = constrainView(logoView, above: self, withOffset: Constants.smallScreenDemologoImageToDayLabelSpace)
             } else {
-                constrainView(logoView, above: self, withOffset: Constants.logoImageToDayLabelSpace)
+                _ = constrainView(logoView, above: self, withOffset: Constants.logoImageToDayLabelSpace)
             }
         }
     }
@@ -74,7 +74,7 @@ public final class DashboardHomeHeaderView: UIView {
     }()
 
     lazy var messageView: MessageView = {
-        let messageView = MessageView.ip_fromNib()
+        let messageView = MessageView.fromNib()
         messageView.bubbleContainerTrailingConstraint.constant = 0
         messageView.bubbleContainer.trailingAnchor.constraint(equalTo: messageView.trailingAnchor).isActive = true
         messageView.translatesAutoresizingMaskIntoConstraints = false
@@ -106,7 +106,7 @@ public final class DashboardHomeHeaderView: UIView {
         addSubview(messageView)
 
         // Constraints
-        constrainView(toMiddleHorizontally: logoView)
+        _ = constrainView(toMiddleHorizontally: logoView)
         dayLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         dayLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         mealEventCountLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true

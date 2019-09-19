@@ -88,9 +88,9 @@ class CreateMealChildViewController: UIViewController {
     private func setupIndicatorView() {
         indicatorView.color = UIColor.white
         view.addSubview(indicatorView)
-        indicatorView.constrainView(indicatorView, toWidth: Constants.indicatorDimension)
-        indicatorView.constrainView(indicatorView, toHeight: Constants.indicatorDimension)
-        view.constrainView(toRight: indicatorView, withInset: Constants.indicatorRightMargin)
+        _ = indicatorView.constrainView(indicatorView, toWidth: Constants.indicatorDimension)
+        _ = indicatorView.constrainView(indicatorView, toHeight: Constants.indicatorDimension)
+        _ = view.constrainView(toRight: indicatorView, withInset: Constants.indicatorRightMargin)
     }
 
     private func setupSwipeGestureRecognizers() {

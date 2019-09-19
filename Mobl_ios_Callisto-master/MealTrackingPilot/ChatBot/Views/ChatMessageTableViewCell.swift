@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Intrepid
 
 class ChatMessageTableViewCell: UITableViewCell {
     private var messageView: MessageView?
@@ -21,10 +20,10 @@ class ChatMessageTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        let messageView = MessageView.ip_fromNib()
+        let messageView = MessageView.fromNib()
         messageView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(messageView)
-        contentView.constrainView(toAllEdges: messageView)
+        _ = contentView.constrainView(toAllEdges: messageView)
 
         self.messageView = messageView
     }
@@ -55,6 +54,6 @@ class ChatMessageTableViewCell: UITableViewCell {
     }
 
     class func createSizingCell() -> ChatMessageTableViewCell {
-        return self.ip_fromNib()
+        return self.fromNib()
     }
 }

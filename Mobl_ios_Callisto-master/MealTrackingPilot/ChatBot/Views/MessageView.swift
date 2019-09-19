@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Intrepid
 import RxSwift
 
 class MessageView: UIView {
@@ -136,7 +135,7 @@ class MessageView: UIView {
     }
 
     private func createIconContentView(with messageViewModel: ChatMessageViewModelProtocol) -> UIView {
-        let contentView = IconMessageContentView.ip_fromNib()
+        let contentView = IconMessageContentView.fromNib()
         contentView.messageViewModel = messageViewModel
         return contentView
     }
@@ -202,7 +201,7 @@ class MessageView: UIView {
         ])
 
         let newLeadingConstraint = NSLayoutConstraint(
-            item: bubbleContainer,
+            item: bubbleContainer as Any,
             attribute: .leading,
             relatedBy: (viewModel.bubbleOrientation == .incoming) ? .equal : .greaterThanOrEqual,
             toItem: self,

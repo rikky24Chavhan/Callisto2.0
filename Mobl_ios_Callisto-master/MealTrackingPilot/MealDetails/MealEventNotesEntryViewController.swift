@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-import Intrepid
 
 class MealEventNotesEntryViewController: UIViewController, UITextViewDelegate {
     private struct Constants {
@@ -68,7 +67,7 @@ class MealEventNotesEntryViewController: UIViewController, UITextViewDelegate {
     }
 
     private func setupTitleView() {
-        let titleView = MealEventDetailsTitleView.ip_fromNib()
+        let titleView = MealEventDetailsTitleView.fromNib()
         titleView.configure(with: viewModel)
         navigationItem.titleView = titleView
     }

@@ -9,7 +9,6 @@
 import Foundation
 import RealmSwift
 
-import Intrepid
 
 enum RealmSyncControllerError: Error {
     case dataPermissionsRequired

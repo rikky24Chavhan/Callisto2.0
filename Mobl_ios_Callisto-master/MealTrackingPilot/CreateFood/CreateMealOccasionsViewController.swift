@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-import Intrepid
 
 final class CreateMealOccasionsViewController: CreateMealChildViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -62,7 +61,7 @@ final class CreateMealOccasionsViewController: CreateMealChildViewController, UI
         occasionsTableView.rowHeight = Constants.occasionTableViewRowHeight
         occasionsTableView.allowsMultipleSelection = true
         occasionsTableView.register(
-            UINib(nibName: CheckmarkTableViewCell.ip_nibName, bundle: nil),
+            UINib(nibName: CheckmarkTableViewCell.nibName, bundle: nil),
             forCellReuseIdentifier: Constants.occasionTableViewCellIdentifier
         )
     }

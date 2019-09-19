@@ -32,9 +32,9 @@ class CopyrightTableViewCell: UITableViewCell {
         copyrightLabelToBottomConstraint.constant = distanceFromBottom
 
         topView.heightAnchor.constraint(equalToConstant: topView.frame.height).isActive = true
-        contentView.constrainView(toTop: topView)
-        contentView.constrainView(toLeft: topView)
-        contentView.constrainView(toRight: topView)
-        contentView.constrainView(logoImageView, attribute: .top, to: topView, attribute: .bottom, constant: Constants.minimumDistanceToImageView, multiplier: 1.0, relation: .greaterThanOrEqual)
+        _ = contentView.constrainView(toTop: topView)
+        _ = contentView.constrainView(toLeft: topView)
+        _ = contentView.constrainView(toRight: topView)
+        _ = contentView.constrainView(logoImageView, attribute: .top, to: topView, attribute: .bottom, constant: Constants.minimumDistanceToImageView, multiplier: 1.0, relation: .greaterThanOrEqual)
     }
 }

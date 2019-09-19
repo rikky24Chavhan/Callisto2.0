@@ -8,7 +8,6 @@
 
 import Foundation
 import RxSwift
-import Intrepid
 import RealmSwift
 
 // MARK: - Parent View Model
@@ -120,13 +119,13 @@ final class CreateMealNameViewModel: CreateMealChildViewModel {
     var nextNavigationEnabled: Observable<Bool> {
         return validatedName.map { name in
             guard let name = name else { return false }
-            return name.ip_length > 0
+            return name.count > 0
         }
     }
 
     var indicatorPosition: Observable<Int?> {
         return validatedName.map { name in
-            let isNameValid = (name?.ip_length ?? 0) > 0
+            let isNameValid = (name?.count ?? 0) > 0
             return [isNameValid].firstIndex(where: { !$0 })
         }
     }
@@ -205,7 +204,7 @@ final class CreateMealOccasionsViewModel: CreateMealChildViewModel {
                 guard let welf = self else { return }
                 let occasion = viewModel.occasion
                 if !isSelected {
-                    welf.meal.occasions.ip_remove(object: occasion)
+                    welf.meal.occasions.remove(object: occasion)
                 } else if !welf.meal.occasions.contains(occasion) {
                     welf.meal.occasions.append(occasion)
                 }

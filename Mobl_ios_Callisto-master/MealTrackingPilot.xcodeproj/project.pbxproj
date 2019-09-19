@@ -60,7 +60,6 @@
 		5E42DD6F1ED76A5000CE8BF0 /* PilotRequest+ReportMealEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E42DD6E1ED76A5000CE8BF0 /* PilotRequest+ReportMealEvents.swift */; };
 		5E5224391EBA30720026A17B /* MealEventDetailsPortionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5224371EBA30720026A17B /* MealEventDetailsPortionCell.swift */; };
 		5E52243A1EBA30720026A17B /* MealEventDetailsPortionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E5224381EBA30720026A17B /* MealEventDetailsPortionCell.xib */; };
-		5E617CA51E956F0E00422969 /* TextEntry+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E617CA41E956F0D00422969 /* TextEntry+Extensions.swift */; };
 		5E6E8C501EBBA25600DBA0B2 /* DashboardTableViewCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E8C4F1EBBA25600DBA0B2 /* DashboardTableViewCellViewModelTests.swift */; };
 		5E6E8C521EC0EB0E00DBA0B2 /* AppNavigatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E8C511EC0EB0E00DBA0B2 /* AppNavigatorTests.swift */; };
 		5E6E96071EEEDAF7001BB8A9 /* PilotAPIErrorReason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E96061EEEDAF7001BB8A9 /* PilotAPIErrorReason.swift */; };
@@ -99,6 +98,15 @@
 		5EE408551E8417E3002A6697 /* CreateMealOccasionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EE408531E8417E3002A6697 /* CreateMealOccasionsViewController.xib */; };
 		5EF436481EA7B5A300D9ABD0 /* MockLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF436471EA7B5A300D9ABD0 /* MockLocationManager.swift */; };
 		93D4F766276CC765FC6209A7 /* Pods_MealTrackingPilotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9563EBA0AC2B40CED071536 /* Pods_MealTrackingPilotTests.framework */; };
+		9807AD1323291FC700D56EB9 /* UITextView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9807AD0A23291FC700D56EB9 /* UITextView+Extensions.swift */; };
+		9807AD1423291FC700D56EB9 /* Foundation+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9807AD0B23291FC700D56EB9 /* Foundation+Helper.swift */; };
+		9807AD1523291FC700D56EB9 /* CGRect+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9807AD0C23291FC700D56EB9 /* CGRect+Extensions.swift */; };
+		9807AD1623291FC700D56EB9 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9807AD0D23291FC700D56EB9 /* UIViewController+Extensions.swift */; };
+		9807AD1723291FC700D56EB9 /* TypeIdentifiable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9807AD0E23291FC700D56EB9 /* TypeIdentifiable+Extensions.swift */; };
+		9807AD1823291FC700D56EB9 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9807AD0F23291FC700D56EB9 /* CGPoint+Extensions.swift */; };
+		9807AD1923291FC700D56EB9 /* Operators+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9807AD1023291FC700D56EB9 /* Operators+Helper.swift */; };
+		9807AD1A23291FC700D56EB9 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9807AD1123291FC700D56EB9 /* UITextField+Extensions.swift */; };
+		9807AD1B23291FC700D56EB9 /* UIView+Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9807AD1223291FC700D56EB9 /* UIView+Constraint.swift */; };
 		AA1042261E78485D0069B595 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1042251E78485D0069B595 /* DashboardViewModel.swift */; };
 		AA1042281E7848AA0069B595 /* DashboardDateHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1042271E7848AA0069B595 /* DashboardDateHeaderView.swift */; };
 		AA10422A1E78543D0069B595 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1042291E78543D0069B595 /* DashboardTableViewCell.swift */; };
@@ -346,7 +354,6 @@
 		5E42DD6E1ED76A5000CE8BF0 /* PilotRequest+ReportMealEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PilotRequest+ReportMealEvents.swift"; sourceTree = "<group>"; };
 		5E5224371EBA30720026A17B /* MealEventDetailsPortionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealEventDetailsPortionCell.swift; sourceTree = "<group>"; };
 		5E5224381EBA30720026A17B /* MealEventDetailsPortionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MealEventDetailsPortionCell.xib; sourceTree = "<group>"; };
-		5E617CA41E956F0D00422969 /* TextEntry+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextEntry+Extensions.swift"; sourceTree = "<group>"; };
 		5E6E8C4F1EBBA25600DBA0B2 /* DashboardTableViewCellViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCellViewModelTests.swift; sourceTree = "<group>"; };
 		5E6E8C511EC0EB0E00DBA0B2 /* AppNavigatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigatorTests.swift; sourceTree = "<group>"; };
 		5E6E96061EEEDAF7001BB8A9 /* PilotAPIErrorReason.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PilotAPIErrorReason.swift; sourceTree = "<group>"; };
@@ -385,6 +392,15 @@
 		5EE408531E8417E3002A6697 /* CreateMealOccasionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateMealOccasionsViewController.xib; sourceTree = "<group>"; };
 		5EF436471EA7B5A300D9ABD0 /* MockLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLocationManager.swift; sourceTree = "<group>"; };
 		7BC7B15AF522101CC9A74342 /* Pods-MealTrackingPilotUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTrackingPilotUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealTrackingPilotUITests/Pods-MealTrackingPilotUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9807AD0A23291FC700D56EB9 /* UITextView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Extensions.swift"; sourceTree = "<group>"; };
+		9807AD0B23291FC700D56EB9 /* Foundation+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+Helper.swift"; sourceTree = "<group>"; };
+		9807AD0C23291FC700D56EB9 /* CGRect+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Extensions.swift"; sourceTree = "<group>"; };
+		9807AD0D23291FC700D56EB9 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		9807AD0E23291FC700D56EB9 /* TypeIdentifiable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TypeIdentifiable+Extensions.swift"; sourceTree = "<group>"; };
+		9807AD0F23291FC700D56EB9 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		9807AD1023291FC700D56EB9 /* Operators+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Operators+Helper.swift"; sourceTree = "<group>"; };
+		9807AD1123291FC700D56EB9 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		9807AD1223291FC700D56EB9 /* UIView+Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraint.swift"; sourceTree = "<group>"; };
 		AA1042251E78485D0069B595 /* DashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		AA1042271E7848AA0069B595 /* DashboardDateHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardDateHeaderView.swift; sourceTree = "<group>"; };
 		AA1042291E78543D0069B595 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
@@ -731,6 +747,15 @@
 			children = (
 				BC3423D12306ACDC0000E2A0 /* Date */,
 				AFA1A5FE1EBA8BD6001AF135 /* AlertController */,
+				9807AD0F23291FC700D56EB9 /* CGPoint+Extensions.swift */,
+				9807AD0C23291FC700D56EB9 /* CGRect+Extensions.swift */,
+				9807AD0B23291FC700D56EB9 /* Foundation+Helper.swift */,
+				9807AD1023291FC700D56EB9 /* Operators+Helper.swift */,
+				9807AD0E23291FC700D56EB9 /* TypeIdentifiable+Extensions.swift */,
+				9807AD1123291FC700D56EB9 /* UITextField+Extensions.swift */,
+				9807AD0A23291FC700D56EB9 /* UITextView+Extensions.swift */,
+				9807AD1223291FC700D56EB9 /* UIView+Constraint.swift */,
+				9807AD0D23291FC700D56EB9 /* UIViewController+Extensions.swift */,
 				AA1042321E79CA290069B595 /* UIColor+PIAdditions.swift */,
 				AAF021D71E7C7FD000850157 /* UIColor+Extensions.swift */,
 				5E27AE101ECF8C67000C3DBD /* UITableView+Extensions.swift */,
@@ -739,7 +764,6 @@
 				AA1A93681E89657700A92123 /* UIDevice+Extensions.swift */,
 				AA1A93641E85922200A92123 /* UIView+Extensions.swift */,
 				AF0D4B0B1E95465D008A7B2A /* DateFormatter+Extensions.swift */,
-				5E617CA41E956F0D00422969 /* TextEntry+Extensions.swift */,
 				AF44B7E81E982042001973DD /* UIBarButtonItem+EmptyTitle.swift */,
 				E62681911EE1B8BB008F223E /* URL+Extensions.swift */,
 				2184501F1F857EA200AB246C /* Array+Extensions.swift */,
@@ -1558,6 +1582,7 @@
 				AF353CE61E84638B00D5E7F9 /* RealmSeeder.swift in Sources */,
 				5ECA25451EE0B119005DE3BB /* LocationOffsetKeychainStorage.swift in Sources */,
 				BCA4D62A231E5750005E3C00 /* ChatCompletionViewController.swift in Sources */,
+				9807AD1523291FC700D56EB9 /* CGRect+Extensions.swift in Sources */,
 				213EF43C1F9E2B9800719A3E /* Int+Extensions.swift in Sources */,
 				AF9242A01E7AC70C004AB47A /* UserProviding.swift in Sources */,
 				AA2AEFEE1E71A88C007A113D /* StepSample.swift in Sources */,
@@ -1591,6 +1616,7 @@
 				AAAE62901E783B56000CE539 /* OpenSans.swift in Sources */,
 				5E8DB1421E85B8C100885851 /* PilotRequest+CreateMeal.swift in Sources */,
 				AA1D46A21E65BDF900525CB1 /* HealthKitController.swift in Sources */,
+				9807AD1723291FC700D56EB9 /* TypeIdentifiable+Extensions.swift in Sources */,
 				BCA4D629231E5750005E3C00 /* UserPermissionsNode.swift in Sources */,
 				BCA4D632231E5750005E3C00 /* MessageBubbleView.swift in Sources */,
 				5E3B9CBD1E79B49400EA01A9 /* RealmMealEvent.swift in Sources */,
@@ -1622,7 +1648,9 @@
 				5E0B8DD31E93F2E600723503 /* PilotRequest+GetMeals.swift in Sources */,
 				5E3B9CB81E797F2E00EA01A9 /* MealDataController.swift in Sources */,
 				5EDB5DEA1E7B22F10096C3CD /* Appearance.swift in Sources */,
+				9807AD1A23291FC700D56EB9 /* UITextField+Extensions.swift in Sources */,
 				AA2ED8671EC4C943009C3FA2 /* ImageViewerViewController.swift in Sources */,
+				9807AD1B23291FC700D56EB9 /* UIView+Constraint.swift in Sources */,
 				AF4BCFE21E8168BF0073937D /* MealSelectionCellViewModel.swift in Sources */,
 				1D24F13621139EC8008EE56A /* PilotRequest+DownloadImage.swift in Sources */,
 				1D75744F20FCD70D001AE4B7 /* LoginFormViewController.swift in Sources */,
@@ -1630,10 +1658,13 @@
 				5E8DB1461E8A9BCA00885851 /* PulsingIndicatorView.swift in Sources */,
 				5E42DD671ED7334C00CE8BF0 /* ReportMealEventViewController.swift in Sources */,
 				5E42DD6B1ED75CD700CE8BF0 /* RoundedModalPresentationController.swift in Sources */,
+				9807AD1623291FC700D56EB9 /* UIViewController+Extensions.swift in Sources */,
 				5E26A2D31E8C52D900AB03F2 /* LabelCollectionViewCell.swift in Sources */,
+				9807AD1923291FC700D56EB9 /* Operators+Helper.swift in Sources */,
 				AA2ED8641EC4A51B009C3FA2 /* PilotRequest+UpdateMealEvent.swift in Sources */,
 				AFC530181E7089930028B357 /* PilotLoginClient.swift in Sources */,
 				AF4BCFE01E8168BF0073937D /* MealSelectionCell.swift in Sources */,
+				9807AD1823291FC700D56EB9 /* CGPoint+Extensions.swift in Sources */,
 				BCA4D627231E5750005E3C00 /* UserConfirmationNode.swift in Sources */,
 				BCA4D61E231E5750005E3C00 /* AsyncDispatcher.swift in Sources */,
 				AFC5300A1E70812B0028B357 /* DashboardViewController.swift in Sources */,
@@ -1661,6 +1692,7 @@
 				218450201F857EA200AB246C /* Array+Extensions.swift in Sources */,
 				BCA4D626231E5750005E3C00 /* ChatDriver.swift in Sources */,
 				1DC8144B2119EEEC005B1088 /* CopyrightTableViewCell.swift in Sources */,
+				9807AD1323291FC700D56EB9 /* UITextView+Extensions.swift in Sources */,
 				AFEF667A1E81EE4800903F94 /* MealOccasionPickerItemViewModel.swift in Sources */,
 				BCA4D625231E5750005E3C00 /* BasicChatNodeGraph.swift in Sources */,
 				1DC81458211CC440005B1088 /* SettingTableViewCell.swift in Sources */,
@@ -1670,7 +1702,6 @@
 				AA1A93691E89657700A92123 /* UIDevice+Extensions.swift in Sources */,
 				5E9E9BF61E8023DD0053CF66 /* CreateMealChildViewController.swift in Sources */,
 				5E1F0A0E1EA69A0500C380F8 /* PilotRequest+CreateLocation.swift in Sources */,
-				5E617CA51E956F0E00422969 /* TextEntry+Extensions.swift in Sources */,
 				1DC81453211CB5B2005B1088 /* StatementViewController.swift in Sources */,
 				AF9242AA1E7B2CA9004AB47A /* JsonWebTokenStorage.swift in Sources */,
 				AFBADF791E71B69300D082F5 /* PilotAPIClient.swift in Sources */,
@@ -1692,6 +1723,7 @@
 				AF3541D21EB7ABD9004936F9 /* OnboardingManager.swift in Sources */,
 				1DF8390B2125FBDC00A2846D /* CreateMealCarbsViewController.swift in Sources */,
 				5E27AE111ECF8C67000C3DBD /* UITableView+Extensions.swift in Sources */,
+				9807AD1423291FC700D56EB9 /* Foundation+Helper.swift in Sources */,
 				AACE4B2E1E8C03E300B11212 /* MealStatistics.swift in Sources */,
 				BCA4D61A231E5750005E3C00 /* ChatCompletionViewModel.swift in Sources */,
 				21084EAD1F9E3CE700252182 /* Decodable+Extensions.swift in Sources */,

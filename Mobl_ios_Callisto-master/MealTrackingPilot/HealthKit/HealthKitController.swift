@@ -8,7 +8,6 @@
 
 import Foundation
 import HealthKit
-import Intrepid
 import RealmSwift
 
 

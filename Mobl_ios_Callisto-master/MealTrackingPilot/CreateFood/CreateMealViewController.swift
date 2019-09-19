@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Intrepid
 
 class CreateMealViewController: UIViewController, CreateMealChildViewControllerDelegate, SegmentedSliderDelegate {
     private struct Constants {
@@ -81,7 +80,7 @@ class CreateMealViewController: UIViewController, CreateMealChildViewControllerD
         let backgroundView = GradientView(colors: colors, direction: .vertical)
         backgroundView.frame = view.bounds
         view.insertSubview(backgroundView, at: 0)
-        view.constrainView(toAllEdges: backgroundView)
+        _ = view.constrainView(toAllEdges: backgroundView)
 
         self.backgroundView = backgroundView
     }
@@ -103,7 +102,7 @@ class CreateMealViewController: UIViewController, CreateMealChildViewControllerD
     private func setupChildViewControllers() {
         let childViewControllers = viewModel.childViewModels.map { $0.viewController }
         childViewControllers.forEach {
-            ip_addChildViewController($0, to: containerScrollView)
+            addChildViewController($0, to: containerScrollView)
             $0.delegate = self
         }
     }

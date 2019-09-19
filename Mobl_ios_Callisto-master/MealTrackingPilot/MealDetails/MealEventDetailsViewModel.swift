@@ -8,7 +8,6 @@
 
 import Foundation
 import RxSwift
-import Intrepid
 import RealmSwift
 import KeychainAccess
 import AlamofireImage

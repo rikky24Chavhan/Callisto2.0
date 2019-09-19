@@ -9,7 +9,6 @@
 import Foundation
 import RealmSwift
 import RxSwift
-import Intrepid
 
 
 fileprivate struct Section {
@@ -360,7 +359,7 @@ public class DashboardViewModel: ReportMealEventViewModelDelegate {
                 NSAttributedString.Key.font : UIFont.openSansLightFont(size: fontSize),
                 NSAttributedString.Key.foregroundColor : UIColor.piWhite
             ],
-            range: NSRange(location: 0, length: message.ip_length)
+            range: NSRange(location: 0, length: message.count)
         )
         if let boldRange = boldRange {
             attributedString.addAttributes(
