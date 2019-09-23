@@ -98,7 +98,11 @@
 		5EE408541E8417E3002A6697 /* CreateMealOccasionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE408521E8417E3002A6697 /* CreateMealOccasionsViewController.swift */; };
 		5EE408551E8417E3002A6697 /* CreateMealOccasionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EE408531E8417E3002A6697 /* CreateMealOccasionsViewController.xib */; };
 		5EF436481EA7B5A300D9ABD0 /* MockLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF436471EA7B5A300D9ABD0 /* MockLocationManager.swift */; };
+		65403A412338C653008B0022 /* OccasionPicker+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65403A402338C653008B0022 /* OccasionPicker+Helpers.swift */; };
+		65403A432338D27A008B0022 /* OccasionPickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65403A422338D27A008B0022 /* OccasionPickerCollectionViewCell.swift */; };
 		65AC567E23326FBB001835D6 /* OccasionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC567D23326FBB001835D6 /* OccasionPicker.swift */; };
+		65D63D43233900EE004C895A /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D63D42233900EE004C895A /* CGPoint+Extensions.swift */; };
+		65D63D4523390100004C895A /* CGSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D63D4423390100004C895A /* CGSize+Extensions.swift */; };
 		93D4F766276CC765FC6209A7 /* Pods_MealTrackingPilotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9563EBA0AC2B40CED071536 /* Pods_MealTrackingPilotTests.framework */; };
 		AA1042261E78485D0069B595 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1042251E78485D0069B595 /* DashboardViewModel.swift */; };
 		AA1042281E7848AA0069B595 /* DashboardDateHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1042271E7848AA0069B595 /* DashboardDateHeaderView.swift */; };
@@ -384,7 +388,11 @@
 		5EE408521E8417E3002A6697 /* CreateMealOccasionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMealOccasionsViewController.swift; sourceTree = "<group>"; };
 		5EE408531E8417E3002A6697 /* CreateMealOccasionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateMealOccasionsViewController.xib; sourceTree = "<group>"; };
 		5EF436471EA7B5A300D9ABD0 /* MockLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLocationManager.swift; sourceTree = "<group>"; };
+		65403A402338C653008B0022 /* OccasionPicker+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OccasionPicker+Helpers.swift"; sourceTree = "<group>"; };
+		65403A422338D27A008B0022 /* OccasionPickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccasionPickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		65AC567D23326FBB001835D6 /* OccasionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccasionPicker.swift; sourceTree = "<group>"; };
+		65D63D42233900EE004C895A /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		65D63D4423390100004C895A /* CGSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extensions.swift"; sourceTree = "<group>"; };
 		7BC7B15AF522101CC9A74342 /* Pods-MealTrackingPilotUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTrackingPilotUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealTrackingPilotUITests/Pods-MealTrackingPilotUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AA1042251E78485D0069B595 /* DashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		AA1042271E7848AA0069B595 /* DashboardDateHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardDateHeaderView.swift; sourceTree = "<group>"; };
@@ -732,6 +740,8 @@
 				BC3423D12306ACDC0000E2A0 /* Date */,
 				AFA1A5FE1EBA8BD6001AF135 /* AlertController */,
 				AA1042321E79CA290069B595 /* UIColor+PIAdditions.swift */,
+				65D63D42233900EE004C895A /* CGPoint+Extensions.swift */,
+				65D63D4423390100004C895A /* CGSize+Extensions.swift */,
 				AAF021D71E7C7FD000850157 /* UIColor+Extensions.swift */,
 				5E27AE101ECF8C67000C3DBD /* UITableView+Extensions.swift */,
 				AA10422C1E7854E90069B595 /* UITableViewCell+Extensions.swift */,
@@ -968,6 +978,8 @@
 			isa = PBXGroup;
 			children = (
 				65AC567D23326FBB001835D6 /* OccasionPicker.swift */,
+				65403A402338C653008B0022 /* OccasionPicker+Helpers.swift */,
+				65403A422338D27A008B0022 /* OccasionPickerCollectionViewCell.swift */,
 				AF4BCFDD1E8168BF0073937D /* MealSelectionCell.swift */,
 				AF4BCFDE1E8168BF0073937D /* MealSelectionCell.xib */,
 				AF4BCFDF1E8168BF0073937D /* MealSelectionCellViewModel.swift */,
@@ -1590,6 +1602,7 @@
 				AAAE62901E783B56000CE539 /* OpenSans.swift in Sources */,
 				5E8DB1421E85B8C100885851 /* PilotRequest+CreateMeal.swift in Sources */,
 				AA1D46A21E65BDF900525CB1 /* HealthKitController.swift in Sources */,
+				65D63D4523390100004C895A /* CGSize+Extensions.swift in Sources */,
 				BCA4D629231E5750005E3C00 /* UserPermissionsNode.swift in Sources */,
 				BCA4D632231E5750005E3C00 /* MessageBubbleView.swift in Sources */,
 				5E3B9CBD1E79B49400EA01A9 /* RealmMealEvent.swift in Sources */,
@@ -1605,6 +1618,7 @@
 				AAF021D61E7C771200850157 /* RoundedCornerView.swift in Sources */,
 				AA10422D1E7854E90069B595 /* UITableViewCell+Extensions.swift in Sources */,
 				5EA734B81EB7B6950056D4D5 /* Synchronizable.swift in Sources */,
+				65D63D43233900EE004C895A /* CGPoint+Extensions.swift in Sources */,
 				AF2439211E8D670900737A94 /* PilotRequest+CreateMealEvent.swift in Sources */,
 				BCA4D633231E5750005E3C00 /* IconMessageContentView.swift in Sources */,
 				BCA4D61D231E5750005E3C00 /* ChatMessageViewModelProtocol.swift in Sources */,
@@ -1616,6 +1630,7 @@
 				AFA1A6001EBA8C2E001AF135 /* UIAlertActionViewModel.swift in Sources */,
 				5EA396F61EE98C2D00BD95DF /* UIAlertController+Extensions.swift in Sources */,
 				5E27AE0D1ECE0E68000C3DBD /* MealEventDetailsMessageView.swift in Sources */,
+				65403A412338C653008B0022 /* OccasionPicker+Helpers.swift in Sources */,
 				5E42DD641ED7333900CE8BF0 /* ReportMealEventViewModel.swift in Sources */,
 				5E9E9BEE1E7C59160053CF66 /* SegmentedSlider.swift in Sources */,
 				5E0B8DD31E93F2E600723503 /* PilotRequest+GetMeals.swift in Sources */,
@@ -1627,6 +1642,7 @@
 				1D75744F20FCD70D001AE4B7 /* LoginFormViewController.swift in Sources */,
 				AF3541DB1EB7ACC6004936F9 /* PermissionRequestController.swift in Sources */,
 				5E8DB1461E8A9BCA00885851 /* PulsingIndicatorView.swift in Sources */,
+				65403A432338D27A008B0022 /* OccasionPickerCollectionViewCell.swift in Sources */,
 				5E42DD671ED7334C00CE8BF0 /* ReportMealEventViewController.swift in Sources */,
 				5E42DD6B1ED75CD700CE8BF0 /* RoundedModalPresentationController.swift in Sources */,
 				5E26A2D31E8C52D900AB03F2 /* LabelCollectionViewCell.swift in Sources */,

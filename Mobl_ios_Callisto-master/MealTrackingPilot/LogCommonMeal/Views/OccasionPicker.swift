@@ -2,7 +2,7 @@
 //  OccasionPicker.swift
 //  MealTrackingPilot
 //
-//  Created by GURU on 17/09/19.
+//  Created by Gowtham on 17/09/19.
 //  Copyright © 2019 LTTS. All rights reserved.
 //
 
@@ -22,89 +22,12 @@ import UIKit
     @objc optional func occasionPicker(_ occasionPicker: OccasionPicker, didTapItem item: Int, index: Int)
     @objc optional func occasionPicker(_ occasionPicker: OccasionPicker, styleForLabel label: UILabel, highlighted: Bool)
     @objc optional func occasionPicker(_ occasionPicker: OccasionPicker, viewForItem item: Int, index: Int, highlighted: Bool, reusingView view: UIView?) -> UIView?
-    
     @objc optional func occasionPickerWillBeginMoving(_ occasionPicker: OccasionPicker)
     @objc optional func occasionPickerDidEndMoving(_ occasionPicker: OccasionPicker)
 }
 
-open class OccasionPicker: UIView {
-    
-    // MARK: UI elements
-    
-    fileprivate class OccasionPickerCollectionViewCell: UICollectionViewCell {
-        lazy var titleLabel: UILabel = {
-            let titleLabel = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: self.contentView.frame.width, height: self.contentView.frame.height))
-            titleLabel.textAlignment = .center
-            
-            return titleLabel
-        }()
-        
-        var customView: UIView? {
-            willSet {
-                if customView != newValue {
-                    customView?.removeFromSuperview()
-                }
-            }
-            didSet {
-                if let newCustomView = customView {
-                    contentView.addSubview(newCustomView)
-                    
-                    newCustomView.translatesAutoresizingMaskIntoConstraints = false
-                    for format in [ "H:|[customView]|", "V:|[customView]|" ] {
-                        contentView.addConstraints(NSLayoutConstraint.constraints(
-                            withVisualFormat: format,
-                            options: [],
-                            metrics: nil,
-                            views: ["customView" : newCustomView]
-                        ))
-                    }
-                }
-            }
-        }
-    }
-    
-    /**
-     ScrollingStyle Enum.
-     
-     - parameter Default: Show only the number of items informed in data source.
-     
-     - parameter Infinite: Loop through the data source offering a infinite scrolling experience to the user.
-     */
-    
-    @objc public enum ScrollingStyle: Int {
-        case `default`
-        case infinite
-    }
-    
-    /**
-     ScrollingDirection Enum.
-     
-     - parameter horizontal: Loads picker items with horizontal scrolling
-     
-     - parameter vertical: Loads picker items with vertical scrolling
-     */
-    
-    @objc public enum ScrollingDirection: Int {
-        case horizontal
-        case vertical
-        
-        func opposite() -> ScrollingDirection {
-            return self == .horizontal ? .vertical : .horizontal
-        }
-        
-        fileprivate func collectionViewScrollDirection() -> UICollectionView.ScrollDirection {
-            return self == .horizontal ? .horizontal : .vertical
-        }
-        
-        fileprivate func spanLayoutAttribute() -> NSLayoutConstraint.Attribute {
-            return self == .horizontal ? .width : .height
-        }
-        
-        fileprivate func lateralSpanLayoutAttribute() -> NSLayoutConstraint.Attribute {
-            return opposite().spanLayoutAttribute()
-        }
-    }
-    
+public class OccasionPicker: UIView {
+
     // MARK: Picker Properties
     
     var enabled = true {
@@ -117,10 +40,10 @@ open class OccasionPicker: UIView {
         }
     }
     
-    fileprivate var selectionOverlaySpanConstraint: NSLayoutConstraint!
-    fileprivate var selectionImageSpanConstraint: NSLayoutConstraint!
-    fileprivate var selectionIndicatorEdgeConstraint: NSLayoutConstraint!
-    fileprivate var pickerCellBackgroundColor: UIColor?
+    private var selectionOverlaySpanConstraint: NSLayoutConstraint!
+    private var selectionImageSpanConstraint: NSLayoutConstraint!
+    private var selectionIndicatorEdgeConstraint: NSLayoutConstraint!
+    private var pickerCellBackgroundColor: UIColor?
     
     var numberOfItemsByDataSource: Int {
         get {
@@ -128,12 +51,12 @@ open class OccasionPicker: UIView {
         }
     }
     
-    fileprivate let occasionPickerCellIdentifier = "occasionPickerCell"
+    private let occasionPickerCellIdentifier = "occasionPickerCell"
     
-    open weak var dataSource: OccasionPickerDataSource?
-    open weak var delegate: OccasionPickerDelegate?
+    weak var dataSource: OccasionPickerDataSource?
+    weak var delegate: OccasionPickerDelegate?
     
-    open lazy var selectionIndicator: UIView = {
+    lazy var selectionIndicator: UIView = {
         let selectionIndicator = UIView()
         selectionIndicator.backgroundColor = self.tintColor
         selectionIndicator.alpha = 0.0
@@ -141,7 +64,7 @@ open class OccasionPicker: UIView {
         return selectionIndicator
     }()
     
-    open lazy var selectionOverlay: UIView = {
+    lazy var selectionOverlay: UIView = {
         let selectionOverlay = UIView()
         selectionOverlay.backgroundColor = self.tintColor
         selectionOverlay.alpha = 0.0
@@ -149,7 +72,7 @@ open class OccasionPicker: UIView {
         return selectionOverlay
     }()
     
-    open lazy var selectionImageView: UIImageView = {
+    lazy var selectionImageView: UIImageView = {
         let selectionImageView = UIImageView()
         selectionImageView.alpha = 0.0
         
@@ -166,29 +89,29 @@ open class OccasionPicker: UIView {
         return collectionView
     }()
     
-    open var currentSelectedItem: Int!
-    open var currentSelectedIndex: Int {
+    var currentSelectedItem: Int!
+    var currentSelectedIndex: Int {
         get {
             return indexForItem(currentSelectedItem)
         }
     }
     
-    fileprivate var infinityItemsMultiplier: Int = 1
-    fileprivate var setupHasBeenDone = false
+    private var infinityItemsMultiplier: Int = 1
+    private var setupHasBeenDone = false
     
-    fileprivate var isScrolling = false {
+    private var isScrolling = false {
         didSet {
             trackMovementChanges()
         }
     }
     
-    fileprivate var isAnimating = false {
+    private var isAnimating = false {
         didSet {
             trackMovementChanges()
         }
     }
     
-    open var scrollingStyle = ScrollingStyle.default {
+    var scrollingStyle = ScrollingStyle.default {
         didSet {
             switch scrollingStyle {
             case .default:
@@ -199,7 +122,7 @@ open class OccasionPicker: UIView {
         }
     }
     
-    open var scrollingDirection = ScrollingDirection.vertical {
+    var scrollingDirection = ScrollingDirection.vertical {
         didSet {
             if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
                 layout.scrollDirection = scrollingDirection.collectionViewScrollDirection()
@@ -219,7 +142,7 @@ open class OccasionPicker: UIView {
     
     // MARK: Subviews Setup
     
-    fileprivate func configureSetup() {
+    private func configureSetup() {
         infinityItemsMultiplier = generateInfinityItemsMultiplier()
         
         translatesAutoresizingMaskIntoConstraints = false
@@ -236,7 +159,7 @@ open class OccasionPicker: UIView {
         }
     }
     
-    fileprivate func setupCollectionView() {
+    private func setupCollectionView() {
         collectionView.backgroundColor = .clear
         collectionView.allowsSelection = true
         collectionView.allowsMultipleSelection = false
@@ -253,26 +176,30 @@ open class OccasionPicker: UIView {
         
         let collectionViewWidth = NSLayoutConstraint(item: collectionView, attribute: .width, relatedBy: .equal, toItem: self,
                                                      attribute: .width, multiplier: 1, constant: 0)
+        addConstraint(collectionViewWidth)
+        
         let collectionViewHeight = NSLayoutConstraint(item: collectionView, attribute: .height, relatedBy: .equal, toItem: self,
                                                       attribute: .height, multiplier: 1, constant: 0)
+        addConstraint(collectionViewHeight)
+        
         let collectionViewLeading = NSLayoutConstraint(item: collectionView, attribute: .leading, relatedBy: .equal, toItem: self,
                                                        attribute: .leading, multiplier: 1, constant: 0)
-        let collectionViewTop = NSLayoutConstraint(item: collectionView, attribute: .top, relatedBy: .equal, toItem: self,
-                                                   attribute: .top, multiplier: 1, constant: 0)
-        let collectionViewBottom = NSLayoutConstraint(item: collectionView, attribute: .bottom, relatedBy: .equal, toItem: self,
-                                                      attribute: .bottom, multiplier: 1, constant: 0)
+        addConstraint(collectionViewLeading)
+        
         let collectionViewTrailing = NSLayoutConstraint(item: collectionView, attribute: .trailing, relatedBy: .equal, toItem: self,
                                                         attribute: .trailing, multiplier: 1, constant: 0)
-        
-        addConstraint(collectionViewWidth)
-        addConstraint(collectionViewHeight)
-        addConstraint(collectionViewTop)
-        addConstraint(collectionViewBottom)
-        addConstraint(collectionViewLeading)
         addConstraint(collectionViewTrailing)
+        
+        let collectionViewTop = NSLayoutConstraint(item: collectionView, attribute: .top, relatedBy: .equal, toItem: self,
+                                                   attribute: .top, multiplier: 1, constant: 0)
+        addConstraint(collectionViewTop)
+        
+        let collectionViewBottom = NSLayoutConstraint(item: collectionView, attribute: .bottom, relatedBy: .equal, toItem: self,
+                                                      attribute: .bottom, multiplier: 1, constant: 0)
+        addConstraint(collectionViewBottom)
     }
     
-    fileprivate func setupSelectionOverlay() {
+    private func setupSelectionOverlay() {
         selectionOverlay.isUserInteractionEnabled = false
         selectionOverlay.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(selectionOverlay)
@@ -289,14 +216,14 @@ open class OccasionPicker: UIView {
         
         let selectionOverlayX = NSLayoutConstraint(item: selectionOverlay, attribute: .centerX, relatedBy: .equal, toItem: self,
                                                    attribute: .centerX, multiplier: 1, constant: 0)
+        addConstraint(selectionOverlayX)
+        
         let selectionOverlayY = NSLayoutConstraint(item: selectionOverlay, attribute: .centerY, relatedBy: .equal, toItem: self,
                                                    attribute: .centerY, multiplier: 1, constant: 0)
-        
-        addConstraint(selectionOverlayX)
         addConstraint(selectionOverlayY)
     }
     
-    fileprivate func setupSelectionImageView() {
+    private func setupSelectionImageView() {
         selectionImageView.isUserInteractionEnabled = false
         selectionImageView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(selectionImageView)
@@ -313,14 +240,14 @@ open class OccasionPicker: UIView {
         
         let selectionImageX = NSLayoutConstraint(item: selectionImageView, attribute: .centerX, relatedBy: .equal, toItem: self,
                                                  attribute: .centerX, multiplier: 1, constant: 0)
+        addConstraint(selectionImageX)
+        
         let selectionImageY = NSLayoutConstraint(item: selectionImageView, attribute: .centerY, relatedBy: .equal, toItem: self,
                                                  attribute: .centerY, multiplier: 1, constant: 0)
-        
-        addConstraint(selectionImageX)
         addConstraint(selectionImageY)
     }
     
-    fileprivate func setupSelectionIndicator() {
+    private func setupSelectionIndicator() {
         selectionIndicator.translatesAutoresizingMaskIntoConstraints = false
         addSubview(selectionIndicator)
         
@@ -337,7 +264,6 @@ open class OccasionPicker: UIView {
         let edgeAttribute: NSLayoutConstraint.Attribute = scrollingDirection == .horizontal ? .trailing : .bottom
         let spanCenterAttribute: NSLayoutConstraint.Attribute = scrollingDirection == .horizontal ? .centerX : .centerY
         let lateralCenterAttribute: NSLayoutConstraint.Attribute = scrollingDirection == .horizontal ? .centerY : .centerX
-        
         selectionIndicatorEdgeConstraint = NSLayoutConstraint(item: selectionIndicator, attribute: edgeAttribute, relatedBy: .equal,
                                                               toItem: self, attribute: spanCenterAttribute, multiplier: 1, constant: itemSpan / 2)
         addConstraint(selectionIndicatorEdgeConstraint)
@@ -349,7 +275,7 @@ open class OccasionPicker: UIView {
     
     // MARK: Infinite Scrolling Helpers
     
-    fileprivate func generateInfinityItemsMultiplier() -> Int {
+    private func generateInfinityItemsMultiplier() -> Int {
         if scrollingStyle == .default {
             return 1
         }
@@ -367,7 +293,7 @@ open class OccasionPicker: UIView {
     
     // MARK: UI handlers
     
-    override open func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         
         if !setupHasBeenDone {
@@ -376,7 +302,7 @@ open class OccasionPicker: UIView {
         }
     }
     
-    fileprivate func adjustSelectionOverlayHeightConstraint() {
+    private func adjustSelectionOverlayHeightConstraint() {
         if selectionOverlaySpanConstraint.constant != itemSpan || selectionImageSpanConstraint.constant != itemSpan || selectionIndicatorEdgeConstraint.constant != (itemSpan / 2) {
             selectionOverlaySpanConstraint.constant = itemSpan
             selectionImageSpanConstraint.constant = itemSpan
@@ -385,7 +311,7 @@ open class OccasionPicker: UIView {
         }
     }
     
-    fileprivate func indexForItem(_ item: Int) -> Int {
+    private func indexForItem(_ item: Int) -> Int {
         return item % (numberOfItemsByDataSource > 0 ? numberOfItemsByDataSource : 1)
     }
     
@@ -396,7 +322,7 @@ open class OccasionPicker: UIView {
      
      - parameter item: A valid index provided by Data Source.
      */
-    fileprivate func selectedNearbyToMiddleItem(_ item: Int) {
+    private func selectedNearbyToMiddleItem(_ item: Int) {
         currentSelectedItem = item % numberOfItemsByDataSource
         collectionView.reloadData()
         
@@ -408,7 +334,7 @@ open class OccasionPicker: UIView {
         }
     }
     
-    fileprivate func setContentOffset(_ offset: CGFloat, animated: Bool) {
+    private func setContentOffset(_ offset: CGFloat, animated: Bool) {
         var offsetPoint = CGPoint.zero
         switch scrollingDirection {
         case .horizontal:
@@ -424,15 +350,15 @@ open class OccasionPicker: UIView {
         collectionView.setContentOffset(offsetPoint, animated: animated)
     }
     
-    fileprivate var itemSpan: CGFloat {
+    private var itemSpan: CGFloat {
         return delegate?.occasionPickerSpanForItems(self) ?? 0
     }
     
-    fileprivate var itemLateralSpan: CGFloat {
+    private var itemLateralSpan: CGFloat {
         return bounds.size.lateralSpan(forDirection: scrollingDirection)
     }
     
-    fileprivate var endCapSpan: CGFloat {
+    private var endCapSpan: CGFloat {
         return (bounds.size.span(forDirection: scrollingDirection) - itemSpan) * 0.5
     }
     
@@ -441,7 +367,7 @@ open class OccasionPicker: UIView {
      
      - parameter item: The item index that the user tapped, i.e. the Data Source index times the `infinityItemsMultiplier`.
      */
-    fileprivate func selectTappedItem(_ item: Int) {
+    private func selectTappedItem(_ item: Int) {
         delegate?.occasionPicker?(self, didTapItem: item, index: indexForItem(item))
         selectItem(item, animated: true)
     }
@@ -449,27 +375,27 @@ open class OccasionPicker: UIView {
     /**
      Configure the first item selection: If some pre-selected item was set, we select it, else we select the nearby to middle at all.
      */
-    fileprivate func configureFirstSelection() {
+    private func configureFirstSelection() {
         let itemToSelect = currentSelectedItem != nil ? currentSelectedItem : Int(ceil(Float(numberOfItemsByDataSource) / 2.0))
         selectedNearbyToMiddleItem(itemToSelect!)
     }
     
-    fileprivate func turnOccasionPickerOn() {
+    private func turnOccasionPickerOn() {
         collectionView.isScrollEnabled = true
     }
     
-    fileprivate func turnOccasionPickerOff() {
+    private func turnOccasionPickerOff() {
         collectionView.isScrollEnabled = false
     }
     
     /**
-     This is an private helper that we use to reach the visible index of the current selected item.
-     Because of we multiply the items several times to create an Infinite Scrolling experience, the index of a visible selected item may
+     This is a private helper that we use to reach the visible index of the current selected item.
+     Since we multiply the items several times to create an Infinite Scrolling experience, the index of a visible selected item may
      not be the same as the index provided on Data Source.
      
      - returns: The visible index of current selected item.
      */
-    fileprivate func visibleIndexOfSelectedItem() -> Int {
+    private func visibleIndexOfSelectedItem() -> Int {
         let middleMultiplier = scrollingStyle == .infinite ? (infinityItemsMultiplier / 2) : infinityItemsMultiplier
         let middleIndex = numberOfItemsByDataSource * middleMultiplier
         let indexForSelectedItem: Int
@@ -486,7 +412,7 @@ open class OccasionPicker: UIView {
         return indexForSelectedItem
     }
     
-    open func selectItem(_ item : Int, animated: Bool) {
+    func selectItem(_ item : Int, animated: Bool) {
         
         var finalItem = item;
         
@@ -552,45 +478,6 @@ extension OccasionPicker: UICollectionViewDataSource {
     }
 }
 
-fileprivate extension CGPoint {
-    init (offset: CGFloat, lateralOffset: CGFloat = 0, direction: OccasionPicker.ScrollingDirection) {
-        let x = direction == .horizontal ? offset : lateralOffset
-        let y = direction == .vertical ? offset : lateralOffset
-        self.init(x: x, y: y)
-    }
-    
-    func offset(forDirection direction: OccasionPicker.ScrollingDirection) -> CGFloat {
-        return direction == .horizontal ? x : y
-    }
-    
-    mutating func setOffset(_ offset: CGFloat, forDirection direction: OccasionPicker.ScrollingDirection) {
-        switch direction {
-        case .horizontal:
-            x = offset
-            break
-        case .vertical:
-            y = offset
-            break
-        }
-    }
-}
-
-fileprivate extension CGSize {
-    init(span: CGFloat, lateralSpan: CGFloat = 0, direction: OccasionPicker.ScrollingDirection) {
-        let width = direction == .horizontal ? span : lateralSpan
-        let height = direction == .vertical ? span : lateralSpan
-        self.init(width: width, height: height)
-    }
-    
-    func span(forDirection direction: OccasionPicker.ScrollingDirection) -> CGFloat {
-        return direction == .horizontal ? width : height
-    }
-    
-    func lateralSpan(forDirection direction: OccasionPicker.ScrollingDirection) -> CGFloat {
-        return span(forDirection: direction.opposite())
-    }
-}
-
 extension OccasionPicker: UICollectionViewDelegate {
     
     // MARK: UICollectionViewDelegate
@@ -601,6 +488,8 @@ extension OccasionPicker: UICollectionViewDelegate {
 }
 
 extension OccasionPicker: UICollectionViewDelegateFlowLayout {
+    
+    // MARK: UICollectionViewDelegateFlowLayout
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let lateralSpan = bounds.size.lateralSpan(forDirection: scrollingDirection)
