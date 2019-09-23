@@ -103,6 +103,7 @@
 		65AC567E23326FBB001835D6 /* OccasionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC567D23326FBB001835D6 /* OccasionPicker.swift */; };
 		65D63D43233900EE004C895A /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D63D42233900EE004C895A /* CGPoint+Extensions.swift */; };
 		65D63D4523390100004C895A /* CGSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D63D4423390100004C895A /* CGSize+Extensions.swift */; };
+		65D63D4723391214004C895A /* OccasionPicker+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D63D4623391214004C895A /* OccasionPicker+Extensions.swift */; };
 		93D4F766276CC765FC6209A7 /* Pods_MealTrackingPilotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9563EBA0AC2B40CED071536 /* Pods_MealTrackingPilotTests.framework */; };
 		AA1042261E78485D0069B595 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1042251E78485D0069B595 /* DashboardViewModel.swift */; };
 		AA1042281E7848AA0069B595 /* DashboardDateHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1042271E7848AA0069B595 /* DashboardDateHeaderView.swift */; };
@@ -393,6 +394,7 @@
 		65AC567D23326FBB001835D6 /* OccasionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccasionPicker.swift; sourceTree = "<group>"; };
 		65D63D42233900EE004C895A /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 		65D63D4423390100004C895A /* CGSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extensions.swift"; sourceTree = "<group>"; };
+		65D63D4623391214004C895A /* OccasionPicker+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OccasionPicker+Extensions.swift"; sourceTree = "<group>"; };
 		7BC7B15AF522101CC9A74342 /* Pods-MealTrackingPilotUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTrackingPilotUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealTrackingPilotUITests/Pods-MealTrackingPilotUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AA1042251E78485D0069B595 /* DashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		AA1042271E7848AA0069B595 /* DashboardDateHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardDateHeaderView.swift; sourceTree = "<group>"; };
@@ -979,6 +981,7 @@
 			children = (
 				65AC567D23326FBB001835D6 /* OccasionPicker.swift */,
 				65403A402338C653008B0022 /* OccasionPicker+Helpers.swift */,
+				65D63D4623391214004C895A /* OccasionPicker+Extensions.swift */,
 				65403A422338D27A008B0022 /* OccasionPickerCollectionViewCell.swift */,
 				AF4BCFDD1E8168BF0073937D /* MealSelectionCell.swift */,
 				AF4BCFDE1E8168BF0073937D /* MealSelectionCell.xib */,
@@ -1565,6 +1568,7 @@
 				AACDC0041E6EFA0C0010038E /* Location.swift in Sources */,
 				AFC530111E7081450028B357 /* LoginLandingViewController.swift in Sources */,
 				BCA4D62D231E5750005E3C00 /* TypingEllipsisView.swift in Sources */,
+				65D63D4723391214004C895A /* OccasionPicker+Extensions.swift in Sources */,
 				AAF021D81E7C7FD000850157 /* UIColor+Extensions.swift in Sources */,
 				AF353CE61E84638B00D5E7F9 /* RealmSeeder.swift in Sources */,
 				5ECA25451EE0B119005DE3BB /* LocationOffsetKeychainStorage.swift in Sources */,
