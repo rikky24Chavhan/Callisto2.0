@@ -97,6 +97,11 @@
 		5EE408541E8417E3002A6697 /* CreateMealOccasionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE408521E8417E3002A6697 /* CreateMealOccasionsViewController.swift */; };
 		5EE408551E8417E3002A6697 /* CreateMealOccasionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EE408531E8417E3002A6697 /* CreateMealOccasionsViewController.xib */; };
 		5EF436481EA7B5A300D9ABD0 /* MockLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF436471EA7B5A300D9ABD0 /* MockLocationManager.swift */; };
+		65403A412338C653008B0022 /* OccasionPicker+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65403A402338C653008B0022 /* OccasionPicker+Helpers.swift */; };
+		65403A432338D27A008B0022 /* OccasionPickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65403A422338D27A008B0022 /* OccasionPickerCollectionViewCell.swift */; };
+		65AC567E23326FBB001835D6 /* OccasionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC567D23326FBB001835D6 /* OccasionPicker.swift */; };
+		65D63D4523390100004C895A /* CGSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D63D4423390100004C895A /* CGSize+Extensions.swift */; };
+		65D63D4723391214004C895A /* OccasionPicker+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D63D4623391214004C895A /* OccasionPicker+Extensions.swift */; };
 		93D4F766276CC765FC6209A7 /* Pods_MealTrackingPilotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9563EBA0AC2B40CED071536 /* Pods_MealTrackingPilotTests.framework */; };
 		9807AD1323291FC700D56EB9 /* UITextView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9807AD0A23291FC700D56EB9 /* UITextView+Extensions.swift */; };
 		9807AD1423291FC700D56EB9 /* Foundation+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9807AD0B23291FC700D56EB9 /* Foundation+Helper.swift */; };
@@ -269,7 +274,6 @@
 		BCA4D632231E5750005E3C00 /* MessageBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D616231E574F005E3C00 /* MessageBubbleView.swift */; };
 		BCA4D633231E5750005E3C00 /* IconMessageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D617231E574F005E3C00 /* IconMessageContentView.swift */; };
 		BCA4D634231E5750005E3C00 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D618231E574F005E3C00 /* MessageView.swift */; };
-		BCA4D63823264E0C005E3C00 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D63723264E0C005E3C00 /* PickerView.swift */; };
 		E61B65E01ECFA08D00188CCE /* DemoDashboardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B65DF1ECFA08D00188CCE /* DemoDashboardViewModelTests.swift */; };
 		E61B65E21ECFA13400188CCE /* MockKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B65E11ECFA13400188CCE /* MockKeychain.swift */; };
 		E61B65E41ECFA18200188CCE /* MockLoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B65E31ECFA18200188CCE /* MockLoginClient.swift */; };
@@ -391,6 +395,11 @@
 		5EE408521E8417E3002A6697 /* CreateMealOccasionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMealOccasionsViewController.swift; sourceTree = "<group>"; };
 		5EE408531E8417E3002A6697 /* CreateMealOccasionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateMealOccasionsViewController.xib; sourceTree = "<group>"; };
 		5EF436471EA7B5A300D9ABD0 /* MockLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLocationManager.swift; sourceTree = "<group>"; };
+		65403A402338C653008B0022 /* OccasionPicker+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OccasionPicker+Helpers.swift"; sourceTree = "<group>"; };
+		65403A422338D27A008B0022 /* OccasionPickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccasionPickerCollectionViewCell.swift; sourceTree = "<group>"; };
+		65AC567D23326FBB001835D6 /* OccasionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccasionPicker.swift; sourceTree = "<group>"; };
+		65D63D4423390100004C895A /* CGSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extensions.swift"; sourceTree = "<group>"; };
+		65D63D4623391214004C895A /* OccasionPicker+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OccasionPicker+Extensions.swift"; sourceTree = "<group>"; };
 		7BC7B15AF522101CC9A74342 /* Pods-MealTrackingPilotUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTrackingPilotUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealTrackingPilotUITests/Pods-MealTrackingPilotUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9807AD0A23291FC700D56EB9 /* UITextView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Extensions.swift"; sourceTree = "<group>"; };
 		9807AD0B23291FC700D56EB9 /* Foundation+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+Helper.swift"; sourceTree = "<group>"; };
@@ -570,7 +579,6 @@
 		BCA4D616231E574F005E3C00 /* MessageBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBubbleView.swift; sourceTree = "<group>"; };
 		BCA4D617231E574F005E3C00 /* IconMessageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconMessageContentView.swift; sourceTree = "<group>"; };
 		BCA4D618231E574F005E3C00 /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
-		BCA4D63723264E0C005E3C00 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		CB68BE3C413A8890E6DFE3B8 /* Pods-MealTrackingPilotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTrackingPilotUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealTrackingPilotUITests/Pods-MealTrackingPilotUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE24596C7B0C494F839F4A8D /* Pods-MealTrackingPilot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTrackingPilot.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealTrackingPilot/Pods-MealTrackingPilot.release.xcconfig"; sourceTree = "<group>"; };
 		E05A257C1047FBBF980480AE /* Pods_MealTrackingPilot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealTrackingPilot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -757,6 +765,7 @@
 				9807AD1223291FC700D56EB9 /* UIView+Constraint.swift */,
 				9807AD0D23291FC700D56EB9 /* UIViewController+Extensions.swift */,
 				AA1042321E79CA290069B595 /* UIColor+PIAdditions.swift */,
+				65D63D4423390100004C895A /* CGSize+Extensions.swift */,
 				AAF021D71E7C7FD000850157 /* UIColor+Extensions.swift */,
 				5E27AE101ECF8C67000C3DBD /* UITableView+Extensions.swift */,
 				AA10422C1E7854E90069B595 /* UITableViewCell+Extensions.swift */,
@@ -991,7 +1000,10 @@
 		AF4BCFDC1E8168BF0073937D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BCA4D63723264E0C005E3C00 /* PickerView.swift */,
+				65AC567D23326FBB001835D6 /* OccasionPicker.swift */,
+				65403A402338C653008B0022 /* OccasionPicker+Helpers.swift */,
+				65D63D4623391214004C895A /* OccasionPicker+Extensions.swift */,
+				65403A422338D27A008B0022 /* OccasionPickerCollectionViewCell.swift */,
 				AF4BCFDD1E8168BF0073937D /* MealSelectionCell.swift */,
 				AF4BCFDE1E8168BF0073937D /* MealSelectionCell.xib */,
 				AF4BCFDF1E8168BF0073937D /* MealSelectionCellViewModel.swift */,
@@ -1567,7 +1579,6 @@
 				AACDC0021E6EFA0C0010038E /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				AFC530161E7084410028B357 /* PilotRequest+Login.swift in Sources */,
 				BCA4D622231E5750005E3C00 /* ChatNodeGraphJSONLoader.swift in Sources */,
-				BCA4D63823264E0C005E3C00 /* PickerView.swift in Sources */,
 				5E9E9BFE1E806E290053CF66 /* EditIconTextField.swift in Sources */,
 				5ED5CF731EDF1D9700780DD5 /* ModalFadeAnimationController.swift in Sources */,
 				5EDB5DE71E7B1B0E0096C3CD /* GradientView.swift in Sources */,
@@ -1578,6 +1589,7 @@
 				AACDC0041E6EFA0C0010038E /* Location.swift in Sources */,
 				AFC530111E7081450028B357 /* LoginLandingViewController.swift in Sources */,
 				BCA4D62D231E5750005E3C00 /* TypingEllipsisView.swift in Sources */,
+				65D63D4723391214004C895A /* OccasionPicker+Extensions.swift in Sources */,
 				AAF021D81E7C7FD000850157 /* UIColor+Extensions.swift in Sources */,
 				AF353CE61E84638B00D5E7F9 /* RealmSeeder.swift in Sources */,
 				5ECA25451EE0B119005DE3BB /* LocationOffsetKeychainStorage.swift in Sources */,
@@ -1616,6 +1628,7 @@
 				AAAE62901E783B56000CE539 /* OpenSans.swift in Sources */,
 				5E8DB1421E85B8C100885851 /* PilotRequest+CreateMeal.swift in Sources */,
 				AA1D46A21E65BDF900525CB1 /* HealthKitController.swift in Sources */,
+				65D63D4523390100004C895A /* CGSize+Extensions.swift in Sources */,
 				9807AD1723291FC700D56EB9 /* TypeIdentifiable+Extensions.swift in Sources */,
 				BCA4D629231E5750005E3C00 /* UserPermissionsNode.swift in Sources */,
 				BCA4D632231E5750005E3C00 /* MessageBubbleView.swift in Sources */,
@@ -1643,6 +1656,7 @@
 				AFA1A6001EBA8C2E001AF135 /* UIAlertActionViewModel.swift in Sources */,
 				5EA396F61EE98C2D00BD95DF /* UIAlertController+Extensions.swift in Sources */,
 				5E27AE0D1ECE0E68000C3DBD /* MealEventDetailsMessageView.swift in Sources */,
+				65403A412338C653008B0022 /* OccasionPicker+Helpers.swift in Sources */,
 				5E42DD641ED7333900CE8BF0 /* ReportMealEventViewModel.swift in Sources */,
 				5E9E9BEE1E7C59160053CF66 /* SegmentedSlider.swift in Sources */,
 				5E0B8DD31E93F2E600723503 /* PilotRequest+GetMeals.swift in Sources */,
@@ -1656,6 +1670,7 @@
 				1D75744F20FCD70D001AE4B7 /* LoginFormViewController.swift in Sources */,
 				AF3541DB1EB7ACC6004936F9 /* PermissionRequestController.swift in Sources */,
 				5E8DB1461E8A9BCA00885851 /* PulsingIndicatorView.swift in Sources */,
+				65403A432338D27A008B0022 /* OccasionPickerCollectionViewCell.swift in Sources */,
 				5E42DD671ED7334C00CE8BF0 /* ReportMealEventViewController.swift in Sources */,
 				5E42DD6B1ED75CD700CE8BF0 /* RoundedModalPresentationController.swift in Sources */,
 				9807AD1623291FC700D56EB9 /* UIViewController+Extensions.swift in Sources */,
@@ -1687,6 +1702,7 @@
 				AA1042331E79CA290069B595 /* UIColor+PIAdditions.swift in Sources */,
 				BC3423D72306AD240000E2A0 /* PilotAPIClientConstant.swift in Sources */,
 				AFC5300E1E70813A0028B357 /* AppNavigator.swift in Sources */,
+				65AC567E23326FBB001835D6 /* OccasionPicker.swift in Sources */,
 				AF9471E71E83FB0C00220BFA /* MealEventDetailsHeaderView.swift in Sources */,
 				BCA4D623231E5750005E3C00 /* MessagesNode.swift in Sources */,
 				218450201F857EA200AB246C /* Array+Extensions.swift in Sources */,

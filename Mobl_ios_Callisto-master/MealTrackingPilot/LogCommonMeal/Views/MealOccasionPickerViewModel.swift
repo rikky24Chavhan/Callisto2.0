@@ -8,8 +8,7 @@
 
 import RxSwift
 
-class MealOccasionPickerViewModel: PickerViewDataSource, PickerViewDelegate {
- 
+class MealOccasionPickerViewModel: OccasionPickerDataSource, OccasionPickerDelegate {
     let occasions: [MealOccasion]
     private(set) var selectedIndex: Variable<Int>
 
@@ -46,17 +45,17 @@ class MealOccasionPickerViewModel: PickerViewDataSource, PickerViewDelegate {
         return occasions[index - 1]
     }
 
-    // MARK: - PickerViewDataSource
+    // MARK: - OccasionPickerDataSource
 
-    func pickerViewNumberOfItems(_ pickerView: PickerView) -> Int {
+    func occasionPickerNumberOfItems(_ occasionPicker: OccasionPicker) -> Int {
         return itemViewModels.count
     }
 
-    func pickerViewSpanForItems(_ _pickerView: PickerView) -> CGFloat {
+    func occasionPickerSpanForItems(_ _occasionPicker: OccasionPicker) -> CGFloat {
         return MealOccasionPickerItemView.preferredWidth + Constants.itemPadding
     }
 
-    func pickerView(_ _pickerView: PickerView, viewForItem item: Int, index: Int, highlighted: Bool, reusingView view: UIView?) -> UIView? {
+    func occasionPicker(_ occasionPicker: OccasionPicker, viewForItem item: Int, index: Int, highlighted: Bool, reusingView view: UIView?) -> UIView? {
         let itemView = (view as? MealOccasionPickerItemView) ?? MealOccasionPickerItemView.fromNib()
         let viewModel = itemViewModels[index]
         viewModel.highlighted = highlighted
@@ -64,13 +63,13 @@ class MealOccasionPickerViewModel: PickerViewDataSource, PickerViewDelegate {
         return itemView
     }
 
-    func pickerView(_ _pickerView: PickerView, titleForItem item: Int, index: Int) -> String {
+    func occasionPicker(_ _occasionPicker: OccasionPicker, titleForItem item: Int, index: Int) -> String {
         return ""
     }
 
-    // MARK: - PickerViewDelegate
+    // MARK: - OccasionPickerDelegate
 
-    func pickerView(_ _pickerView: PickerView, didSelectItem item: Int, index: Int) {
+    func occasionPicker(_ _occasionPicker: OccasionPicker, didSelectItem item: Int, index: Int) {
         selectedIndex.value = index
     }
 }
