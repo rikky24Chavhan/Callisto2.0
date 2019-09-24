@@ -8,7 +8,6 @@
 
 import Foundation
 import RxSwift
-import Intrepid
 
 protocol ReportMealEventViewModelDelegate: class {
     func reportMealEventViewModelDidReport(_ viewModel: ReportMealEventViewModel)

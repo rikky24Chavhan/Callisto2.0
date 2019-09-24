@@ -53,7 +53,7 @@ class UnderlinedTextField: UITextField {
         super.draw(rect)
 
         guard
-            (text ?? "").ip_length == 0,
+            (text ?? "").count == 0,
             let context = UIGraphicsGetCurrentContext()
         else { return }
 

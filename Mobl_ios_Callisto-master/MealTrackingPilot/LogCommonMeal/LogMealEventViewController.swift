@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Intrepid
 import RxSwift
 
 protocol LogMealEventViewControllerDelegate: class {
@@ -86,7 +85,7 @@ public final class LogMealEventViewController: UIViewController, UITableViewData
         }
 
         backgroundViewContainer.addSubview(backgroundView)
-        backgroundViewContainer.constrainView(toAllEdges: backgroundView)
+        _ = backgroundViewContainer.constrainView(toAllEdges: backgroundView)
     }
 
     // MARK: - Navigation Bar
@@ -177,7 +176,7 @@ public final class LogMealEventViewController: UIViewController, UITableViewData
         mealSelectionTableView.rowHeight = UITableView.automaticDimension
 
         MealSelectionCell.registerNib(mealSelectionTableView)
-        mealSelectionTableView.register(CopyrightTableViewCell.ip_nib, forCellReuseIdentifier: CopyrightTableViewCell.ip_identifier)
+        mealSelectionTableView.register(CopyrightTableViewCell.nib, forCellReuseIdentifier: CopyrightTableViewCell.identifier)
     }
 
     private func scrollToSelectedMeal() {
@@ -197,11 +196,11 @@ public final class LogMealEventViewController: UIViewController, UITableViewData
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section > 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: CopyrightTableViewCell.ip_identifier, for: indexPath) as! CopyrightTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: CopyrightTableViewCell.identifier, for: indexPath) as! CopyrightTableViewCell
             cell.selectionStyle = .none
 
             if viewModel.allowsAddNewMeal {
-                let addNewMealView = MealSelectionTableFooterView.ip_fromNib()
+                let addNewMealView = MealSelectionTableFooterView.fromNib()
                 addNewMealView.delegate = self
                 cell.configure(with: addNewMealView)
             }

@@ -80,7 +80,7 @@ class ChatCompletionViewController: UIViewController {
     // MARK: - Message Bubble
 
     private func setupMessageView() {
-        let messageView = MessageView.ip_fromNib()
+        let messageView = MessageView.fromNib()
         messageView.translatesAutoresizingMaskIntoConstraints = false
         messageView.viewModel = viewModel.slidingViewModel()
         messageView.alpha = 0

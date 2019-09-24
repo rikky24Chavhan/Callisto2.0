@@ -64,7 +64,7 @@ final class DashboardDateTableHeaderView: UITableViewHeaderFooterView {
     func setupHeaderView() {
         contentView.addSubview(headerview)
 
-        contentView.constrainView(toAllEdges: headerview)
+        _ = contentView.constrainView(toAllEdges: headerview)
     }
 
 }

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Intrepid
 
 protocol ChatControllerDelegate: class {
     func chatControllerIsReady(_ chatController: ChatController)

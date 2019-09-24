@@ -84,7 +84,7 @@ final class DashboardDateHeaderView: UIView {
     private func setup() {
         backgroundColor = .clear
         addSubview(roundedBackgroundView)
-        constrainView(toAllEdges: roundedBackgroundView)
+        _ = constrainView(toAllEdges: roundedBackgroundView)
 
         let stackView = UIStackView(arrangedSubviews: [weekdayLabel, dateLabel])
         stackView.axis = .horizontal

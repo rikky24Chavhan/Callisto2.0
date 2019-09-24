@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Intrepid
 import RxSwift
 
 enum ChatTableItem {
@@ -173,7 +172,7 @@ class ChatViewModel: ChatController {
 
         asyncDispatcher.after(delay) {
             permissionsController.requestPermissions(completion: { [weak self] in
-                Main {
+                DispatchQueue.main.async {
                     self?.didFinishPermissionsRequest()
                 }
             })

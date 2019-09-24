@@ -92,7 +92,7 @@ public final class DashboardTableViewCellViewModel {
     }
 
     var noteIndicatorHidden: Bool {
-        return mealEvent.note.ip_length == 0
+        return mealEvent.note.count == 0
     }
 
     var reportButtonHidden: Bool {

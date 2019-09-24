@@ -10,8 +10,6 @@ import Foundation
 import CoreLocation
 import RealmSwift
 
-import Intrepid
-
 public final class LocationController: NSObject, RealmSyncController, PermissionRequestController {
 
     // MARK: - Properties

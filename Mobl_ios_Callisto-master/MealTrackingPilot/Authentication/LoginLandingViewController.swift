@@ -79,7 +79,7 @@ final class LoginLandingViewController: UIViewController {
         view.addSubview(backgroundView)
         view.sendSubviewToBack(backgroundView)
 
-        view.constrainView(toAllEdges: backgroundView)
+        _ = view.constrainView(toAllEdges: backgroundView)
     }
 
     // MARK: - Helper

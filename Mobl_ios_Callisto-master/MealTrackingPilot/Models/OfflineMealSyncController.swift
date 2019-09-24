@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Intrepid
 import RxSwift
 
 final class OfflineMealSyncController {

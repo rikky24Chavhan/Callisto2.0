@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Intrepid
 
 public protocol SegmentedSliderDelegate: class {
     func segmentedSlider(_ segmentedSlider: SegmentedSlider, canSelectSegment index: Int) -> Bool
@@ -137,8 +136,8 @@ public final class SegmentedSlider: UIControl {
         // Selected segment View
         selectedSegmentView.layer.masksToBounds = true
         addSubview(selectedSegmentView)
-        constrainView(toTop: selectedSegmentView)
-        constrainView(toBottom: selectedSegmentView)
+        _ = constrainView(toTop: selectedSegmentView)
+        _ = constrainView(toBottom: selectedSegmentView)
         selectedSegmentWidthConstraint = constrainView(selectedSegmentView, toWidth: 0)
         selectedSegmentCenterXConstraint = constrainView(toMiddleHorizontally: selectedSegmentView)
 
@@ -147,7 +146,7 @@ public final class SegmentedSlider: UIControl {
         selectedSegmentLabel.numberOfLines = 0
         selectedSegmentLabel.textAlignment = .center
         selectedSegmentView.addSubview(selectedSegmentLabel)
-        selectedSegmentView.constrainView(toAllEdges: selectedSegmentLabel)
+        _ = selectedSegmentView.constrainView(toAllEdges: selectedSegmentLabel)
         refreshSegmentLabels()
     }
 
@@ -155,9 +154,10 @@ public final class SegmentedSlider: UIControl {
         if let oldConstraints = backgroundSegmentInsetConstraints {
             removeConstraints(oldConstraints)
         }
-
         let insets = UIEdgeInsets(top: backgroundSegmentInset, left: 0, bottom: backgroundSegmentInset, right: 0)
-        backgroundSegmentInsetConstraints = constrainView(backgroundSegmentView, to: insets).map { $0.value }
+        if let constraints = constrainView(backgroundSegmentView, to: insets) {
+             backgroundSegmentInsetConstraints = Array(constraints.values)
+        }
     }
 
     private func refreshSegmentLabels() {
@@ -176,7 +176,7 @@ public final class SegmentedSlider: UIControl {
             label.numberOfLines = 0
             label.textAlignment = .center
             insertSubview(label, belowSubview: selectedSegmentView)
-            constrainView(toMiddleVertically: label)
+            _ = constrainView(toMiddleVertically: label)
             let constraint = NSLayoutConstraint(
                 item: self,
                 attribute: .leading,

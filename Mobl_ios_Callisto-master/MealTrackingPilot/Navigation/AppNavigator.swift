@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Intrepid
 import KeychainAccess
 import RealmSwift
 
@@ -29,7 +28,7 @@ final class AppNavigator: NSObject, LoginClientDelegate, LoginClientUIDelegate {
     }()
 
     private lazy var signInViewController: LoginLandingViewController = {
-        let controller = LoginLandingViewController.ip_fromNib()
+        let controller = LoginLandingViewController.fromNib()
         controller.loginClient = self.loginClient
         return controller
     }()

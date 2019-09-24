@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Intrepid
 
 extension UITableViewCell {
     public static var cellIdentifier: String {
@@ -19,6 +18,6 @@ extension UITableViewCell {
     }
 
     public static func registerNib(_ tableView: UITableView) {
-        tableView.register(ip_nib, forCellReuseIdentifier: cellIdentifier)
+        tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
     }
 }

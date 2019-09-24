@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-import Intrepid
 
 final class CreateMealCarbsViewController: CreateMealChildViewController {
 

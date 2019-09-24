@@ -55,8 +55,8 @@ class MealOccasionPickerViewModel: OccasionPickerDataSource, OccasionPickerDeleg
         return MealOccasionPickerItemView.preferredWidth + Constants.itemPadding
     }
 
-    func occasionPicker(_ _occasionPicker: OccasionPicker, viewForItem item: Int, index: Int, highlighted: Bool, reusingView view: UIView?) -> UIView? {
-        let itemView = (view as? MealOccasionPickerItemView) ?? MealOccasionPickerItemView.ip_fromNib()
+    func pickerView(_ _pickerView: PickerView, viewForItem item: Int, index: Int, highlighted: Bool, reusingView view: UIView?) -> UIView? {
+        let itemView = (view as? MealOccasionPickerItemView) ?? MealOccasionPickerItemView.fromNib()
         let viewModel = itemViewModels[index]
         viewModel.highlighted = highlighted
         itemView.configureWithViewModel(viewModel)

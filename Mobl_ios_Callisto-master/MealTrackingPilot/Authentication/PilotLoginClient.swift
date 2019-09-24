@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Intrepid
 
 protocol LoginClientUIDelegate: class {
     func presentLoginViewController()
@@ -221,7 +220,7 @@ final class PilotLoginClient: AccessCredentialProviding, LoginUserProviding, Log
         accessCredentials = nil
         user = nil
 
-        Main {
+        DispatchQueue.main.async {
             self.delegate?.loginClientDidDisconnect(self)
         }
     }

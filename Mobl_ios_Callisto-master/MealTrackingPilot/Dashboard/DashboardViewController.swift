@@ -10,7 +10,6 @@ import UIKit
 import KeychainAccess
 import RxSwift
 import RxCocoa
-import Intrepid
 
 fileprivate final class ScrollInteraction {
 
@@ -253,8 +252,8 @@ final class DashboardViewController: UIViewController, UITableViewDataSource, UI
 
         let imageView = UIImageView(image: #imageLiteral(resourceName: "allIllustrationLarge"))
         emptyView.addSubview(imageView)
-        emptyView.constrainView(toTop: imageView, withInset: 40.0)
-        emptyView.constrainView(toMiddleHorizontally: imageView)
+        _ = emptyView.constrainView(toTop: imageView, withInset: 40.0)
+        _ = emptyView.constrainView(toMiddleHorizontally: imageView)
 
         let label = UILabel(frame: .zero)
         label.text = "You have not logged any meals yet."
@@ -262,10 +261,10 @@ final class DashboardViewController: UIViewController, UITableViewDataSource, UI
         label.textColor = UIColor.piDenim.withAlphaComponent(0.5)
         label.textAlignment = .center
         label.numberOfLines = 2
-        emptyView.addSubview(label)
-        emptyView.constrainView(label, attribute: .top, to: imageView, attribute: .bottom, constant: 22.0, multiplier: 1.0)
-        emptyView.constrainView(toMiddleHorizontally: label)
-        label.constrainView(label, toWidth: 272.0)
+        _ = emptyView.addSubview(label)
+        _ = emptyView.constrainView(label, attribute: .top, to: imageView, attribute: .bottom, constant: 22.0, multiplier: 1.0)
+        _ = emptyView.constrainView(toMiddleHorizontally: label)
+        _ = label.constrainView(label, toWidth: 272.0)
 
         let copyrightLabel = UILabel(frame: .zero)
         copyrightLabel.text = "Copyright 2018 © Eli Lilly and Company.\nAll rights reserved."
@@ -274,9 +273,9 @@ final class DashboardViewController: UIViewController, UITableViewDataSource, UI
         copyrightLabel.textAlignment = .center
         copyrightLabel.numberOfLines = 2
         emptyView.addSubview(copyrightLabel)
-        emptyView.constrainView(toBottom: copyrightLabel, withInset: -10.0)
-        emptyView.constrainView(toMiddleHorizontally: copyrightLabel)
-        copyrightLabel.constrainView(copyrightLabel, toWidth: 223.0)
+        _ = emptyView.constrainView(toBottom: copyrightLabel, withInset: -10.0)
+        _ = emptyView.constrainView(toMiddleHorizontally: copyrightLabel)
+        _ = copyrightLabel.constrainView(copyrightLabel, toWidth: 223.0)
 
         return emptyView
     }()
@@ -290,7 +289,7 @@ final class DashboardViewController: UIViewController, UITableViewDataSource, UI
     init(viewModel: DashboardViewModel) {
         self.viewModel = viewModel
 
-        super.init(nibName: DashboardViewController.ip_nibName, bundle: nil)
+        super.init(nibName: DashboardViewController.nibName, bundle: nil)
     }
 
     override func viewDidLoad() {
@@ -453,7 +452,7 @@ final class DashboardViewController: UIViewController, UITableViewDataSource, UI
 
         DashboardTableViewCell.registerNib(tableView)
         DashboardDateTableHeaderView.registerHeaderFooterView(tableView)
-        tableView.register(CopyrightTableViewCell.ip_nib, forCellReuseIdentifier: CopyrightTableViewCell.ip_identifier)
+        tableView.register(CopyrightTableViewCell.nib, forCellReuseIdentifier: CopyrightTableViewCell.identifier)
 
         viewModel.tableUpdateObservable.subscribe(onNext: { [weak self] _ in
             self?.tableView.reloadData()
@@ -759,10 +758,10 @@ final class DashboardViewController: UIViewController, UITableViewDataSource, UI
 
     func setupEmptyView() {
         tableViewContainerView.insertSubview(emptyView, aboveSubview: footerView)
-        tableViewContainerView.constrainView(emptyView, attribute: .top, to: footerView, attribute: .top, constant: 40.0, multiplier: 1.0, relation: .equal)
-        tableViewContainerView.constrainView(toLeft: emptyView)
-        tableViewContainerView.constrainView(toRight: emptyView)
-        tableViewContainerView.constrainView(emptyView, toBottomOf: footerView)
+        _ = tableViewContainerView.constrainView(emptyView, attribute: .top, to: footerView, attribute: .top, constant: 40.0, multiplier: 1.0, relation: .equal)
+        _ = tableViewContainerView.constrainView(toLeft: emptyView)
+        _ = tableViewContainerView.constrainView(toRight: emptyView)
+        _ = tableViewContainerView.constrainView(emptyView, toBottomOf: footerView)
 
         emptyView.rx.alpha <- viewModel.emptyViewAlpha >>> bag
     }
@@ -786,7 +785,7 @@ final class DashboardViewController: UIViewController, UITableViewDataSource, UI
                 case .success(_):
                     break
                 case .failure(let error):
-                    Main {
+                    DispatchQueue.main.async {
                         self?.displayDataError(error)
                     }
             }
@@ -812,7 +811,7 @@ final class DashboardViewController: UIViewController, UITableViewDataSource, UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case viewModel.numberOfDatesLogged():
-            let cell = tableView.dequeueReusableCell(withIdentifier: CopyrightTableViewCell.ip_identifier, for: indexPath) as! CopyrightTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: CopyrightTableViewCell.identifier, for: indexPath) as! CopyrightTableViewCell
 
             cell.selectionStyle = .none
             cell.configure(with: endOfListView)
@@ -880,7 +879,7 @@ final class DashboardViewController: UIViewController, UITableViewDataSource, UI
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        Main {
+        DispatchQueue.main.async {
             guard let mealEventViewModel = self.viewModel.mealEventDetailsViewModel(at: indexPath) else { return }
             let viewController = MealEventDetailsViewController(viewModel: mealEventViewModel)
             let navController  = UINavigationController(rootViewController: viewController)

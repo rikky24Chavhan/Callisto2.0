@@ -148,7 +148,7 @@ class StatementViewController: UIViewController, WKNavigationDelegate {
         webView.navigationDelegate = self
 
         webViewContainer.addSubview(webView)
-        webViewContainer.constrainView(toAllEdges: webView)
+        _ = webViewContainer.constrainView(toAllEdges: webView)
         webView.loadHTMLString(htmlString, baseURL: Bundle.main.bundleURL)
     }
 

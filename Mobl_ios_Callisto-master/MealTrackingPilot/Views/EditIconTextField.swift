@@ -38,7 +38,7 @@ final class EditIconTextField: UnderlinedTextField {
         guard
             let text = text,
             let font = font,
-            text.ip_length > 0
+            text.count > 0
             else {
                 // Position out-of-bounds but maintain size
                 return rect.offsetBy(dx: 1000, dy: 0)

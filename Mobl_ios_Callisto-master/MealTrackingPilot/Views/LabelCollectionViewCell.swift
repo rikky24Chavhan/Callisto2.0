@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Intrepid
 
 class LabelCollectionViewCell: UICollectionViewCell {
 
@@ -31,7 +30,7 @@ class LabelCollectionViewCell: UICollectionViewCell {
 
     private func setupLabel() {
         contentView.addSubview(label)
-        contentView.constrainView(toAllEdges: label)
+        _ = contentView.constrainView(toAllEdges: label)
 
         contentView.backgroundColor = UIColor.clear
         label.backgroundColor = UIColor.clear

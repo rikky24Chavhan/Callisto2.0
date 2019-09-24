@@ -92,7 +92,7 @@ final class GradientButton: UIButton {
         setupContainerView()
 
         addSubview(containerView)
-        constrainView(toAllEdges: containerView)
+        _ = constrainView(toAllEdges: containerView)
 
         containerView.backgroundColor = UIColor.white
     }
@@ -111,9 +111,9 @@ final class GradientButton: UIButton {
         containerView.layer.cornerRadius = 8
 
         containerView.addSubview(textLabel)
-        containerView.constrainView(toAllEdges: textLabel)
+        _ = containerView.constrainView(toAllEdges: textLabel)
 
         containerView.addSubview(overlayView)
-        containerView.constrainView(toAllEdges: overlayView)
+        _ = containerView.constrainView(toAllEdges: overlayView)
     }
 }
