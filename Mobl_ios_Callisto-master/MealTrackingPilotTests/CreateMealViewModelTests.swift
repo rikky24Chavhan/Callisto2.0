@@ -8,7 +8,6 @@
 
 import XCTest
 import RxSwift
-import Intrepid
 import RealmSwift
 @testable import MealTrackingPilot
 

@@ -115,11 +115,13 @@ class HealthKitTests: XCTestCase {
 
         let asyncExpectation = expectation(description: "Authorization successful")
         healthKitController.requestAuthorization { result in
-            if result.isSuccess {
+            switch result{
+            case .success( _):
                 asyncExpectation.fulfill()
+            case .failure(_):
+                break
             }
         }
-
         waitForExpectations(timeout: 0.1) { error in
             XCTAssertNil(error)
 
@@ -144,7 +146,10 @@ class HealthKitTests: XCTestCase {
 
         let asyncExpectation = expectation(description: "Authorization failed")
         healthKitController.requestAuthorization { result in
-            if result.isFailure {
+            switch result{
+            case .success( _):
+                break
+            case .failure(_):
                 asyncExpectation.fulfill()
             }
         }
@@ -163,9 +168,16 @@ class HealthKitTests: XCTestCase {
 
         let asyncExpectation = expectation(description: "HealthKit unavailable error")
         healthKitController.requestAuthorization { result in
-            if let error = result.error, error == HealthKitController.HealthKitError.healthKitUnavailable {
-                asyncExpectation.fulfill()
+            switch result{
+            case .success( _):
+                break
+            case .failure(let error):
+                if error == HealthKitController.HealthKitError.healthKitUnavailable{
+                    asyncExpectation.fulfill()
+                }
+                break
             }
+            
         }
 
         waitForExpectations(timeout: 0.1) { error in
@@ -213,11 +225,16 @@ class HealthKitTests: XCTestCase {
         let asyncExpectation = expectation(description: "HealthKit unavailable error")
 
         healthKitController.queryCumulativeSum(.steps, startDate: Date(), intervalComponents: DateComponents()) { result in
-            if let error = result.error, error == HealthKitController.HealthKitError.healthKitUnavailable {
-                asyncExpectation.fulfill()
+            switch result {
+            case .success( _):
+                break
+            case .failure(let error):
+                if error == HealthKitController.HealthKitError.healthKitUnavailable{
+                    asyncExpectation.fulfill()
+                }
+                break
             }
         }
-
         wait(for: [asyncExpectation], timeout: 0.1)
     }
 }

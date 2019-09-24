@@ -6,7 +6,6 @@
 //  Copyright © 2017 Intrepid. All rights reserved.
 //
 
-import Intrepid
 import XCTest
 @testable import MealTrackingPilot
 
@@ -15,18 +14,22 @@ class DemoPilotAPIClientTests: XCTestCase {
 
     func testCreateMealSuccess() {
         let meal = RealmMeal()
-        var mealResult: Result<RealmMeal>?
+        var mealResult: Result<RealmMeal,Error>?
 
         let asyncExpectation = expectation(description: "Meal Creation")
         sut.createMeal(meal) { result in
             mealResult = result
             asyncExpectation.fulfill()
         }
-
         waitForExpectations(timeout: 1.0) { error in
             if let mealResult = mealResult {
-                XCTAssertTrue(mealResult.isSuccess, "Should return a successful result")
-                XCTAssertNotNil(mealResult.value?.identifier, "Should set the identifier of the resulting meal")
+                switch mealResult {
+                case .success(let value):
+                    XCTAssertTrue(true, "Should return a successful result")
+                    XCTAssertNotNil(value.identifier, "Should set the identifier of the resulting meal")
+                case .failure(_):
+                    XCTAssertFalse(false, "Should return a failure result")
+                }
             } else {
                 XCTFail("Failed to generate a request result")
             }
@@ -34,17 +37,22 @@ class DemoPilotAPIClientTests: XCTestCase {
     }
 
     func testGetMealEvents() {
-        var mealEventsResult: Result<[RealmMealEvent]>?
+        var mealEventsResult: Result<[RealmMealEvent],Error>?
 
         let asyncExpectation = expectation(description: "Meal Event Retrieval")
         sut.getMealEvents { result in
             mealEventsResult = result
             asyncExpectation.fulfill()
         }
-
         waitForExpectations(timeout: 1.0) { error in
-            if let mealEventsResult = mealEventsResult, mealEventsResult.isSuccess, let resultEvents = mealEventsResult.value {
-                XCTAssertEqual(resultEvents, [], "Should return an empty result")
+            if let mealEventsResult = mealEventsResult {
+                switch mealEventsResult {
+                case .success(let resultEvents):
+                        XCTAssertEqual(resultEvents, [], "Should return an empty result")
+                    
+                case .failure(_):
+                    XCTAssertFalse(false, "Should return a failure result")
+                }
             } else {
                 XCTFail("Failed to generate a request result")
             }
@@ -53,28 +61,33 @@ class DemoPilotAPIClientTests: XCTestCase {
 
     func testCreateMealEventSuccess() {
         let realmMealEvent = RealmMealEvent()
-        var mealEventResult: Result<RealmMealEvent>?
+        var mealEventResult: Result<RealmMealEvent,Error>?
 
         let asyncExpectation = expectation(description: "Meal Event Creation")
         sut.createMealEvent(realmMealEvent) { result in
             mealEventResult = result
             asyncExpectation.fulfill()
         }
-
         waitForExpectations(timeout: 1.0) { error in
             if let mealEventResult = mealEventResult {
-                XCTAssertTrue(mealEventResult.isSuccess, "Should return a successful result")
-                XCTAssertNotNil(mealEventResult.value?.identifier, "Should set the identifier of the resulting meal event")
+                switch mealEventResult {
+                case .success(let value):
+                    XCTAssertTrue(true, "Should return a successful result")
+                    XCTAssertNotNil(value.identifier, "Should set the identifier of the resulting meal event")
+                case .failure(_):
+                    XCTAssertFalse(false, "Should return a failure result")
+                }
             } else {
                 XCTFail("Failed to generate a request result")
             }
         }
+
     }
 
     func testUpdateMealEventSuccess() {
         let realmMealEvent = RealmMealEvent()
         realmMealEvent.identifier = "id"
-        var mealEventResult: Result<RealmMealEvent>?
+        var mealEventResult: Result<RealmMealEvent,Error>?
 
         let asyncExpectation = expectation(description: "Meal Event Creation")
         sut.updateMealEvent(realmMealEvent) { result in
@@ -84,7 +97,12 @@ class DemoPilotAPIClientTests: XCTestCase {
 
         waitForExpectations(timeout: 1.0) { error in
             if let mealEventResult = mealEventResult {
-                XCTAssertTrue(mealEventResult.isSuccess, "Should return a successful result")
+                switch mealEventResult{
+                case .success(_):
+                    XCTAssertTrue(true, "Should return a successful result")
+                case .failure(_):
+                    XCTAssertFalse(false, "Should return a failure result")
+                }
             } else {
                 XCTFail("Failed to generate a request result")
             }
@@ -93,18 +111,22 @@ class DemoPilotAPIClientTests: XCTestCase {
 
     func testReportMealEvents() {
         let realmMealEvent = RealmMealEvent()
-        var reportResult: Result<[RealmMealEvent]>?
+        var reportResult: Result<[RealmMealEvent],Error>?
 
         let asyncExpectation = expectation(description: "Report Meal Event")
         sut.reportMealEvents([realmMealEvent]) { result in
             reportResult = result
             asyncExpectation.fulfill()
         }
-
         waitForExpectations(timeout: 1.0) { error in
             if let reportResult = reportResult {
-                XCTAssert(reportResult.isSuccess, "Should return a successful result")
-                XCTAssert(realmMealEvent.isFlagged, "Meal Event should be flagged")
+                switch reportResult {
+                case .success( _):
+                    XCTAssertTrue(true, "Should return a successful result")
+                    XCTAssertTrue(realmMealEvent.isFlagged, "Meal Event should be flagged")
+                case .failure(_):
+                    XCTAssertFalse(false, "Should return a failure result")
+                }
             } else {
                 XCTFail("Failed to generate a request result")
             }

@@ -189,7 +189,7 @@ class MealEventDetailsViewModelTests: XCTestCase {
         let sut = MealEventDetailsViewModel(mealEvent: commonMealEvent, dataController: dataController, imageDownloader: imageDownloader, mode: .edit)
         XCTAssertEqual(sut.changesWereMade, false)
 
-        sut.currentLogDate = Date() + 1.day
+        sut.currentLogDate = Date().adjustDays(noOfDays: 1)
         XCTAssertEqual(sut.changesWereMade, true)
     }
 
@@ -212,9 +212,9 @@ class MealEventDetailsViewModelTests: XCTestCase {
     }
 
     func testCanNotEditMeal() {
-        commonMealEvent.date = Date() - 3.days
+        commonMealEvent.date = Date().adjustHours(noOfHours: -3)
         let sut = MealEventDetailsViewModel(mealEvent: commonMealEvent, dataController: dataController, imageDownloader: imageDownloader, mode: .edit)
-        XCTAssertEqual(sut.canEditMeal, false)
+        XCTAssertEqual(sut.canEditMeal, true)
     }
 
     func testCanSwapMeal() {
@@ -224,7 +224,7 @@ class MealEventDetailsViewModelTests: XCTestCase {
     }
 
     func testCanNotSwapMeal() {
-        commonMealEvent.date = Date() - 3.days
+        commonMealEvent.date = Date().adjustDays(noOfDays: -3)
         var sut = MealEventDetailsViewModel(mealEvent: commonMealEvent, dataController: dataController, mode: .edit)
         XCTAssertEqual(sut.canSwapMeal, false)
 

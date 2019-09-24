@@ -8,7 +8,6 @@
 
 import XCTest
 import RxSwift
-import Intrepid
 @testable import MealTrackingPilot
 
 class ChatViewModelTests: XCTestCase {
@@ -137,7 +136,7 @@ class ChatViewModelTests: XCTestCase {
         // Mimick the user tapping the CTAs
         sut.callToActionText.subscribe(onNext: { [weak self] text in
             if text != nil {
-                Main {
+                DispatchQueue.main.async {
                     self?.sut.didReceiveUserConfirmation()
                 }
             }
@@ -336,7 +335,7 @@ fileprivate class MockAsyncDispatcher: AsyncDispatcherProtocol {
         if runSynchronously {
             op()
         } else {
-            Main(op)
+            DispatchQueue.main.async(execute: op)
         }
     }
 }

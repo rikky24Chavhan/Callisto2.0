@@ -7,11 +7,11 @@
 //
 
 import Foundation
-import Intrepid
 import RxSwift
 @testable import MealTrackingPilot
 
 final class MockMealDataController: MealDataController {
+   
     enum MockMealDataControllerError: Error {
         case defaultMockSaveMealFailure
     }
@@ -37,7 +37,7 @@ final class MockMealDataController: MealDataController {
         return mockMealsVariable.asObservable()
     }
 
-    func getMeals(forClassification classification: MealClassification, completion: ((Result<Void>) -> Void)?) {
+    func getMeals(forClassification classification: MealClassification, completion: voidRequestCompletion?) {
         completion?(.success(()))
     }
 
@@ -54,7 +54,7 @@ final class MockMealDataController: MealDataController {
         return mockMealEventsVariable.asObservable()
     }
 
-    func getLoggedMealEvents(completion: ((Result<Void>) -> Void)?) {
+    func getLoggedMealEvents(completion: voidRequestCompletion?) {
         completion?(.success(()))
     }
 
@@ -68,7 +68,7 @@ final class MockMealDataController: MealDataController {
         completion?(.synchronized(mealEvent))
     }
 
-    func reportMealEvent(_ mealEvent: MealEvent, completion: ((Result<MealEvent>) -> Void)?) {
+    func reportMealEvent(_ mealEvent: MealEvent, completion: mealEventCompletion?) {
         mealEvent.isFlagged = true
         completion?(.success(mealEvent))
     }

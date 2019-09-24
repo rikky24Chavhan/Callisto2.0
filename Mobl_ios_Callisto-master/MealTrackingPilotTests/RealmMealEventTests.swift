@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import Intrepid
 import RealmSwift
 @testable import MealTrackingPilot
 
