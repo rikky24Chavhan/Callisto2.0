@@ -101,7 +101,6 @@
 		65403A412338C653008B0022 /* OccasionPicker+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65403A402338C653008B0022 /* OccasionPicker+Helpers.swift */; };
 		65403A432338D27A008B0022 /* OccasionPickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65403A422338D27A008B0022 /* OccasionPickerCollectionViewCell.swift */; };
 		65AC567E23326FBB001835D6 /* OccasionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC567D23326FBB001835D6 /* OccasionPicker.swift */; };
-		65D63D43233900EE004C895A /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D63D42233900EE004C895A /* CGPoint+Extensions.swift */; };
 		65D63D4523390100004C895A /* CGSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D63D4423390100004C895A /* CGSize+Extensions.swift */; };
 		65D63D4723391214004C895A /* OccasionPicker+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D63D4623391214004C895A /* OccasionPicker+Extensions.swift */; };
 		93D4F766276CC765FC6209A7 /* Pods_MealTrackingPilotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9563EBA0AC2B40CED071536 /* Pods_MealTrackingPilotTests.framework */; };
@@ -392,7 +391,6 @@
 		65403A402338C653008B0022 /* OccasionPicker+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OccasionPicker+Helpers.swift"; sourceTree = "<group>"; };
 		65403A422338D27A008B0022 /* OccasionPickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccasionPickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		65AC567D23326FBB001835D6 /* OccasionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccasionPicker.swift; sourceTree = "<group>"; };
-		65D63D42233900EE004C895A /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 		65D63D4423390100004C895A /* CGSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extensions.swift"; sourceTree = "<group>"; };
 		65D63D4623391214004C895A /* OccasionPicker+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OccasionPicker+Extensions.swift"; sourceTree = "<group>"; };
 		7BC7B15AF522101CC9A74342 /* Pods-MealTrackingPilotUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTrackingPilotUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealTrackingPilotUITests/Pods-MealTrackingPilotUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -742,7 +740,6 @@
 				BC3423D12306ACDC0000E2A0 /* Date */,
 				AFA1A5FE1EBA8BD6001AF135 /* AlertController */,
 				AA1042321E79CA290069B595 /* UIColor+PIAdditions.swift */,
-				65D63D42233900EE004C895A /* CGPoint+Extensions.swift */,
 				65D63D4423390100004C895A /* CGSize+Extensions.swift */,
 				AAF021D71E7C7FD000850157 /* UIColor+Extensions.swift */,
 				5E27AE101ECF8C67000C3DBD /* UITableView+Extensions.swift */,
@@ -1622,7 +1619,6 @@
 				AAF021D61E7C771200850157 /* RoundedCornerView.swift in Sources */,
 				AA10422D1E7854E90069B595 /* UITableViewCell+Extensions.swift in Sources */,
 				5EA734B81EB7B6950056D4D5 /* Synchronizable.swift in Sources */,
-				65D63D43233900EE004C895A /* CGPoint+Extensions.swift in Sources */,
 				AF2439211E8D670900737A94 /* PilotRequest+CreateMealEvent.swift in Sources */,
 				BCA4D633231E5750005E3C00 /* IconMessageContentView.swift in Sources */,
 				BCA4D61D231E5750005E3C00 /* ChatMessageViewModelProtocol.swift in Sources */,
