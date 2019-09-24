@@ -3,7 +3,7 @@
 //  MealTrackingPilot
 //
 //  Created by Gowtham on 23/09/19.
-//  Copyright © 2019 Intrepid. All rights reserved.
+//  Copyright © 2019 LTTS. All rights reserved.
 //
 
 import Foundation

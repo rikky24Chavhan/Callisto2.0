@@ -3,7 +3,7 @@
 //  MealTrackingPilot
 //
 //  Created by Gowtham on 23/09/19.
-//  Copyright © 2019 Intrepid. All rights reserved.
+//  Copyright © 2019 LTTS. All rights reserved.
 //
 
 import Foundation
@@ -19,11 +19,8 @@ extension OccasionPicker: UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let indexOfSelectedItem = visibleIndexOfSelectedItem()
-        
         let occasionPickerCell = collectionView.dequeueReusableCell(withReuseIdentifier: occasionPickerCellIdentifier, for: indexPath) as! OccasionPickerCollectionViewCell
-        
         let view = delegate?.occasionPicker?(self, viewForItem: indexPath.item, index: indexForItem(indexPath.item), highlighted: indexPath.item == indexOfSelectedItem, reusingView: occasionPickerCell.customView)
-        
         occasionPickerCell.backgroundColor = UIColor.clear
         
         if let customView = view {
@@ -31,14 +28,11 @@ extension OccasionPicker: UICollectionViewDataSource {
         } else {
             let size = CGSize(span: itemSpan, lateralSpan: itemLateralSpan, direction: scrollingDirection)
             occasionPickerCell.titleLabel.frame = CGRect(origin: .zero, size: size)
-            
             occasionPickerCell.contentView.addSubview(occasionPickerCell.titleLabel)
             occasionPickerCell.titleLabel.backgroundColor = UIColor.clear
             occasionPickerCell.titleLabel.text = dataSource?.occasionPicker(self, titleForItem: indexPath.item, index: indexForItem(indexPath.item))
-            
             delegate?.occasionPicker?(self, styleForLabel: occasionPickerCell.titleLabel, highlighted: indexPath.item == indexOfSelectedItem)
         }
-        
         return occasionPickerCell
     }
 }
@@ -74,7 +68,6 @@ extension OccasionPicker: UIScrollViewDelegate {
         // Get the estimative of what item will be the selected when the scroll animation ends.
         let partialItem = Float((targetContentOffset.pointee.offset(forDirection: scrollingDirection) + endCapSpan) / itemSpan)
         var roundedItem = Int(lroundf(partialItem)) // Round the estimative to an item
-        
         if roundedItem < 0 {
             roundedItem = 0
         }
@@ -84,7 +77,6 @@ extension OccasionPicker: UIScrollViewDelegate {
         
         // Update the currentSelectedItem and notify the delegate that we have a new selected item.
         currentSelectedItem = roundedItem % numberOfItemsByDataSource
-        
         delegate?.occasionPicker?(self, didSelectItem: currentSelectedItem, index: currentSelectedIndex)
     }
     
@@ -95,7 +87,6 @@ extension OccasionPicker: UIScrollViewDelegate {
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let partialItem = Float((scrollView.contentOffset.offset(forDirection: scrollingDirection) + endCapSpan) / itemSpan)
         let roundedItem = Int(lroundf(partialItem))
-        
         // Avoid to have two highlighted items at the same time
         let visibleItems = collectionView.indexPathsForVisibleItems
         for indexPath in visibleItems {

@@ -11,9 +11,7 @@ import UIKit
 
 /**
  ScrollingStyle Enum.
- 
  - parameter Default: Show only the number of items informed in data source.
- 
  - parameter Infinite: Loop through the data source offering a infinite scrolling experience to the user.
  */
 
@@ -24,9 +22,7 @@ import UIKit
 
 /**
  ScrollingDirection Enum.
- 
  - parameter horizontal: Loads picker items with horizontal scrolling
- 
  - parameter vertical: Loads picker items with vertical scrolling
  */
 

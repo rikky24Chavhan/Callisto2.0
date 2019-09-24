@@ -28,7 +28,7 @@ import UIKit
 
 public class OccasionPicker: UIView {
 
-    // MARK: Picker Properties
+    // MARK: OccasionPicker Properties
     
     let occasionPickerCellIdentifier = "occasionPickerCell"
     
@@ -135,11 +135,24 @@ public class OccasionPicker: UIView {
         super.init(frame: frame)
     }
     
+    private var isMoving = false
+    
+    var itemSpan: CGFloat {
+        return delegate?.occasionPickerSpanForItems(self) ?? 0
+    }
+    
+    var itemLateralSpan: CGFloat {
+        return bounds.size.lateralSpan(forDirection: scrollingDirection)
+    }
+    
+    var endCapSpan: CGFloat {
+        return (bounds.size.span(forDirection: scrollingDirection) - itemSpan) * 0.5
+    }
+    
     // MARK: Subviews Setup
     
     private func configureSetup() {
         infinityItemsMultiplier = generateInfinityItemsMultiplier()
-        
         translatesAutoresizingMaskIntoConstraints = false
         
         // Setup subview constraints and apperance
@@ -214,7 +227,6 @@ public class OccasionPicker: UIView {
         if scrollingStyle == .default {
             return 1
         }
-        
         if numberOfItemsByDataSource > 100 {
             return 100
         } else if numberOfItemsByDataSource < 100 && numberOfItemsByDataSource > 50 {
@@ -230,7 +242,6 @@ public class OccasionPicker: UIView {
     
     override public func layoutSubviews() {
         super.layoutSubviews()
-        
         if !setupHasBeenDone {
             configureSetup()
             setupHasBeenDone = true
@@ -245,17 +256,14 @@ public class OccasionPicker: UIView {
     
     /**
      Selects the nearby to middle item that matches with the provided index.
-     
      - parameter item: A valid index provided by Data Source.
      */
     private func selectedNearbyToMiddleItem(_ item: Int) {
         currentSelectedItem = item % numberOfItemsByDataSource
         collectionView.reloadData()
-        
         if numberOfItemsByDataSource > 0 && collectionView.numberOfItems(inSection: 0) > 0 {
             let indexOfSelectedItem = visibleIndexOfSelectedItem()
             setContentOffset(CGFloat(indexOfSelectedItem) * itemSpan - endCapSpan, animated: false)
-            
             delegate?.occasionPicker?(self, didSelectItem: currentSelectedItem, index: currentSelectedIndex)
         }
     }
@@ -268,29 +276,14 @@ public class OccasionPicker: UIView {
         case .vertical:
             offsetPoint.y = offset
         }
-        
         if animated {
             isAnimating = true
         }
-        
         collectionView.setContentOffset(offsetPoint, animated: animated)
-    }
-    
-    var itemSpan: CGFloat {
-        return delegate?.occasionPickerSpanForItems(self) ?? 0
-    }
-    
-    var itemLateralSpan: CGFloat {
-        return bounds.size.lateralSpan(forDirection: scrollingDirection)
-    }
-    
-    var endCapSpan: CGFloat {
-        return (bounds.size.span(forDirection: scrollingDirection) - itemSpan) * 0.5
     }
     
     /**
      Selects literally the item with index that the user tapped.
-     
      - parameter item: The item index that the user tapped, i.e. the Data Source index times the `infinityItemsMultiplier`.
      */
     func selectTappedItem(_ item: Int) {
@@ -315,17 +308,13 @@ public class OccasionPicker: UIView {
     }
     
     /**
-     This is a private helper that we use to reach the visible index of the current selected item.
-     Since we multiply the items several times to create an Infinite Scrolling experience, the index of a visible selected item may
-     not be the same as the index provided on Data Source.
-     
+     This is a private helper that we use to reach the visible index of the current selected item. Since we multiply the items several times to create an infinite scrolling experience, the index of a visible selected item may not be the same as the index provided on Data Source.
      - returns: The visible index of current selected item.
      */
     func visibleIndexOfSelectedItem() -> Int {
         let middleMultiplier = scrollingStyle == .infinite ? (infinityItemsMultiplier / 2) : infinityItemsMultiplier
         let middleIndex = numberOfItemsByDataSource * middleMultiplier
         let indexForSelectedItem: Int
-        
         if let _ = currentSelectedItem , scrollingStyle == .default && currentSelectedItem == 0 {
             indexForSelectedItem = 0
         } else if let _ = currentSelectedItem {
@@ -334,28 +323,22 @@ public class OccasionPicker: UIView {
             let middleItem = Int(ceil(Float(numberOfItemsByDataSource) / 2.0))
             indexForSelectedItem = middleIndex - (numberOfItemsByDataSource - middleItem)
         }
-        
         return indexForSelectedItem
     }
     
     func selectItem(_ item : Int, animated: Bool) {
-        
         var finalItem = item;
-        
         if (scrollingStyle == .infinite && item < numberOfItemsByDataSource) {
             let selectedItem = currentSelectedItem ?? Int(ceil(Float(numberOfItemsByDataSource) / 2.0))
             let diff = (item % numberOfItemsByDataSource) - (selectedItem % numberOfItemsByDataSource)
             finalItem = selectedItem + diff
         }
-        
         currentSelectedItem = finalItem % numberOfItemsByDataSource
         delegate?.occasionPicker?(self, didSelectItem: currentSelectedItem, index: currentSelectedIndex)
         setContentOffset(CGFloat(finalItem) * itemSpan - endCapSpan, animated: animated)
     }
     
     // MARK: Scrolling Movement
-    
-    private var isMoving = false
     
     private func trackMovementChanges() {
         let moving = isAnimating || isScrolling
