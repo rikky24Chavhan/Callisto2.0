@@ -27,8 +27,8 @@ extension UIViewController {
         if let controller = controller {
             addChild(controller)
         }
-        if let view = controller?.view {
-            view.addSubview(view)
+        if let controllerView = controller?.view {
+            view?.addSubview(controllerView)
         }
         controller?.didMove(toParent: self)
     }
