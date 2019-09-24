@@ -24,7 +24,7 @@ extension OccasionPicker: UICollectionViewDataSource {
         
         let view = delegate?.occasionPicker?(self, viewForItem: indexPath.item, index: indexForItem(indexPath.item), highlighted: indexPath.item == indexOfSelectedItem, reusingView: occasionPickerCell.customView)
         
-        occasionPickerCell.backgroundColor = pickerCellBackgroundColor ?? UIColor.clear
+        occasionPickerCell.backgroundColor = UIColor.clear
         
         if let customView = view {
             occasionPickerCell.customView = customView

@@ -24,16 +24,13 @@ class OccasionPickerCollectionViewCell: UICollectionViewCell {
         }
         didSet {
             if let newCustomView = customView {
-                contentView.addSubview(newCustomView)
                 newCustomView.translatesAutoresizingMaskIntoConstraints = false
-                for format in [ "H:|[customView]|", "V:|[customView]|" ] {
-                    contentView.addConstraints(NSLayoutConstraint.constraints(
-                        withVisualFormat: format,
-                        options: [],
-                        metrics: nil,
-                        views: ["customView" : newCustomView]
-                    ))
-                }
+                contentView.addSubview(newCustomView)
+                
+                contentView.leadingAnchor.constraint(equalTo: newCustomView.leadingAnchor).isActive = true
+                contentView.trailingAnchor.constraint(equalTo: newCustomView.trailingAnchor).isActive = true
+                contentView.topAnchor.constraint(equalTo: newCustomView.topAnchor).isActive = true
+                contentView.bottomAnchor.constraint(equalTo: newCustomView.bottomAnchor).isActive = true
             }
         }
     }

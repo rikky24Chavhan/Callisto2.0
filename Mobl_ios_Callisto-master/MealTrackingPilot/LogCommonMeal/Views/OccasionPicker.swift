@@ -30,6 +30,11 @@ public class OccasionPicker: UIView {
 
     // MARK: Picker Properties
     
+    let occasionPickerCellIdentifier = "occasionPickerCell"
+    
+    weak var dataSource: OccasionPickerDataSource?
+    weak var delegate: OccasionPickerDelegate?
+    
     var enabled = true {
         didSet {
             if enabled {
@@ -40,22 +45,12 @@ public class OccasionPicker: UIView {
         }
     }
     
-    private var selectionOverlaySpanConstraint: NSLayoutConstraint!
-    private var selectionImageSpanConstraint: NSLayoutConstraint!
-    private var selectionIndicatorEdgeConstraint: NSLayoutConstraint!
-    var pickerCellBackgroundColor: UIColor?
-    
     var numberOfItemsByDataSource: Int {
         get {
             return dataSource?.occasionPickerNumberOfItems(self) ?? 0
         }
     }
-    
-    let occasionPickerCellIdentifier = "occasionPickerCell"
-    
-    weak var dataSource: OccasionPickerDataSource?
-    weak var delegate: OccasionPickerDelegate?
-    
+
     lazy var selectionIndicator: UIView = {
         let selectionIndicator = UIView()
         selectionIndicator.backgroundColor = self.tintColor
@@ -155,7 +150,6 @@ public class OccasionPicker: UIView {
         
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             self.configureFirstSelection()
-            self.adjustSelectionOverlayHeightConstraint()
         }
     }
     
@@ -174,29 +168,12 @@ public class OccasionPicker: UIView {
         self.collectionView.dataSource = self
         self.collectionView.reloadData()
         
-        let collectionViewWidth = NSLayoutConstraint(item: collectionView, attribute: .width, relatedBy: .equal, toItem: self,
-                                                     attribute: .width, multiplier: 1, constant: 0)
-        addConstraint(collectionViewWidth)
-        
-        let collectionViewHeight = NSLayoutConstraint(item: collectionView, attribute: .height, relatedBy: .equal, toItem: self,
-                                                      attribute: .height, multiplier: 1, constant: 0)
-        addConstraint(collectionViewHeight)
-        
-        let collectionViewLeading = NSLayoutConstraint(item: collectionView, attribute: .leading, relatedBy: .equal, toItem: self,
-                                                       attribute: .leading, multiplier: 1, constant: 0)
-        addConstraint(collectionViewLeading)
-        
-        let collectionViewTrailing = NSLayoutConstraint(item: collectionView, attribute: .trailing, relatedBy: .equal, toItem: self,
-                                                        attribute: .trailing, multiplier: 1, constant: 0)
-        addConstraint(collectionViewTrailing)
-        
-        let collectionViewTop = NSLayoutConstraint(item: collectionView, attribute: .top, relatedBy: .equal, toItem: self,
-                                                   attribute: .top, multiplier: 1, constant: 0)
-        addConstraint(collectionViewTop)
-        
-        let collectionViewBottom = NSLayoutConstraint(item: collectionView, attribute: .bottom, relatedBy: .equal, toItem: self,
-                                                      attribute: .bottom, multiplier: 1, constant: 0)
-        addConstraint(collectionViewBottom)
+        collectionView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        collectionView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        collectionView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
     
     private func setupSelectionOverlay() {
@@ -204,23 +181,10 @@ public class OccasionPicker: UIView {
         selectionOverlay.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(selectionOverlay)
         
-        let spanAttribute = scrollingDirection.spanLayoutAttribute()
-        selectionOverlaySpanConstraint = NSLayoutConstraint(item: selectionOverlay, attribute: spanAttribute, relatedBy: .equal, toItem: nil,
-                                                            attribute: .notAnAttribute, multiplier: 1, constant: itemSpan)
-        self.addConstraint(selectionOverlaySpanConstraint)
-        
-        let lateralSpanAttribute = scrollingDirection.lateralSpanLayoutAttribute()
-        let selectionOverlayLateral = NSLayoutConstraint(item: selectionOverlay, attribute: lateralSpanAttribute, relatedBy: .equal, toItem: self,
-                                                         attribute: lateralSpanAttribute, multiplier: 1, constant: 0)
-        addConstraint(selectionOverlayLateral)
-        
-        let selectionOverlayX = NSLayoutConstraint(item: selectionOverlay, attribute: .centerX, relatedBy: .equal, toItem: self,
-                                                   attribute: .centerX, multiplier: 1, constant: 0)
-        addConstraint(selectionOverlayX)
-        
-        let selectionOverlayY = NSLayoutConstraint(item: selectionOverlay, attribute: .centerY, relatedBy: .equal, toItem: self,
-                                                   attribute: .centerY, multiplier: 1, constant: 0)
-        addConstraint(selectionOverlayY)
+        selectionOverlay.widthAnchor.constraint(equalToConstant: itemSpan).isActive = true
+        selectionOverlay.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+        selectionOverlay.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        selectionOverlay.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
     
     private func setupSelectionImageView() {
@@ -228,49 +192,20 @@ public class OccasionPicker: UIView {
         selectionImageView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(selectionImageView)
         
-        let spanAttribute = scrollingDirection.spanLayoutAttribute()
-        selectionImageSpanConstraint = NSLayoutConstraint(item: selectionImageView, attribute: spanAttribute, relatedBy: .equal, toItem: nil,
-                                                          attribute: .notAnAttribute, multiplier: 1, constant: itemSpan)
-        self.addConstraint(selectionImageSpanConstraint)
-        
-        let lateralSpanAttribute = scrollingDirection.lateralSpanLayoutAttribute()
-        let selectionImageLateralSpan = NSLayoutConstraint(item: selectionImageView, attribute: lateralSpanAttribute, relatedBy: .equal, toItem: self,
-                                                           attribute: lateralSpanAttribute, multiplier: 1, constant: 0)
-        addConstraint(selectionImageLateralSpan)
-        
-        let selectionImageX = NSLayoutConstraint(item: selectionImageView, attribute: .centerX, relatedBy: .equal, toItem: self,
-                                                 attribute: .centerX, multiplier: 1, constant: 0)
-        addConstraint(selectionImageX)
-        
-        let selectionImageY = NSLayoutConstraint(item: selectionImageView, attribute: .centerY, relatedBy: .equal, toItem: self,
-                                                 attribute: .centerY, multiplier: 1, constant: 0)
-        addConstraint(selectionImageY)
+        selectionImageView.widthAnchor.constraint(equalToConstant: itemSpan).isActive = true
+        selectionImageView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+        selectionImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        selectionImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
     
     private func setupSelectionIndicator() {
         selectionIndicator.translatesAutoresizingMaskIntoConstraints = false
         addSubview(selectionIndicator)
         
-        let spanAttribute = scrollingDirection.spanLayoutAttribute()
-        let selectionIndicatorSpan = NSLayoutConstraint(item: selectionIndicator, attribute: spanAttribute, relatedBy: .equal, toItem: nil,
-                                                        attribute: .notAnAttribute, multiplier: 1, constant: 2.0)
-        addConstraint(selectionIndicatorSpan)
-        
-        let lateralSpanAttribute = scrollingDirection.lateralSpanLayoutAttribute()
-        let selectionIndicatorLateralSpan = NSLayoutConstraint(item: selectionIndicator, attribute: lateralSpanAttribute, relatedBy: .equal,
-                                                               toItem: self, attribute: lateralSpanAttribute, multiplier: 1, constant: 0)
-        addConstraint(selectionIndicatorLateralSpan)
-        
-        let edgeAttribute: NSLayoutConstraint.Attribute = scrollingDirection == .horizontal ? .trailing : .bottom
-        let spanCenterAttribute: NSLayoutConstraint.Attribute = scrollingDirection == .horizontal ? .centerX : .centerY
-        let lateralCenterAttribute: NSLayoutConstraint.Attribute = scrollingDirection == .horizontal ? .centerY : .centerX
-        selectionIndicatorEdgeConstraint = NSLayoutConstraint(item: selectionIndicator, attribute: edgeAttribute, relatedBy: .equal,
-                                                              toItem: self, attribute: spanCenterAttribute, multiplier: 1, constant: itemSpan / 2)
-        addConstraint(selectionIndicatorEdgeConstraint)
-        
-        let selectionIndicatorCenter = NSLayoutConstraint(item: selectionIndicator, attribute: lateralCenterAttribute, relatedBy: .equal,
-                                                          toItem: self, attribute: lateralCenterAttribute, multiplier: 1, constant: 0)
-        addConstraint(selectionIndicatorCenter)
+        selectionIndicator.widthAnchor.constraint(equalToConstant: 2.0).isActive = true
+        selectionIndicator.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+        selectionIndicator.trailingAnchor.constraint(equalTo: self.centerXAnchor, constant:itemSpan/2).isActive = true
+        selectionIndicator.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
     
     // MARK: Infinite Scrolling Helpers
@@ -299,15 +234,6 @@ public class OccasionPicker: UIView {
         if !setupHasBeenDone {
             configureSetup()
             setupHasBeenDone = true
-        }
-    }
-    
-    private func adjustSelectionOverlayHeightConstraint() {
-        if selectionOverlaySpanConstraint.constant != itemSpan || selectionImageSpanConstraint.constant != itemSpan || selectionIndicatorEdgeConstraint.constant != (itemSpan / 2) {
-            selectionOverlaySpanConstraint.constant = itemSpan
-            selectionImageSpanConstraint.constant = itemSpan
-            selectionIndicatorEdgeConstraint.constant = -(itemSpan / 2)
-            layoutIfNeeded()
         }
     }
     
