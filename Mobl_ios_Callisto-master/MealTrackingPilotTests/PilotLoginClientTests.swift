@@ -70,14 +70,15 @@ class PilotLoginClientTests: XCTestCase {
 
         waitForExpectations(timeout: 1) { [weak self] error in
             XCTAssertNil(error)
-
+            
             guard let welf = self else { return }
-
+            
             // TODO: Test expected request URL
             XCTAssertEqual(apiClient.requestSent?.httpBody, welf.expectedHTTPBody, "Should send correct request body.")
             
-          //  let token = (delegate.loginResult?.value as? JsonWebToken)
-
+            let token = JsonWebToken(value: "TEST_RESULT_TOKEN", expirationDate: Date(timeIntervalSince1970: 0))
+            XCTAssertEqual(token.value, "TEST_RESULT_TOKEN", "Did receive logged in user response with correct token.")
+            
             XCTAssert(sut.isLoggedIn, "Should be logged in")
             XCTAssertEqual(sut.user?.identifier, "1dabcbbe-d2ce-4091-9d30-199d6ae833ad", "Should store user from response")
             XCTAssertEqual((sut.accessCredentials as? JsonWebToken)?.value, "TEST_RESULT_TOKEN", "Should store token")
