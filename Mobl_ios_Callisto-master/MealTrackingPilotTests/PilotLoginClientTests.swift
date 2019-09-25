@@ -22,8 +22,8 @@ class PilotLoginClientTests: XCTestCase {
     }()
 
     private var credentials: UserLoginCredentials {
-        let userName = "Participant99"
-        let password = "Password123"
+        let userName = "Participant41"
+        let password = "Password1234"
         return PilotUserLoginCredentials(userName: userName, password: password)
     }
 
@@ -34,8 +34,8 @@ class PilotLoginClientTests: XCTestCase {
                     "updated_at": "2017-03-02T21:48:35.579741Z",
                     "inserted_at": "2017-03-02T21:48:35.574107Z",
                     "id": "1dabcbbe-d2ce-4091-9d30-199d6ae833ad",
-                    "username": "Participant99",
-                    "device_id": "D9F0A23B-E5B0-4509-9F31-B37F2FB131C1"
+                    "username": "Participant41",
+                    "device_id": "xyz"
                 ],
                 "credentials": [
                     "token": "TEST_RESULT_TOKEN",
@@ -206,7 +206,6 @@ class PilotLoginClientTests: XCTestCase {
             primaryUserStorage: PilotPrimaryUserStorage(underlyingUserProvider: MockUserStorage()),
             reachability: MockReachability(isConnected: false)
         )
-        sut.delegate = MockLoginClientDelegate()
 
         // User has logged in before and has credentials stored
         sut.loginCredentials = credentials
