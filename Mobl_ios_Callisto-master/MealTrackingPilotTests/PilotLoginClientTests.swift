@@ -22,8 +22,8 @@ class PilotLoginClientTests: XCTestCase {
     }()
 
     private var credentials: UserLoginCredentials {
-        let userName = "Participant41"
-        let password = "Password1234"
+        let userName = "Participant99"
+        let password = "Password123"
         return PilotUserLoginCredentials(userName: userName, password: password)
     }
 
@@ -34,8 +34,8 @@ class PilotLoginClientTests: XCTestCase {
                     "updated_at": "2017-03-02T21:48:35.579741Z",
                     "inserted_at": "2017-03-02T21:48:35.574107Z",
                     "id": "1dabcbbe-d2ce-4091-9d30-199d6ae833ad",
-                    "username": "Participant41",
-                    "device_id": "xyz"
+                    "username": "Participant99",
+                    "device_id": "D9F0A23B-E5B0-4509-9F31-B37F2FB131C1"
                 ],
                 "credentials": [
                     "token": "TEST_RESULT_TOKEN",
@@ -70,7 +70,6 @@ class PilotLoginClientTests: XCTestCase {
 
         waitForExpectations(timeout: 1) { [weak self] error in
             XCTAssertNil(error)
-            
             guard let welf = self else { return }
             
             // TODO: Test expected request URL
@@ -268,7 +267,7 @@ fileprivate final class MockResponseAPIClient: APIClient {
         super.init()
     }
 
-    fileprivate func sendRequest(_ request: URLRequest, completion: ((Result<Data?,Error>) -> Void)?) {
+    fileprivate func sendRequest(_ request: URLRequest, completion: defaultRequestCompletion?) {
         requestSent = request
         completion?(mockResult)
     }

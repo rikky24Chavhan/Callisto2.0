@@ -214,7 +214,7 @@ class MealEventDetailsViewModelTests: XCTestCase {
     func testCanNotEditMeal() {
         commonMealEvent.date = Date().adjustHours(noOfHours: -3)
         let sut = MealEventDetailsViewModel(mealEvent: commonMealEvent, dataController: dataController, imageDownloader: imageDownloader, mode: .edit)
-        XCTAssertEqual(sut.canEditMeal, true)
+        XCTAssertEqual(sut.canEditMeal, false)
     }
 
     func testCanSwapMeal() {

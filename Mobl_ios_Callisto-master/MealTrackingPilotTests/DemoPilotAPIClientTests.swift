@@ -48,8 +48,7 @@ class DemoPilotAPIClientTests: XCTestCase {
             if let mealEventsResult = mealEventsResult {
                 switch mealEventsResult {
                 case .success(let resultEvents):
-                        XCTAssertEqual(resultEvents, [], "Should return an empty result")
-                    
+                    XCTAssertEqual(resultEvents, [], "Should return an empty result")
                 case .failure(_):
                     XCTAssertFalse(false, "Should return a failure result")
                 }
@@ -81,7 +80,6 @@ class DemoPilotAPIClientTests: XCTestCase {
                 XCTFail("Failed to generate a request result")
             }
         }
-
     }
 
     func testUpdateMealEventSuccess() {

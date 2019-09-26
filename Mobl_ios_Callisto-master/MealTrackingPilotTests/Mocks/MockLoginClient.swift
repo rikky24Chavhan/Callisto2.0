@@ -6,7 +6,6 @@
 //  Copyright © 2017 Intrepid. All rights reserved.
 //
 
-
 @testable import MealTrackingPilot
 
 class MockLoginClient: LoginCredentialsLoginClient {
@@ -25,7 +24,7 @@ class MockLoginClient: LoginCredentialsLoginClient {
         functionCalls.append("logout")
     }
 
-    func refreshLogin(completion: ((Result<AccessCredentials,Error>) -> Void)?) {
+    func refreshLogin(completion: accessCredentialsCompletion?) {
         functionCalls.append("refreshLogin")
     }
 }

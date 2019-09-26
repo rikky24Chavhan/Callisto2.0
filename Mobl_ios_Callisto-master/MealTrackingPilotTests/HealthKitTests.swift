@@ -177,7 +177,6 @@ class HealthKitTests: XCTestCase {
                 }
                 break
             }
-            
         }
 
         waitForExpectations(timeout: 0.1) { error in
