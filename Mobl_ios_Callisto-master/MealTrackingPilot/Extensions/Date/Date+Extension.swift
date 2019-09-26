@@ -57,6 +57,14 @@ extension Date {
         return value(forComponent: .weekday)
     }
     
+    public var minute: Int {
+        return value(forComponent: .minute)
+    }
+    
+    public var second: Int {
+        return value(forComponent: .second)
+    }
+    
     public var weekdayName: String {
         return self.dateFormatter(format: "EEEE").string(from: self)
     }
@@ -79,6 +87,13 @@ extension Date {
     
     public func adjustDays(noOfDays: Int) -> Date {
         guard let addedDate = calendar.date(byAdding: .day, value: noOfDays, to: self) else {
+            return Date()
+        }
+        return addedDate
+    }
+    
+    public func adjustHours(noOfHours: Int) -> Date {
+        guard let addedDate = calendar.date(byAdding: .hour, value: noOfHours, to: self) else {
             return Date()
         }
         return addedDate

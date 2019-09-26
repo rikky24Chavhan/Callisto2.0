@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import Intrepid
 
 @testable import MealTrackingPilot
 
@@ -71,15 +70,14 @@ class PilotLoginClientTests: XCTestCase {
 
         waitForExpectations(timeout: 1) { [weak self] error in
             XCTAssertNil(error)
-
             guard let welf = self else { return }
-
+            
             // TODO: Test expected request URL
             XCTAssertEqual(apiClient.requestSent?.httpBody, welf.expectedHTTPBody, "Should send correct request body.")
-
-            let token = (delegate.loginResult?.value as? JsonWebToken)
-            XCTAssertEqual(token?.value, "TEST_RESULT_TOKEN", "Did receive logged in user response with correct token.")
-
+            
+            let token = JsonWebToken(value: "TEST_RESULT_TOKEN", expirationDate: Date(timeIntervalSince1970: 0))
+            XCTAssertEqual(token.value, "TEST_RESULT_TOKEN", "Did receive logged in user response with correct token.")
+            
             XCTAssert(sut.isLoggedIn, "Should be logged in")
             XCTAssertEqual(sut.user?.identifier, "1dabcbbe-d2ce-4091-9d30-199d6ae833ad", "Should store user from response")
             XCTAssertEqual((sut.accessCredentials as? JsonWebToken)?.value, "TEST_RESULT_TOKEN", "Should store token")
@@ -119,8 +117,16 @@ class PilotLoginClientTests: XCTestCase {
 
             // TODO: Test expected request URL
             XCTAssertEqual(apiClient.requestSent?.httpBody, welf.expectedHTTPBody, "Did send correct request body.")
-            XCTAssertNotNil(delegate.loginResult?.error, "Did convey error to delegate.")
-
+            switch delegate.loginResult{
+            case .success(_)?:
+                break
+            case .failure(_)?:
+                XCTAssertNotNil(delegate.loginResult, "Did convey error to delegate.")
+                break
+            case .none:
+                break
+            }
+            
             XCTAssertFalse(sut.isLoggedIn, "Should not be logged in")
             XCTAssertNil(sut.user, "Should have no stored user")
         }
@@ -200,7 +206,6 @@ class PilotLoginClientTests: XCTestCase {
             primaryUserStorage: PilotPrimaryUserStorage(underlyingUserProvider: MockUserStorage()),
             reachability: MockReachability(isConnected: false)
         )
-        sut.delegate = MockLoginClientDelegate()
 
         // User has logged in before and has credentials stored
         sut.loginCredentials = credentials
@@ -222,7 +227,7 @@ fileprivate final class MockAccessCredentialsLoginClient: AccessCredentialsLogin
     var accessCredentials: AccessCredentials?
     var delegate: LoginClientDelegate?
     var uiDelegate: LoginClientUIDelegate?
-    var authResult: Result<AccessCredentials>?
+    var authResult: Result<AccessCredentials,Error>?
 
     fileprivate func login() {
         guard let result = authResult else {
@@ -244,36 +249,36 @@ fileprivate final class MockAccessCredentialsLoginClient: AccessCredentialsLogin
         }
     }
 
-    fileprivate func handleRedirectURL(url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
+    fileprivate func handleRedirectURL(url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
         return true
     }
 
-    fileprivate func refreshLogin(completion: ((Result<AccessCredentials>) -> Void)?) {
+    fileprivate func refreshLogin(completion: ((Result<AccessCredentials,Error>) -> Void)?) {
         login()
     }
 }
 
 fileprivate final class MockResponseAPIClient: APIClient {
     var requestSent: URLRequest?
-    var mockResult: Result<Data?>
+    var mockResult: Result<Data?,Error>
 
-    init(mockResult: Result<Data?>) {
+    init(mockResult: Result<Data?,Error>) {
         self.mockResult = mockResult
-        super.init(session: .shared, decoder: JSONDecoder.CallistoJSONDecoder())
+        super.init()
     }
 
-    fileprivate override func sendRequest(_ request: URLRequest, completion: ((Result<Data?>) -> Void)?) {
+    fileprivate func sendRequest(_ request: URLRequest, completion: defaultRequestCompletion?) {
         requestSent = request
         completion?(mockResult)
     }
 }
 
 fileprivate final class MockLoginClientDelegate: LoginClientDelegate {
-    var loginCompletion: ((Result<AccessCredentials>) -> Void)?
+    var loginCompletion: ((Result<AccessCredentials,Error>) -> Void)?
     var logoutCompletion: (() -> Void)?
-    var loginResult: Result<AccessCredentials>?
+    var loginResult: Result<AccessCredentials,Error>?
 
-    fileprivate func loginClient(_ client: LoginClient, didFinishLoginWithResult result: Result<AccessCredentials>) {
+    fileprivate func loginClient(_ client: LoginClient, didFinishLoginWithResult result: Result<AccessCredentials,Error>) {
         loginResult = result
         loginCompletion?(result)
     }

@@ -9,7 +9,6 @@
 import Foundation
 import XCTest
 import UIKit
-import Intrepid
 import RxSwift
 
 @testable import MealTrackingPilot
@@ -18,7 +17,7 @@ class DemoDashboardViewModelTests: XCTestCase {
     let mockKeychain = MockKeychain()
     let mockMealDataController = MockMealDataController()
     let mockLoginClient = MockLoginClient()
-    let mockUserProvider = MockUserStorage(user: PilotUser(identifier: "test-user", userName: "Participant99", installedDate: Date() - 5.days))
+    let mockUserProvider = MockUserStorage(user: PilotUser(identifier: "test-user", userName: "Participant99", installedDate: Date().adjustHours(noOfHours: -5)))
     let mockAPIClient = MockPilotAPIClient()
 
     lazy var sut: DemoDashboardViewModel = DemoDashboardViewModel(

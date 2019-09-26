@@ -22,12 +22,12 @@ class MealOccasionPickerViewModelTests: XCTestCase {
             .dinner
         ]
         let sut = MealOccasionPickerViewModel(occasions: occasions)
-        let pickerView = PickerView()
+        let pickerView = OccasionPicker()
 
-        XCTAssertEqual(sut.pickerViewNumberOfItems(pickerView), 4)
+        XCTAssertEqual(sut.occasionPickerNumberOfItems(pickerView), 4)
 
         let itemViews = (0..<4).map {
-            return sut.pickerView(pickerView, viewForItem: $0, index: $0, highlighted: false, reusingView: nil) as? MealOccasionPickerItemView
+            return sut.occasionPicker(pickerView, viewForItem: $0, index: $0, highlighted: false, reusingView: nil) as? MealOccasionPickerItemView
         }
         XCTAssertEqual(itemViews[0]?.titleLabel.text, "All")
         XCTAssertEqual(itemViews[1]?.titleLabel.text, "Breakfast")
@@ -42,7 +42,7 @@ class MealOccasionPickerViewModelTests: XCTestCase {
             .dinner
         ]
         let sut = MealOccasionPickerViewModel(occasions: occasions)
-        let pickerView = PickerView()
+        let pickerView = OccasionPicker()
 
         let selectedOccasion: Variable<MealOccasion?> = Variable(nil)
         sut.selectedOccasion
@@ -52,24 +52,25 @@ class MealOccasionPickerViewModelTests: XCTestCase {
         XCTAssertEqual(sut.selectedIndex.value, 0)
         XCTAssertNil(selectedOccasion.value)
 
-        sut.pickerView(pickerView, didSelectItem: 1, index: 1)
+        sut.occasionPicker(pickerView, didSelectItem: 1, index: 1)
 
         XCTAssertEqual(sut.selectedIndex.value, 1)
         XCTAssertEqual(selectedOccasion.value, .breakfast)
 
-        sut.pickerView(pickerView, didSelectItem: 2, index: 2)
+        sut.occasionPicker(pickerView, didSelectItem: 2, index: 2)
 
         XCTAssertEqual(sut.selectedIndex.value, 2)
         XCTAssertEqual(selectedOccasion.value, .lunch)
 
-        sut.pickerView(pickerView, didSelectItem: 3, index: 3)
+        sut.occasionPicker(pickerView, didSelectItem: 3, index: 3)
 
         XCTAssertEqual(sut.selectedIndex.value, 3)
         XCTAssertEqual(selectedOccasion.value, .dinner)
 
-        sut.pickerView(pickerView, didSelectItem: 0, index: 0)
+        sut.occasionPicker(pickerView, didSelectItem: 0, index: 0)
 
         XCTAssertEqual(sut.selectedIndex.value, 0)
         XCTAssertNil(selectedOccasion.value)
     }
 }
+

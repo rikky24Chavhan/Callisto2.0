@@ -8,7 +8,6 @@
 
 import Foundation
 import Realm
-import Intrepid
 @testable import MealTrackingPilot
 
 enum MockPilotAPIClientError: Error {
@@ -16,19 +15,19 @@ enum MockPilotAPIClientError: Error {
 }
 
 class MockPilotAPIClient: PilotAPIClient {
-    var mockCreateMealEventResponse: Result<RealmMealEvent> = .success(RealmMealEvent())
-    var mockCreateImageURLResponse: Result<String> = .success("")
-    var mockCreateLocationResponse: Result<Void> = .success(())
+    var mockCreateMealEventResponse: Result<RealmMealEvent,Error> = .success(RealmMealEvent())
+    var mockCreateImageURLResponse: Result<String,Error> = .success("")
+    var mockCreateLocationResponse: Result<Void?,Error> = .success(())
 
-    override func createMeal(_ meal: Meal, completion: ((Result<RealmMeal>) -> Void)?) {
+    override func createMeal(_ meal: Meal, completion: relamMealCompletion?) {
         completion?(.success(RealmMeal()))
     }
 
-    override func createMealEvent(_ mealEvent: MealEvent, completion: ((Result<RealmMealEvent>) -> Void)?) {
+    override func createMealEvent(_ mealEvent: MealEvent, completion: relamMealEventCompletion?) {
         completion?(mockCreateMealEventResponse)
     }
 
-    override func createLocation(_ location: Location, completion: ((Result<Void>) -> Void)?) {
+    override func createLocation(_ location: Location, completion: voidRequestCompletion?) {
         completion?(mockCreateLocationResponse)
     }
 }

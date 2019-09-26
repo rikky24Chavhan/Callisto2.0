@@ -9,7 +9,6 @@
 import XCTest
 import RealmSwift
 import RxSwift
-import Intrepid
 @testable import MealTrackingPilot
 
 class RealmMealDataControllerTests: XCTestCase {
