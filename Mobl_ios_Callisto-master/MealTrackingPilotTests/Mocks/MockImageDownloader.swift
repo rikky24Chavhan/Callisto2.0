@@ -17,8 +17,7 @@ class MockImageDownloader: ImageDownloader {
         progress: ImageDownloader.ProgressHandler?,
         progressQueue: DispatchQueue,
         completion: ImageDownloader.CompletionHandler?) -> RequestReceipt? {
-
-        completion?(DataResponse(request: urlRequest.urlRequest, response: nil, data: nil, result: .success(#imageLiteral(resourceName: "buttonBackarrow")))) // Random test image
+        completion?(DataResponse(request: urlRequest.urlRequest, response: nil, data: nil, metrics: nil, serializationDuration: 60, result: .success(#imageLiteral(resourceName: "buttonBackarrow")))) // Random test image
         return nil
     }
 }

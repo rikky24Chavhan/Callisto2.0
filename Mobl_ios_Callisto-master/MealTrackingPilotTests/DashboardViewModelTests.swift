@@ -8,7 +8,6 @@
 
 import XCTest
 import UIKit
-import Intrepid
 import RxSwift
 
 @testable import MealTrackingPilot
@@ -75,7 +74,7 @@ class DashboardViewModelTests: XCTestCase {
         let oldMealEvent = MockMealEvent(
             identifier: "old-meal-event",
             meal: self.mockMeals[0],
-            date: Date() - 7.days,
+            date: Date().adjustDays(noOfDays: -7),
             imageURL: nil,
             portion: .usual,
             note: "")
@@ -87,7 +86,7 @@ class DashboardViewModelTests: XCTestCase {
         var suggestionMessage: String = ""
 
         // Start at first day of the week
-        sut.getCurrentDate = { Date().startWeek + 12.hours }
+        sut.getCurrentDate = { Date().startWeek.adjustHours(noOfHours: 12)}
 
         sut.suggestionMessage.subscribe(onNext: { attributedString in
             suggestionMessage = attributedString.string
@@ -100,7 +99,7 @@ class DashboardViewModelTests: XCTestCase {
         let todayMealEvent0 = MockMealEvent(
             identifier: "mock-meal-event-0",
             meal: self.mockMeals[0],
-            date: Date().startWeek + 1.hour,
+            date: Date().startWeek.adjustHours(noOfHours: 1),
             imageURL: nil,
             portion: .usual,
             note: "")
@@ -111,7 +110,7 @@ class DashboardViewModelTests: XCTestCase {
         let todayMealEvent1 = MockMealEvent(
             identifier: "mock-meal-event-0",
             meal: self.mockMeals[0],
-            date: Date().startWeek + 2.hour,
+            date: Date().startWeek.adjustHours(noOfHours: 2),
             imageURL: nil,
             portion: .usual,
             note: "")
@@ -123,7 +122,7 @@ class DashboardViewModelTests: XCTestCase {
         var suggestionMessage: String = ""
 
         // Start at first day of the week
-        sut.getCurrentDate = { Date().startWeek + 36.hours }
+        sut.getCurrentDate = { Date().startWeek.adjustHours(noOfHours: 36) }
 
         sut.suggestionMessage.subscribe(onNext: { attributedString in
             suggestionMessage = attributedString.string
@@ -136,7 +135,7 @@ class DashboardViewModelTests: XCTestCase {
         let yesterdayMealEvent = MockMealEvent(
             identifier: "mock-meal-event-0",
             meal: self.mockMeals[0],
-            date: Date().startWeek + 1.hour,
+            date: Date().startWeek.adjustHours(noOfHours: 1),
             imageURL: nil,
             portion: .usual,
             note: "")
@@ -147,7 +146,7 @@ class DashboardViewModelTests: XCTestCase {
         let todayMealEvent1 = MockMealEvent(
             identifier: "mock-meal-event-0",
             meal: self.mockMeals[0],
-            date: Date().startWeek + 2.hour,
+            date: Date().startWeek.adjustHours(noOfHours: 2),
             imageURL: nil,
             portion: .usual,
             note: "")

@@ -133,7 +133,7 @@ class LocationTests: XCTestCase {
         }
 
         // Only result of successful request is location being removed from the realm, if necessary
-        XCTAssertNil(location.realm)
+       XCTAssertNil(location.realm)
     }
 
     func testLocationControllerSaveLocationError() {

@@ -27,7 +27,7 @@ class RealmSeederTests: XCTestCase {
         XCTAssertEqual(meals.count, 4, "Should seed with meals.")
 
         for mealEvent in mealEvents {
-            XCTAssert(mealEvent.meal.identifier.ip_length > 0, "Each meal event should have a valid meal")
+            XCTAssert(mealEvent.meal.identifier.count > 0, "Each meal event should have a valid meal")
         }
     }
 }
